@@ -1,0 +1,24 @@
+Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process where
+the byte stream is used to recreate the actual Java object in memory. This mechanism is used to persist the object.
+
+Why is custom serialization needed?
+
+During serialization, there may be data loss if we use the ‘transient’ keyword. ‘Transient’ keyword is used on the variables which
+we don’t want to serialize. But sometimes, it is needed to serialize them in a different manner than the default serialization
+(such as encrypting before serializing etc.), in that case, we have to use custom serialization and deserialization.
+
+Below program illustrates the above situation of data loss:
+
+In the above image example, before serialization, Account object can provide proper username and password but deserialization of Account
+ object provides only username and not the password. This is due to declaring password variable as transient.
+
+Hence during default serialization, there may be a chance of loss of information because of the transient keyword.
+To recover this loss, we will have to use Customized Serialization.
+
+Customized serialization can be implemented using the following two methods:
+
+  1. private void writeObject(ObjectOutputStream oos) throws Exception: This method will be executed automatically by the jvm(also known as
+    Callback Methods) at the time of serialization. Hence to perform any activity during serialization, it must be defined only in this method.
+
+  2. private void readObject(ObjectInputStream ois) throws Exception: This method will be executed automatically by the jvm(also known as Callback
+     Methods) at the time of deserialization. Hence to perform any activity during deserialization, it must be defined only in this method.

@@ -1,0 +1,29 @@
+Exception is an unwanted or unexpected event, which occurs during the execution of a program, i.e. at run time, that disrupts the normal flow of
+ the program’s instructions. In Java, there are two types of exceptions:
+
+   1. Checked exceptions
+   2. Unchecked exceptions
+
+ Checked Exceptions
+
+   These are the exceptions that are checked at compile time. If some code within a method throws a checked exception, then the method must either
+    handle the exception or it must specify the exception using the throws keyword. In checked exception, there are two types: fully checked and
+    partially checked exceptions. A fully checked exception is a checked exception where all its child classes are also checked, like IOException,
+    InterruptedException. A partially checked exception is a checked exception where some of its child classes are unchecked, like Exception.
+
+   For example, consider the following Java program that opens the file at location “C:\test\a.txt” and prints the first three lines of it.
+   The program doesn’t compile, because the function main() uses FileReader() and FileReader() throws a checked exception FileNotFoundException.
+   It also uses readLine() and close() methods, and these methods also throw checked exception IOException.
+
+   To fix the above program, we either need to specify a list of exceptions using throws, or we need to use a try-catch block. We have used throws
+    in the below program. Since FileNotFoundException is a subclass of IOException, we can just specify IOException in the throws list and make
+    the above program compiler-error-free.
+
+ Unchecked Exceptions
+
+    These are the exceptions that are not checked at compile time. In C++, all exceptions are unchecked, so it is not forced by the compiler to
+    either handle or specify the exception. It is up to the programmers to be civilized, and specify or catch the exceptions.In Java, exceptions
+     under Error and RuntimeException classes are unchecked exceptions, everything else under throwable is checked.
+
+    Consider the following Java program. It compiles fine, but it throws ArithmeticException when run. The compiler allows it to compile because
+     ArithmeticException is an unchecked exception.

@@ -1,0 +1,98 @@
+The List interface in Java provides a way to store the ordered collection. It is a child interface of Collection. It is an ordered collection of objects in which duplicate values can be stored. Since List preserves the insertion order, it allows positional access and insertion of elements.
+The List interface is found in java.util package and inherits the Collection interface. It is a factory of ListIterator interface. Through the ListIterator, we can iterate the list in forward and backward directions. The implementation classes of the List interface are ArrayList, LinkedList, Stack, and Vector.
+ArrayList and LinkedList are widely used in Java programming.
+ The Vector class is deprecated since Java 5.
+Declaration: The List interface is declared as:
+
+public interface List<E> extends Collection<E>
+
+Let us elaborate on creating objects or instances in a List class. Since List is an interface, objects cannot be created of the type list. We always need a class that implements this List in order to create an object. And also, after the introduction of Generics in Java 1.5, it is possible to restrict the type of object that can be stored in the List.
+Just like several other user-defined ‘interfaces’ implemented by user-defined ‘classes’, List is an ‘interface’, implemented by the ArrayList class, pre-defined in the java.util package.
+
+Syntax: This type of safelist can be defined as:
+
+List<Obj> list = new ArrayList<Obj> ();
+
+    Note: Obj is the type of the object to be stored in List
+
+          Operations in a List interface
+
+     Since List is an interface, it can be used only with a class that implements this interface. Now, let’s see how to perform a few frequently used operations on the List.
+
+         Operation 1: Adding elements to List class using add() method
+         Operation 2: Updating elements in List class using set() method
+         Operation 3: Removing elements using remove() method
+
+     Operation 1:  Adding elements to List class using add() method
+
+         In order to add an element to the list, we can use the add() method. This method is overloaded to perform multiple operations based on different parameters.
+
+         Parameters:  It takes 2 parameters, namely:
+
+             add(Object): This method is used to add an element at the end of the List.
+             add(int index, Object): This method is used to add an element at a specific index in the List
+
+     Operation 2: Updating elements
+
+         After adding the elements, if we wish to change the element, it can be done using the set() method. Since List is indexed, the element which we wish to change is referenced by the index of the element.
+         Therefore, this method takes an index and the updated element which needs to be inserted at that index.
+
+     Operation 3: Removing Elements
+
+         In order to remove an element from a list, we can use the remove() method. This method is overloaded to perform multiple operations based on different parameters. They are:
+
+         Parameters:
+
+             remove(Object): This method is used to simply remove an object from the List. If there are multiple such objects, then the first occurrence of the object is removed.
+             remove(int index): Since a List is indexed, this method takes an integer value which simply removes the element present at that specific index in the List. After removing the element,
+             all the elements are moved to the left to fill the space and the indices of the objects are updated.
+
+     Iterating over List
+             Till now we are having a very small input size and we are doing operations manually for every entity. Now let us discuss various ways by which we can iterate over the list to get them working for a larger sample set.
+
+             Methods: There are multiple ways to iterate through the List. The most famous ways are by using the basic for loop in combination with a get() method to get the element at a specific index and the advanced for a loop.
+
+     Methods of the List Interface
+         Since the main concept behind the different types of the lists is the same, the list interface contains the following methods:
+
+     Java List vs Set
+         Both the List interface and the Set interface inherits the Collection interface. However, there exists some differences between them.
+
+     Classes Association with a List Interface
+
+     Now let us discuss the classes that implement the List Interface for which first do refer to the
+      pictorial representation below to have a better understanding of the List interface. It is as follows:
+
+
+    AbstractList, CopyOnWriteArrayList, and the AbstractSequentialList are the classes that implement the List interface. A separate functionality is implemented in each of the mentioned classes. They are as follows:
+
+        1. AbstractList: This class is used to implement an unmodifiable list, for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
+        2. CopyOnWriteArrayList: This class implements the list interface. It is an enhanced version of ArrayList in which all the modifications(add, set, remove, etc.) are implemented by making a fresh copy of the list.
+        3. AbstractSequentialList: This class implements the Collection interface and the AbstractCollection class. This class is used to implement an unmodifiable list, for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
+
+    We will proceed in this manner.
+
+        ArrayList
+        Vector
+        Stack
+        LinkedList
+    Let us discuss them sequentially and implement the same to figure out the working of the classes with the List interface.
+
+    Class 1: ArrayList
+      An ArrayList class which is implemented in the collection framework provides us with dynamic arrays in Java. Though, it may be slower than standard arrays but can be helpful in programs where lots of manipulation in the array is needed.
+      Let’s see how to create a list object using this class.
+
+    Class 2: Vector
+       Vector is a class that is implemented in the collection framework implements a growable array of objects. Vector implements a dynamic array that means it can grow or shrink as required. Like an array, it contains components that can be accessed using an integer index.
+       Vectors basically fall in legacy classes but now it is fully compatible with collections.
+       Let’s see how to create a list object using this class.
+
+    Class 3: Stack
+       Stack is a class that is implemented in the collection framework and extends the vector class models and implements the Stack data structure. The class is based on the basic principle of last-in-first-out. In addition to the basic push and pop operations,
+       the class provides three more functions of empty, search and peek. Let’s see how to create a list object using this class.
+
+    Class 4: LinkedList
+
+    LinkedList is a class that is implemented in the collection framework which inherently implements the linked list data structure. It is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part.
+     The elements are linked using pointers and addresses. Each element is known as a node. Due to the dynamicity and ease of insertions and deletions,
+    they are preferred over the arrays. Let’s see how to create a list object using this class.

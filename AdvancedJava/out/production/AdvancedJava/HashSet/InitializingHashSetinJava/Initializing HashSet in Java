@@ -1,0 +1,17 @@
+Set in Java is an interface which extends Collection. It is an unordered collection of objects in which duplicate values cannot be stored.
+Basically, set is implemented by HashSet, LinkedHashSet or TreeSet (sorted representation).
+Set has various methods to add, remove clear, size, etc to enhance the usage of this interface.
+
+Method 1: Using Constructors.Constructor:
+
+   In this method first we create an array then convert it to a list and then pass it to the HashSet constructor that accepts another collection.
+   Integer elements of the set are printed in sorted order.
+
+Method 2 using Collections:
+
+  Collections class consists of several methods that operate on collections.
+   a) Collection.addAll() : adds all the specified elements to the specified collection of the specified type.
+   b) Collections.unmodifiableSet() : adds the elements and returns an unmodifiable view of the specified set.
+
+Method 3: using .add() each time
+   Create a set and using .add() method we add the elements into the set 

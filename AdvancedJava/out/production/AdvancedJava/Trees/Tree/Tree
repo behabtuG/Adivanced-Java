@@ -1,0 +1,2 @@
+A tree is a non-linear data structure where data objects are generally organized in terms of hierarchical relationship.
+The structure is non-linear in the sense that, unlike Arrays, Linked Lists, Stack and Queues, data in a tree is not organized linearly.

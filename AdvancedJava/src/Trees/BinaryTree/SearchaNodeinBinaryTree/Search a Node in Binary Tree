@@ -1,0 +1,12 @@
+
+    . Define Node class which has three attributes namely: data left and right. Here, left represents the left child of the node and right represents the right child of the node.
+    . When a node is created, data will pass to data attribute of the node and both left and right will be set to null.
+    . Define another class which has two attribute root and flag.
+        i. Root represents the root node of the tree and initializes it to null.
+        ii. The Flag will be used to check whether the given node is present in the tree or not. Initially, it will be set to false.
+
+    a. searchNode() will search for a particular node in the binary tree:
+        a. It checks whether the root is null, which means the tree is empty.
+        b. If the tree is not empty, it will compare temp's data with value. If they are equal, it will set the flag to true and return.
+        c. Traverse left subtree by calling searchNode() recursively and check whether the value is present in left subtree.
+        d. Traverse right subtree by calling searchNode() recursively and check whether the value is present in the right subtree.

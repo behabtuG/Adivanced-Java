@@ -1,0 +1,3 @@
+Like C++, Java also supports a copy constructor. But, unlike C++, Java doesn’t create a default copy constructor if you don’t write your own.
+ A prerequisite prior to learning copy constructors is to learn about constructors in java to deeper roots. Below is an example Java program
+  that shows a simple use of a copy constructor.

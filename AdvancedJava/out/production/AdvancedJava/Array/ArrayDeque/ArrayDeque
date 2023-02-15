@@ -1,0 +1,105 @@
+The ArrayDeque in Java provides a way to apply resizable-array in addition to the implementation of the Deque interface.
+It is also known as Array Double Ended Queue or Array Deck. This is a special kind of array that grows and allows users to add or remove an element from both sides of the queue.
+
+Few important features of ArrayDeque are as follows:
+
+    . Array deques have no capacity restrictions and they grow as necessary to support usage.
+    . They are not thread-safe which means that in the absence of external synchronization, ArrayDeque does not support concurrent access by multiple threads.
+    . Null elements are prohibited in the ArrayDeque.
+    . ArrayDeque class is likely to be faster than Stack when used as a stack.
+    . ArrayDeque class is likely to be faster than LinkedList when used as a queue.
+
+Interfaces implemented by ArrayDeque:
+
+The ArrayDeque class implements these two interfaces:
+     . Queue Interface: It is an Interface that is a FirstIn – FirstOut Data Structure where the elements are added from the back.
+     . Deque Interface: It is a Doubly Ended Queue in which you can insert the elements from both sides. It is an interface that implements the Queue.
+
+   ArrayDeque implements both Queue and Deque. It is dynamically resizable from both sides. All implemented interfaces of
+   ArrayDeque in the hierarchy are Serializable, Cloneable, Iterable<E>, Collection<E>, Deque<E>, Queue<E>
+
+   Syntax: Declaration
+
+       public class ArrayDeque<E>
+
+       extends AbstractCollection<E>
+
+       implements Deque<E>, Cloneable, Serializable
+
+       Here, E refers to the element which can refer to any class, such as Integer or String class.
+
+   Now we are done with syntax now let us come up with constructors been defined for it prior before implementing to grasp it better and perceiving the output better.
+
+
+       ArrayDeque(): This constructor is used to create an empty ArrayDeque and by default holds an initial capacity to hold 16 elements.
+
+   ArrayDeque<E> dq = new ArrayDeque<E>();
+
+       ArrayDeque(Collection<? extends E> c): This constructor is used to create an ArrayDeque containing all the elements the same as that of the specified collection.
+
+   ArrayDeque<E> dq = new ArrayDeque<E>(Collection col);
+
+       ArrayDeque(int numofElements): This constructor is used to create an empty ArrayDeque and holds the capacity to contain a specified number of elements.
+
+   ArrayDeque<E> dq = new ArrayDeque<E>(int numofElements);
+
+   Methods in ArrayDeque are as follows:
+
+Methods in ArrayDeque are as follows:
+
+    Note: Here, Element is the type of elements stored by ArrayDeque.
+
+  If there is some lag in clarity in this example, if so then we are proposing various operations on the ArrayDeque class Let’s see how to perform
+   a few frequently used operations on the ArrayDeque to get a better understanding of the operations that we have used above to illustrate Array Deque as a whole.
+
+      Adding operation
+      Accessing operation
+      Removing operations
+      Iterating through the Deque
+
+  Let us go through each of the operations by implementing alongside by providing clean java program as follows:
+
+  Operation 1: Adding Elements
+
+     In order to add an element to the ArrayDeque, we can use the methods  add(), addFirst(), addLast(), offer(), offerFirst(), offerLast() methods.
+
+      add()
+      addFirst()
+      addLast()
+      offer()
+      offerFirst()
+      offerLast()
+
+  Operation 2: Accessing the Elements
+
+     After adding the elements, if we wish to access the elements, we can use inbuilt methods like getFirst(), getLast(), etc.
+
+      getFirst()
+      getLast()
+      peek()
+      peekFirst()
+      peekLast()
+
+  Operation 3. Removing Elements
+
+    In order to remove an element from a deque, there are various methods available. Since we can also remove from both the ends, the deque interface provides us with removeFirst(), removeLast() methods.
+    Apart from that, this interface also provides us with the poll(), pop(), pollFirst(), pollLast() methods where pop() is used to remove and return the head of the deque.
+    However, poll() is used because this offers the same functionality as pop() and doesn’t return an exception when the deque is empty. These sets of operations are as listed below as follows:
+
+      remove()
+      removeFirst()
+      removeLast()
+      poll()
+      pollFirst()
+      pollLast()
+      pop()
+
+  Operation 4: Iterating through the Deque
+
+    Since a deque can be iterated from both directions, the iterator method of the deque interface provides us two ways to iterate.
+     One from the first and the other from the back. These sets of operations are listed below as follows:
+
+        remove()
+        iterator()
+        descendingIterator()
+

@@ -1,0 +1,17 @@
+
+   1. Define Node class which has three attributes namely: data left and right. Here, left represents the left child of the node and
+      right represents the right child of the node.
+   2. When a node is created, data will pass to data attribute of the node and both left and right will be set to null.
+   3. Define another class which has an attribute root.
+        a.Root represents the root node of the tree and initializes it to null.
+   4. findMaximumWidth() will find out the maximum width of the given binary tree:
+        a. Variable maxWidth will store the maximum number of nodes present in any level.
+        b. The queue is used for traversing binary tree level-wise.
+        c. It checks whether the root is null, which means the tree is empty.
+        d. If not, add the root node to queue. Variable nodesInLevel keeps track of the number of nodes in each level.
+        e. If nodesInLevel > 0, remove the node from the front of the queue and add its left and right child to the queue. For the
+           first iteration, node 1 will be removed and its children nodes 2 and 3 will be added to the queue. In the second iteration,
+           node 2 will be removed, its children 4 and 5 will be added to the queue and so on.
+        f. MaxWidth will store max(maxWidth, nodesInLevel). So, at any given point of time, it will represent the maximum number of
+           nodes.
+        g. This will continue till all the levels of the tree is traversed.

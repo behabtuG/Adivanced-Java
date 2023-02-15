@@ -1,0 +1,83 @@
+What is Queue Data Structure?
+
+    A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
+
+We define a queue to be a list in which all additions to the list are made at one end, and all deletions from the list are made at the other end.
+The element which is first pushed into the order, the operation is first performed on that.
+
+ FIFO Principle of Queue:
+
+     . A Queue is like a line waiting to purchase tickets, where the first person in line is the first person served. (i.e. First come first serve).
+     . Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue(sometimes,
+      head of the queue), similarly, the position of the last entry in the queue, that is, the one most recently added, is called the rear (or the tail) of the queue. See the below figure.
+
+ Characteristics of Queue:
+
+     . Queue can handle multiple data.
+     . We can access both ends.
+     . They are fast and flexible.
+
+ Queue Representation:
+
+ Like stacks, Queues can also be represented in an array: In this representation, the Queue is implemented using the array. Variables used in this case are
+
+     . Queue: the name of the array storing queue elements.
+     . Front: the index where the first element is stored in the array representing the queue.
+     . Rear: the index where the last element is stored in an array representing the queue.
+
+ The Queue interface is present in java.util package and extends the Collection interface is used to hold the elements about to be processed in FIFO(First In First Out) order.
+  It is an ordered list of objects with its use limited to inserting elements at the end of the list and deleting elements from the start of the list, (i.e.),
+  it follows the FIFO or the First-In-First-Out principle.
+  
+Being an interface the queue needs a concrete class for the declaration and the most common classes are the PriorityQueue and LinkedList in Java. Note that neither of these implementations is thread-safe.
+PriorityBlockingQueue is one alternative implementation if the thread-safe implementation is needed.
+
+Declaration: The Queue interface is declared as:
+public interface Queue extends Collection
+
+Creating Queue Objects: Since Queue is an interface, objects cannot be created of the type queue. We always need a class which extends this list in order to create an object. And also,
+  after the introduction of Generics in Java 1.5, it is possible to restrict the type of object that can be stored in the Queue. This type-safe queue can be defined as:
+
+   // Obj is the type of the object to be stored in Queue
+    Queue<Obj> queue = new PriorityQueue<Obj> ();
+
+Operations on Queue Interface
+
+Let’s see how to perform a few frequently used operations on the queue using the Priority Queue class.
+
+ 1. Adding Elements: In order to add an element in a queue, we can use the add() method. The insertion order is not retained in the PriorityQueue.
+    The elements are stored based on the priority order which is ascending by default.
+
+ 2. Removing Elements: In order to remove an element from a queue, we can use the remove() method. If there are multiple such objects, then the first occurrence of the object is removed.
+    Apart from that, poll() method is also used to remove the head and return it.
+
+ 3. Iterating the Queue: There are multiple ways to iterate through the Queue. The most famous way is converting the queue to the array and traversing using the for loop. However,
+    the queue also has an inbuilt iterator which can be used to iterate through the queue.
+
+     Characteristics of a Queue: The following are the characteristics of the queue:
+
+         . The Queue is used to insert elements at the end of the queue and removes from the beginning of the queue. It follows FIFO concept.
+         . The Java Queue supports all methods of Collection interface including insertion, deletion, etc.
+         . LinkedList, ArrayBlockingQueue and PriorityQueue are the most frequently used implementations.
+         . If any null operation is performed on BlockingQueues, NullPointerException is thrown.
+         . The Queues which are available in java.util package are Unbounded Queues.
+         . The Queues which are available in java.util.concurrent package are the Bounded Queues.
+         . All Queues except the Deques supports insertion and removal at the tail and head of the queue respectively. The Deques support element insertion and removal at both ends.
+
+     Classes that implement the Queue Interface:
+
+     1. PriorityQueue: PriorityQueue class which is implemented in the collection framework provides us a way to process the objects based on the priority.
+        It is known that a queue follows the First-In-First-Out algorithm, but sometimes the elements of the queue are needed to be processed according to the priority,
+        that’s when the PriorityQueue comes into play. Let’s see how to create a queue object using this class.
+
+     2. LinkedList: LinkedList is a class which is implemented in the collection framework which inherently implements the linked list data structure. It is a linear data structure
+        where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. The elements are linked using pointers and addresses.
+        Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays or queues. Let’s see how to create a queue object using this class.
+
+     3. PriorityBlockingQueue: It is to be noted that both the implementations, the PriorityQueue and LinkedList are not thread-safe. PriorityBlockingQueue is one alternative implementation
+        if thread-safe implementation is needed. PriorityBlockingQueue is an unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations.
+        Since it is unbounded, adding elements may sometimes fail due to resource exhaustion resulting in OutOfMemoryError. Let’s see how to create a queue object using this class.
+
+     Methods of Queue Interface
+
+     The queue interface inherits all the methods present in the collections interface while implementing the following methods:

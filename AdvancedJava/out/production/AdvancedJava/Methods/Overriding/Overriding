@@ -1,0 +1,86 @@
+In any object-oriented programming language, Methods.Overriding is a feature that allows a subclass or child class to provide a specific implementation
+ of a method that is already provided by one of its super-classes or parent classes. When a method in a subclass has the same name, same parameters
+ or signature, and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in
+ the super-class.
+
+ Method overriding is one of the way by which java achieve Run Time Polymorphism.The version of a method that is executed will be determined by the
+  object that is used to invoke it. If an object of a parent class is used to invoke the method, then the version in the parent class will be
+  executed, but if an object of the subclass is used to invoke the method, then the version in the child class will be executed. In other words,
+  it is the type of the object being referred to (not the type of the reference variable) that determines which version of an overridden method
+  will be executed.
+
+ Rules for method overriding:
+
+  1. Overriding and Access-Modifiers : The access modifier for an overriding method can allow more, but not less, access than the overridden method.
+     For example, a protected instance method in the super-class can be made public, but not private, in the subclass. Doing so, will generate
+     compile-time error.
+
+  2. Final methods can not be overridden : If we don’t want a method to be overridden, we declare it as final. Please see Using final with
+     Inheritance.
+
+  3. Static methods can not be overridden(Method Overriding vs Method Hiding) : When you define a static method with same signature as a static
+     method in base class, it is known as method hiding.
+
+     The following table summarizes what happens when you define a method with the same signature as a method in a super-class.
+
+  4. Private methods can not be overridden : Private methods cannot be overridden as they are bonded during compile time. Therefore we can’t even
+     override private methods in a subclass.(See this for details).
+
+  5. The overriding method must have same return type (or subtype) : From Java 5.0 onwards it is possible to have different return type for a
+     overriding method in child class, but child’s return type should be sub-type of parent’s return type. This phenomena is known as covariant
+     return type.
+
+  6. Invoking overridden method from sub-class : We can call parent class method in overriding method using super keyword.
+
+  7. Overriding and constructor : We can not override constructor as parent and child class can never have constructor with same name(Constructor
+     name must always be same as Class name).
+     Overriding and Exception-Handling : Below are two rules to note when overriding methods related to exception-handling.
+
+      . Rule#1 : If the super-class overridden method does not throw an exception, subclass overriding method can only throws the unchecked
+         exception, throwing checked exception will lead to compile-time error.
+      . Rule#2 : If the super-class overridden method does throws an exception, subclass overriding method can only throw same, subclass exception.
+         Throwing parent exception in Exception hierarchy will lead to compile time error.Also there is no issue if subclass overridden method is
+         not throwing any exception.
+
+  8. Overriding and abstract method: Abstract methods in an interface or abstract class are meant to be overridden in derived concrete classes
+     otherwise a compile-time error will be thrown.
+
+  9. Overriding and synchronized/strictfp method : The presence of synchronized/strictfp modifier with method have no effect on the rules of
+     overriding, i.e. it’s possible that a synchronized/strictfp method can override a non synchronized/strictfp one and vice-versa.
+
+     Note :
+
+         1. In C++, we need virtual keyword to achieve overriding or Run Time Polymorphism. In Java, methods are virtual by default.
+         2. We can have multilevel method-overriding.
+         3.Overriding vs Overloading :
+           1. Overloading is about same method have different signatures. Overriding is about same method, same signature but different classes
+              connected through inheritance.
+           2. Overloading is an example of compiler-time polymorphism and overriding is an example of run time polymorphism.
+
+  Why Method Overriding ?
+
+     As stated earlier, overridden methods allow Java to support run-time polymorphism. Polymorphism is essential to object-oriented programming
+      for one reason: it allows a general class to specify methods that will be common to all of its derivatives while allowing subclasses to
+      define the specific implementation of some or all of those methods. Overridden methods are another way that Java implements the “one
+      interface, multiple methods” aspect of polymorphism.
+
+     Dynamic Method Dispatch is one of the most powerful mechanisms that object-oriented design brings to bear on code reuse and robustness.
+      The ability to exist code libraries to call methods on instances of new classes without recompiling while maintaining a clean abstract
+      interface is a profoundly powerful tool.
+
+     Overridden methods allow us to call methods of any of the derived classes without even knowing the type of derived class object.
+
+  When to apply Method Overriding ?(with example)
+
+      Overriding and Inheritance : Part of the key to successfully applying polymorphism is understanding that the superclasses and subclasses
+      form a hierarchy which moves from lesser to greater specialization. Used correctly, the superclass provides all elements that a subclass
+      can use directly. It also defines those methods that the derived class must implement on its own. This allows the subclass the flexibility
+      to define its methods, yet still enforces a consistent interface. Thus, by combining inheritance with overridden methods, a superclass can
+      define the general form of the methods that will be used by all of its subclasses.
+
+      Let’s look at a more practical example that uses method overriding. Consider an employee management software for an organization, let the
+      code has a simple base class Employee, the class has methods like raiseSalary(), transfer(), promote(), .. etc. Different types of employees
+      like Manager, Engineer, ..etc may have their implementations of the methods present in base class Employee. In our complete software, we
+      just need to pass a list of employees everywhere and call appropriate methods without even knowing the type of employee. For example, we
+      can easily raise the salary of all employees by iterating through the list of employees. Every type of employee may have its logic in its
+      class, we don’t need to worry because if raiseSalary() is present for a specific employee type, only that method would be called.

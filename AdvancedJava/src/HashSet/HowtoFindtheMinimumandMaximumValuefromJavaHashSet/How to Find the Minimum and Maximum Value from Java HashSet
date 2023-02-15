@@ -1,0 +1,15 @@
+HashSet is used to store distinct values in Java. The HashSet does not guarantee the constant order of elements over time, which means when we iterate a HashSet, there is no guarantee that we get the same order of elements as we added in order. HashSet does not provide any built-in method to get the maximum and minimum values.
+
+There are a couple of ways to find the maximum and minimum from the HashSet in Java:
+
+    Using Collection class
+    Using simple iteration
+
+Method 1: Using Collections class
+
+     Using Collections class in Java we can find maximum and minimum value with the help of max() and min() method of Collections class.
+
+Method 2: Using Simple Iteration
+
+    We can find Maximum and Minimum using simply iterate the HashSet and maintain the min and max variable and update it accordingly
+      while traversing through each element and comparing it with the min and max values.

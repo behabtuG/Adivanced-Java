@@ -1,0 +1,15 @@
+In order to perform any operations while assigning values to an instance data member, an initializer block is used. In simpler terms, the
+initializer block is used to declare/initialize the common part of various constructors of a class. It runs every time whenever the object
+is created.
+
+The initializer block contains the code that is always executed whenever an instance is created and it runs each time when an object of the class
+ is created. There are 3 areas where we can use the initializer blocks:
+
+    . Constructors
+    . Methods
+    . Blocks
+
+        Tip: If we want to execute some code once for all objects of a class then we will be using Static Block in Java
+
+ Note: The contents of the initializer block are executed whenever any constructor is invoked (before the constructor’s contents)
+ The order of initialization constructors and initializer block doesn’t matter, the initializer block is always executed before the constructor.

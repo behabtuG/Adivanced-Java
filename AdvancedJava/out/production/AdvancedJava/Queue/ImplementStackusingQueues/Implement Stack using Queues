@@ -1,0 +1,58 @@
+Given a Queue data structure that supports standard operations like enqueue() and dequeue().
+The task is to implement a Stack data structure using only instances of Queue and Queue operations allowed on the instances.
+A Stack can be implemented using two queues. Let Stack to be implemented be ‘s’ and queues used to implement are ‘q1’ and ‘q2’. Stack ‘s’ can be implemented in two ways:
+
+ Implement Stack using Queues By making push() operation costly:
+    The idea is to keep newly entered element at the front of ‘q1’ so that pop operation dequeues from ‘q1’.
+      ‘q2’ is used to put every new element in front of ‘q1’.
+           Follow the below steps to implement the push(s, x) operation:
+             Enqueue x to q2.
+             One by one dequeue everything from q1 and enqueue to q2.
+             Swap the queues of q1 and q2.
+           Follow the below steps to implement the pop(s) operation:
+             Dequeue an item from q1 and return it.
+
+    Time Complexity:
+
+          Push operation: O(N), As all the elements need to be popped out from the Queue (q1) and push them back to Queue (q2).
+          Pop operation: O(1), As we need to remove the front element from the Queue.
+
+       Auxiliary Space: O(N), As we use two queues for the implementation of a Stack.
+
+ Implement Stack using Queues by making pop() operation costly:
+    The new element is always enqueued to q1. In pop() operation, if q2 is empty then all the elements except the last, are moved to q2.
+    Finally, the last element is dequeued from q1 and returned.
+         Follow the below steps to implement the push(s, x) operation:
+             Enqueue x to q1 (assuming the size of q1 is unlimited).
+         Follow the below steps to implement the pop(s) operation:
+             One by one dequeue everything except the last element from q1 and enqueue to q2.
+             Dequeue the last item of q1, the dequeued item is the result, store it.
+             Swap the names of q1 and q2
+             Return the item stored in step 2.
+
+
+    Time Complexity:
+
+        Push operation: O(1), As, on each push operation the new element is added at the end of the Queue.
+        Pop operation: O(N), As, on each pop operation, all the elements are popped out from the Queue (q1) except the last element and pushed into the Queue (q2).
+
+    Auxiliary Space: O(N) since 2 queues are used.
+
+    Implement Stack using 1 queue:
+
+    Using only one queue and make the queue act as a Stack in modified way of the above discussed approach.
+
+     Follow the below steps to implement the idea:
+
+         The idea behind this approach is to make one queue and push the first element in it.
+         After the first element, we push the next element and then push the first element again and finally pop the first element.
+         So, according to the FIFO rule of the queue, the second element that was inserted will be at the front and then the first element as it was pushed again later and its first copy was popped out.
+         So, this acts as a Stack and we do this at every step i.e. from the initial element to the second last element, and the last element will be the one that we are inserting
+         and since we will be pushing the initial elements after pushing the last element, our last element becomes the first element.
+
+         Time Complexity:
+
+             Push operation: O(N)
+             Pop operation: O(1)
+
+         Auxiliary Space: O(N) since 1 queue is used.

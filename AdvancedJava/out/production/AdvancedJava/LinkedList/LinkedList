@@ -1,0 +1,81 @@
+Linked List is a part of the Collection framework present in java.util package. This class is an implementation of the LinkedList data structure
+which is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part.
+The elements are linked using pointers and addresses. Each element is known as a node.
+
+Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays. It also has a few disadvantages
+like the nodes cannot be accessed directly instead we need to start from the head and follow through the link to reach a node we wish to access.
+
+How Does LinkedList work Internally?
+
+Since a LinkedList acts as a dynamic array and we do not have to specify the size while creating it,
+ the size of the list automatically increases when we dynamically add and remove items. And also,
+ the elements are not stored in a continuous fashion. Therefore, there is no need to increase the size.
+  Internally, the LinkedList is implemented using the doubly linked list data structure.
+
+The main difference between a normal linked list and a doubly LinkedList is that a doubly linked list contains an extra pointer,
+ typically called the previous pointer, together with the next pointer and data which are there in the singly linked list.
+
+ Constructors in the LinkedList:
+
+ In order to create a LinkedList, we need to create an object of the LinkedList class. The LinkedList class consists of various constructors
+ that allow the possible creation of the list. The following are the constructors available in this class:
+
+
+ 1. LinkedList(): This constructor is used to create an empty linked list. If we wish to create an empty LinkedList with the name ll, then, it can be created as:
+
+     LinkedList ll = new LinkedList();
+
+ 2. LinkedList(Collection C): This constructor is used to create an ordered list that contains all the elements of a specified collection, as returned by the collection’s iterator.
+  If we wish to create a LinkedList with the name ll, then, it can be created as:
+
+     LinkedList ll = new LinkedList(C);
+
+     Methods for Java LinkedList:
+
+  In the above illustration, AbstractList, CopyOnWriteArrayList, and AbstractSequentialList are the classes that implement the list interface. A separate functionality is implemented in each of the mentioned classes. They are:
+
+      AbstractList: This class is used to implement an unmodifiable list, for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
+      CopyOnWriteArrayList: This class implements the list interface. It is an enhanced version of ArrayList in which all the modifications(add, set, remove, etc.) are implemented by making a fresh copy of the list.
+
+      Performing Various Operations on LinkedList:
+
+          . Adding elements
+          . Updating elements
+          . Removing elements
+          . Iterating over elements
+          . To Array();
+          . Size();
+          . remove First();
+          . remove last();
+
+      Operation 1: Adding Elements
+
+         In order to add an element to an ArrayList, we can use the add() method. This method is overloaded to perform multiple operations based on different parameters. They are:
+
+            add(Object): This method is used to add an element at the end of the LinkedList.
+            add(int index, Object): This method is used to add an element at a specific index in the LinkedList.
+
+      Operation 2: Changing Elements
+
+         After adding the elements, if we wish to change the element, it can be done using the set() method.
+         Since a LinkedList is indexed, the element which we wish to change is referenced by the index of the element.
+         Therefore, this method takes an index and the updated element which needs to be inserted at that index.
+
+      Operation 3: Removing Elements
+
+         In order to remove an element from a LinkedList, we can use the remove() method. This method is overloaded to perform multiple operations based on different parameters. They are:
+
+             remove(Object): This method is used to simply remove an object from the LinkedList. If there are multiple such objects, then the first occurrence of the object is removed.
+             remove(int index): Since a LinkedList is indexed, this method takes an integer value which simply removes the element present at that specific index in the LinkedList.
+             After removing the element and the indices of elements are updated so do the object of LinkedList is updated giving a new List after the deletion of element/s.
+
+      Operation 4: Iterating the LinkedList
+
+         There are multiple ways to iterate through LinkedList. The most famous ways are by using the basic for loop in combination
+         with a get() method to get the element at a specific index and the advanced for-loop.
+
+      Operation 4:  Linked list to To Array by using  toArray();
+
+      Operation 5-size();
+      Operation 7 – removeFirst();
+      Operation 8- removelast();

@@ -1,0 +1,50 @@
+Given an array of size n and a number k. We must modify array K a number of times. Here modify array means in each operation we can replace any
+array element arr[i] by -arr[i]. We need to perform this operation in such a way that after K operations, the sum of the array must be maximum?
+
+Examples :
+
+    Input : arr[] = {-2, 0, 5, -1, 2}, K = 4
+    Output: 10
+    Explanation:
+    1. Replace (-2) by -(-2), array becomes {2, 0, 5, -1, 2}
+    2. Replace (-1) by -(-1), array becomes {2, 0, 5, 1, 2}
+    3. Replace (0) by -(0), array becomes {2, 0, 5, 1, 2}
+    4. Replace (0) by -(0), array becomes {2, 0, 5, 1, 2}
+
+    Input : arr[] = {9, 8, 8, 5}, K = 3
+    Output: 20
+
+    Naive approach: This problem has a very simple solution, we just have to replace the minimum element arr[i] in the array by -arr[i] for the current operation.
+    In this way, we can make sum of the array maximum after K operations. One interesting case is, that once the minimum element becomes 0, we don’t need to make any more changes.
+
+    Implementation:
+
+  Time Complexity: O(k*n)
+  Auxiliary Space: O(1)
+
+  Approach 2 (Using Sort):  When there is a need to negate at most k elements.
+
+      Follow the steps below to solve this problem:
+
+          1.Sort the given array arr.
+          2.Then for a given value of k, Iterate through the array till k remains greater than 0, If the value of the array at any index is less than 0 we will change its sign and decrement k by 1.
+          3.If we find a 0 in the array we will immediately set k equal to 0 to maximize our result.
+          4.In some cases, if we have all the values in an array greater than 0 we will change the sign of positive values, as our array is already sorted we will be changing signs of lower values
+            present in the array which will eventually maximize our sum.
+
+  Time Complexity: O(n*logn)
+  Auxiliary Space: O(1)
+  Approach 3(Using Sort):
+
+      The above approach 2 is optimal when there is a need to negate at most k elements. To solve when there are exactly k negations the algorithm is given below.
+
+          1.Sort the array in ascending order. Initialize i = 0.
+          2.Increment i and multiply all negative elements by -1 till k becomes or a positive element is reached.
+          3.Check if the end of the array has occurred. If true then go to (n-1)th element.
+          4.If k ==0 or k is even, return the sum of all elements. Else multiply the absolute of minimum of ith or (i-1) th element by -1.
+          5.Return sum of the array.
+
+   //Time Complexity: O(n*logn)
+    //Auxiliary Space: O(1)
+
+    //Maximize array sum after K negations | Set 2

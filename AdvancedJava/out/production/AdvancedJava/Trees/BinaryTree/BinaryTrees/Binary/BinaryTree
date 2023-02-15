@@ -1,0 +1,93 @@
+ A binary tree is a recursive tree data structure where each node can have 2 children at most.
+
+ Binary trees have a few interesting properties when they’re perfect:
+
+     . Property 1: The number of total nodes on each “level” doubles as you move down the tree.
+     . Property 2: The number of nodes on the last level is equal to the sum of the number of nodes on all other levels, plus 1
+
+     Each data element stored in a tree structure called a node. A Tree node contains the following parts:
+     1. Data
+     2. Pointer to left child
+     3. Pointer to the right child
+
+ Types of Binary Trees
+
+   . Full Binary Tree
+
+      A full binary tree is a binary tree where every node has exactly 0 or 2 children. The example of fully binary tress is:
+
+   . Perfect Binary Tree
+
+      A binary tree is perfect binary Tree if all internal nodes have two children and all leaves are at the same level. The example
+      of perfect binary tress is:
+
+   . Complete Binary Tree
+
+      A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are
+      as far left as possible. An example of a complete binary tree is:
+
+   Binary Tree Implementation
+
+     For the implementation, there’s an auxiliary Node class that will store int values and keeps a reference to each child. The first
+     step is to find the place where we want to add a new node in order to keep the tree sorted. We’ll follow these rules starting
+     from the root node:
+
+      . if the new node’s value is lower than the current node’s, go to the left child
+      . if the new node’s value is greater than the current node’s, go to the right child
+      . when the current node is null, we’ve reached a leaf node, we insert the new node in that position
+
+    In this example, we have used in-order traversal to traverse the tree. The in-order traversal consists of first visiting the left
+    sub-tree, then the root node, and finally the right sub-tree. There are more ways to traverse a tree. Let’s check them out.
+
+ Listed below are the properties of a binary tree:
+    . A binary tree can be traversed in two ways:
+
+       . Depth First Traversal: In-order (Left-Root-Right), Preorder (Root-Left-Right) and Postorder (Left-Right-Root)
+       . Breadth First Traversal: Level Order Traversal
+    . Time Complexity of Tree Traversal: O(n)
+    . The maximum number of nodes at level ‘l’ = 2^l-1.
+   Tree Traversals
+
+     Trees can be traversed in several ways: Let’s use the same tree example that we used before for each case.
+
+    Depth First Search
+
+      Depth-first search is a type of traversal where you go as deep as possible down one path before backing up and trying a different
+      one. There are several ways to perform a depth-first search: in-order, pre-order and post-order.
+
+     We already checked out in-order traversal. Let’s check out pre-order and post-order now.
+
+    Pre-Order Traversal
+     In Pre-order traversal you visit the root node first, then the left subtree, and finally the right subtree.
+
+ Binary Heap
+   Binary Heap is a complete binary tree, which answers to the heap property.  In simple terms it is a variation of a binary tree with
+   the following properties:
+
+      . Heap is a complete binary tree: A tree is said to be complete if all its levels, except possibly the deepest, are complete.
+        This property of Binary Heap makes it suitable to be stored in an array.
+      . Follows heap property: A Binary Heap is either a Min-Heap or a Max-Heap.
+          . Min Binary Heap: For every node in a heap, node’s value is lesser than or equal to values of the children
+          . Max Binary Heap:For every node in a heap, the node’s value is greater than or equal to values of the children
+   Popular applications of binary heap include implementing efficient priority-queues, efficiently finding the k smallest (or largest)
+   elements in an array and many more.
+
+ Hash Tables
+   Imagine that you have an object and you want to assign a key to it to make searching very easy. To store that key/value pair, you
+   can use a simple array like a data structure where keys (integers) can be used directly as an index to store data values. However,
+   in cases where the keys are too large and cannot be used directly as an index, a technique called hashing is used.
+
+   In hashing, the large keys are converted into small keys by using hash functions. The values are then stored in a data structure
+   called a hash table. A hash table is a data structure that implements a dictionary ADT, a structure that can map unique keys to
+   values.
+
+   In general, a hash table has two major components:
+
+       1. Bucket Array: A bucket array for a hash table is an array A of size N, where each cell of A is thought of as a “bucket”, that
+          is, a collection of key-value pairs. The integer N defines the capacity of the array.
+       2. Hash Function: It is any function that maps each key k in our map to an integer in the range [0, N − 1], where N is the
+          capacity of the bucket array for this table.
+
+   When we put objects into a hashtable, it is possible that different objects might have the same hashcode. This is called a collision.
+    To deal with collision, there are techniques like chaining and open addressing.
+

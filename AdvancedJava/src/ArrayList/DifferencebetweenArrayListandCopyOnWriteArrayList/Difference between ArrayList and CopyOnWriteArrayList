@@ -1,0 +1,10 @@
+Both ArrayList and CopyOnWriteArray implement List interface. But There are lots of differences between ArrayList and CopyOnWriteArrayList:
+
+  . CopyOnWriteArrayList creates a Cloned copy of underlying ArrayList, for every update operation at certain point both will synchronized automatically which is takes care by JVM.
+    Therefore there is no effect for threads which are performing read operation. Therefore thread-safety is not there in ArrayList whereas CopyOnWriteArrayList is thread-safe.
+  . While Iterating ArrayList object by one thread if other thread try to do modification then we will get Runt-time exception saying ConcurrentModificationException.
+    Where as We won’t get any Exception in the case of CopyOnWriteArrayList.
+  . ArrayList is introduced in JDK 1.2 whereas CopyOnWriteArrayList is introduced by SUN people in JDK 1.5.
+  . Iterator of ArrayList can perform remove operation while iteration. But Iterator of CopyOnWriteArrayList cant perform remove operation while iteration, otherwise it will throw run-time exception UnsupportedOperationException.
+
+    Below is the implementation of this point.

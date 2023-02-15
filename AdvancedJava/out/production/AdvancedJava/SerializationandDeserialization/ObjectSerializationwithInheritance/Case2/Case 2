@@ -1,0 +1,14 @@
+Case 2: If a superclass is not serializable, then subclass can still be serialized
+
+Even though the superclass doesn’t implement a Serializable interface, we can serialize subclass objects if the subclass itself
+implements a Serializable interface. So we can say that to serialize subclass objects, superclass need not be serializable.
+  But what happens with the instances of superclass during serialization in this case. The following procedure explains this.
+  Case 2(a): What happens when a class is serializable, but its superclass is not?
+
+    Serialization: At the time of serialization, if any instance variable inherits from the non-serializable superclass, then JVM
+        ignores the original value of that instance variable and saves the default value to the file.
+
+    De- Serialization: At the time of de-serialization, if any non-serializable superclass is present, then JVM will execute
+       instance control flow in the superclass. To execute instance control flow in a class, JVM will always invoke the default(no-arg)
+       constructor of that class. So every non-serializable superclass must necessarily contain a default constructor. Otherwise,
+       we will get a runtime exception.

@@ -1,0 +1,60 @@
+Abstract is the modifier applicable only for methods and classes but not for variables. Even though we don’t have implementation still we can declare a method with an abstract modifier.
+That is abstract methods have only declaration but not implementation. Hence, abstract method declaration should compulsory ends with semicolons.
+
+Illustration:
+
+public abstract void methodOne(); ------>valid
+public abstract void methodOne(){} ------->Invalid
+
+Output explanation:
+
+    If a class contains at least one abstract method then compulsory the corresponding class should be declared with an abstract modifier.
+     Because implementation is not complete and hence we can’t create objects of that class.
+
+Even though the class doesn’t contain any abstract methods still we can declare the class as abstract which is an abstract class that can contain zero no of abstract methods also.
+
+  Illustration 1:
+
+        class Parent
+          {  // Method of this class
+             public void methodOne();
+          }
+
+     Output:
+
+        Compile time error.
+        missing method body, or declared abstract
+        public void methodOne();
+
+  Illustration 2:
+
+       class parent {
+          // Method of this class
+          public abstract void methodOne() {}
+           }
+
+    Output:
+
+       Compile time error.
+       abstract method cannot have a body.
+       public abstract void methodOne(){}
+
+  Illustration 3:
+
+       class parent {
+
+        // Method of this class
+           public abstract void methodOne();
+           }
+
+     Output:
+
+        Compile time error.
+        Parent is not abstract and does not override abstract method methodOne() in Parent class
+        Parent
+
+   If a class extends any abstract class then compulsory we should provide implementation
+   for every abstract method of the parent class otherwise we have to declare child class as abstract.
+
+Note: If we declare the child as abstract then the code compiles fine,
+but the child of a child is responsible to provide an implementation for methodTwo().

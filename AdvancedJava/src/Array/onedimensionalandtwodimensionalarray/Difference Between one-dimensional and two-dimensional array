@@ -1,0 +1,30 @@
+Array is a data structure that is used to store variables that are of similar data types at contiguous locations.
+The main advantage of the array is random access and cache friendliness. There are mainly three types of the array:
+
+    . One Dimensional (1D) Array
+    . Two Dimension (2D) Array
+    . Multidimensional Array
+ One Dimensional Array:
+
+     . It is a list of the variable of similar data types.
+     . It allows random access and all the elements can be accessed with the help of their index.
+     . The size of the array is fixed.
+     . For a dynamically sized array, vector can be used in C++.
+     . Representation of 1D array:
+
+ Two Dimensional Array:
+
+     . It is a list of lists of the variable of the same data type.
+     . It also allows random access and all the elements can be accessed with the help of their index.
+     . It can also be seen as a collection of 1D arrays. It is also known as the Matrix.
+     . Its dimension can be increased from 2 to 3 and 4 so on.
+     . They all are referred to as a multi-dimension array.
+     . The most common multidimensional array is a 2D array.
+     . Representation of 2 D array:
+
+ Applications of Arrays:
+
+     . 2D Arrays are used to implement matrices.
+     . Arrays can be used to implement various data structures like a heap, stack, queue, etc.
+     . They allow random access.
+     . They are cache-friendly.

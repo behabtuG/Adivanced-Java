@@ -1,0 +1,68 @@
+The PriorityBlockingQueue is an unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations.
+ Since it is unbounded, adding elements may sometimes fail due to resource exhaustion resulting in OutOfMemoryError. This class does not permit null elements.
+PriorityBlockingQueue class and its iterator implement all of the optional methods of the Collection and Iterator interfaces.
+
+The Iterator provided in method iterator() and the Spliterator provided in the method spliterator() are not guaranteed to traverse the elements of the
+PriorityBlockingQueue in any particular order. For ordered traversal, use Arrays.sort(pq.toArray()). Also, method drainTo() can be used to remove some
+or all elements in priority order and place them in another collection.
+
+Operations on this class make no guarantees about the ordering of elements with equal priority. If an ordering is needed to be enforced, define custom classes
+or comparators that use a secondary key to break ties in primary priority values.
+This class is a member of the Java Collections Framework.
+
+The Hierarchy of PriorityBlockingQueue
+
+It implements Serializable, Iterable<E>, Collection<E>, BlockingQueue<E>, Queue<E> interfaces and extends AbstractQueue<E> class.
+
+Declaration:
+
+    public class PriorityBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, Serializable
+
+Here, E is the type of elements held in this collection.
+
+Constructors of PriorityBlockingQueue
+
+In order to create an instance of PriorityBlockingQueue, we need to import it from java.util.concurrent.PriorityBlockingQueue.
+
+ 1. PriorityBlockingQueue()– Creates a PriorityBlockingQueue with the default initial capacity (11) that orders its elements according to their natural ordering.
+    Adding element more than the initial capacity changes the capacity of the PriorityBlockingQueue dynamically as the PriorityBlockingQueue is not capacity constrained.
+
+    PriorityBlockingQueue<E> pbq = new PriorityBlockingQueue<E>();
+
+ 2. PriorityBlockingQueue(Collection<? extends E> c)– Creates a PriorityBlockingQueue containing the elements in the specified collection.
+
+     PriorityBlockingQueue<E> pbq = new PriorityBlockingQueue(Collection<? extends E> c);
+
+ 3. PriorityBlockingQueue(int initialCapacity)– Creates a PriorityBlockingQueue with the specified initial capacity
+   that orders its elements according to their natural ordering.
+
+ 4. PriorityBlockingQueue(int initialCapacity, Comparator<? super E> comparator)– Creates a PriorityBlockingQueue with the specified initial capacity
+    that orders its elements according to the specified comparator.
+
+  Basic Operations
+
+  1. Adding Elements
+
+     The add(E e) method of PriorityBlockingQueue inserts the element passed as a parameter to the method at the tail of this PriorityBlockingQueue.
+     This method returns true if the adding of the element is successful. Else it returns false.
+
+  2. Removing Elements
+
+    The remove(Object o) method of PriorityBlockingQueue is used to delete an element from this queue. This method removes a single instance of the element
+    passed as the parameter if it is present. It returns true if and only if the element was removed, else it returned false. clear() is used to remove all the elements at once.
+
+  3. Accessing Elements
+
+     The peek() method of PriorityBlockingQueue returns the element at the head of the PriorityBlockingQueue. It retrieves the value of the head of LinkedBlockingQueue but does not remove it.
+     If the PriorityBlockingQueue does not contain any element, then this method returns null. A PriorityBlockingQueue queue uses the same ordering rules as class PriorityQueue.
+
+  4. Iterating
+
+     The iterator() method of PriorityBlockingQueue class Returns an iterator over the elements in this queue. The elements returned from this method do not follow any order.
+     The returned iterator is weakly consistent.
+  5. Comparator Example
+
+     The comparator() method of PriorityBlockingQueue returns the comparator that can be used to order the elements in a PriorityBlockingQueue. The method returns a null value if the
+     queue follows the natural ordering pattern of the elements.
+
+  Methods of PriorityBlockingQueue

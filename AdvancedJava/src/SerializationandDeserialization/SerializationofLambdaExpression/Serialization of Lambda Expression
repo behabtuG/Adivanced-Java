@@ -1,0 +1,75 @@
+Here we will be discussing serialization in java and the problems related to the lambda function without the serialization
+ alongside discussing some ways due to which we require serialization alongside proper implementation as in clean java programs
+ with complete serialization and deserialization process using the function interface.
+
+Serialization is a process for writing the state of an object into a byte stream so that we can transfer it over the network.
+We can serialize a lambda expression if its target type and its captured arguments have serialized. However, like inner classes,
+the serialization of lambda expressions is strongly discouraged. As the lambda function is not serialized by default we simply have
+to cast our lambda to java.io.Serializable. But the submit method requires a Runnable or Callable as the parameter, not a Serializable.
+ So, we have to cast the lambda to two interfaces at the same time Runnable and Serializable.Java Serialization is a good generalized,
+ backwardly compatible serialization library. Two of the most common problems that alternatives try to solve are performance and cross-platform
+ serialization. By comparison, a straightforward binary YAML serialization uses 348, with more options to optimize the serialization.
+ This raises the problem of how to serialize a lambda using an alternative, or cross-platform or faster serialization format.
+
+ Note: There occurs a necessity to serialize a lambda function because Serializing lambdas can be useful in a number of use cases such as
+       persisting configuration, or as a visitor pattern to remote resources.\
+
+   Say We want to access a resource on a remote Map. We can use get/put, but say we just want to return a field from the value of a Map:
+   we can pass a lambda as a visitor to extract the information we want. As you can see, it is easy to add various simple functions,
+   or call a method to perform the action you need. The only problem is that lambdas by default are not serializable.
+
+    Example
+
+    MapView userMap = Chassis.acquireMap("users", String.class, UserInfo.class);
+    userMap.put("userid", new UserInfo("User's Name"));
+
+    // Print out changes
+    userInfo.registerSubscriber(System.out::println);
+
+
+    // Obtain just the fullName without downloading the whole object
+    String name= userMap.applyToKey("userid", u -> u.fullName);
+
+
+
+    // Increment a counter atomically and trigger
+    // an updated event printed with the subscriber.
+
+    userMap.asyncUpdateKey("userid", ui -> {
+    ui.usageCounter++;
+    return ui;
+    });
+
+
+
+    // Incrementing counter and return the userid
+    int count = userMap.syncUpdateKey("userid",
+    ui -> { ui.usageCounter++; return ui;},
+    ui -> ui.usageCounter);
+
+    SerializedLambda class is used by compilers and libraries to ensure that lambdas deserialize correctly. Making the intersection cast of
+    Function<String, String> & Serializable changes the underlying type of the lambda, allowing a library like Kryo to properly understand
+    how to deserialize lambdas given to it.
+
+    Adding this extra casting of & Serializable is one possible solution to allow Kryo to deserialize lambdas. An alternative route involves
+    creating a new interface that extends both the underlying Function type that you need, along with Serializable.
+
+    Layout:
+
+    public class IntersectionCasting {
+
+      public static void main(String[] args) {
+
+        SerializableLambda function = (message) -> "Kryo please serialize this message '" + message + "'";
+
+      }
+
+      interface SerializableLambda extends Function<String, String>, Serializable {}
+
+    }
+
+    Now in order to make Lambdas Serializable in our API keeping foremost a thing safe that unfortunately the standard APIs cannot
+    be changed or sub-classes to add this but if you have your own API, you can use a Serializable interface. The user of your API
+    doesn’t have to explicitly say that the lambda is serializable. The remote implementation serializes the lambda, executes it on
+    the server,, and returns the result. Similarly, there are methods for applying a lambda to the map as a whole.
+

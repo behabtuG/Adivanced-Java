@@ -1,0 +1,127 @@
+The HashSet class implements the Set interface, backed by a hash table which is actually a HashMap instance. No guarantee is made as to the iteration order of the set which means that the class does not guarantee the constant order of elements over time. This class permits the null element. The class also offers constant time performance for the basic operations like add, remove, contains, and size assuming the hash function disperses the elements properly among the buckets, which we shall see further in the article.  
+
+A few important features of HashSet are:
+
+    Implements Set Interface.
+    The underlying data structure for HashSet is Hashtable.
+    As it implements the Set Interface, duplicate values are not allowed.
+    Objects that you insert in HashSet are not guaranteed to be inserted in the same order. Objects are inserted based on their hash code.
+    NULL elements are allowed in HashSet.
+    HashSet also implements Serializable and Cloneable interfaces.
+
+The Hierarchy of HashSet is as follows:
+
+HashSet extends Abstract Set<E> class and implements Set<E>, Cloneable, and Serializable interfaces where E is the type of elements maintained by this set. The directly known subclass of HashSet is LinkedHashSet.
+
+Now for the maintenance of constant time performance, iterating over HashSet requires time proportional to the sum of the HashSet instance’s size (the number of elements) plus the “capacity” of the backing HashMap instance (the number of buckets). Thus, it’s very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important. 
+
+
+    Initial Capacity: The initial capacity means the number of buckets when hashtable (HashSet internally uses hashtable data structure) is created. The number of buckets will be automatically increased if the current size gets full. 
+
+    Load Factor: The load factor is a measure of how full the HashSet is allowed to get before its capacity is automatically increased. When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
+
+
+                  Number of stored elements in the table
+Load Factor= -----------------------------------------
+Size of the hash table
+
+    Example: If internal capacity is 16 and the load factor is 0.75 then the number of buckets will automatically get increased when the table has 12 elements in it.
+
+Effect on performance:  Load factor and initial capacity are two main factors that affect the performance of HashSet operations. A load factor of 0.75 provides very effective performance with respect to time and space complexity. If we increase the load factor value more than that then memory overhead will be reduced (because it will decrease internal rebuilding operation) but, it will affect the add and search operation in the hashtable. To reduce the rehashing operation we should choose initial capacity wisely. If the initial capacity is greater than the maximum number of entries divided by the load factor, no rehash operation will ever occur.
+
+    Note: The implementation in a HashSet is not synchronized, in the sense that if multiple threads access a hash set concurrently, and at least one of the threads modifies the set, it must be synchronized externally. This is typically accomplished by synchronizing on some object that naturally encapsulates the set. If no such object exists, the set should be “wrapped” using the Collections.synchronizedSet method. This is best done at creation time, to prevent accidental unsynchronized access to the set as shown below:
+
+Set s = Collections.synchronizedSet(new HashSet(...));
+
+Syntax: Declaration of HashSet
+
+public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable
+
+where E is the type of elements stored in a HashSet.
+
+Internal working of a HashSet: All the classes of Set interface are internally backed up by Map. HashSet uses HashMap for storing its object internally. You must be wondering that to enter a value in HashMap we need a key-value pair, but in HashSet, we are passing only one value. 
+
+Storage in HashMap: Actually the value we insert in HashSet acts as a key to the map Object and for its value, java uses a constant variable. So in the key-value pair, all the values will be the same.
+
+Implementation of HashSet in Java doc
+
+private transient HashMap map;
+
+// Constructors.Constructor - 1
+// All the constructors are internally creating HashMap Object.
+public HashSet()
+{
+    // Creating internally backing HashMap object
+    map = new HashMap();
+}
+
+// Constructors.Constructor - 2
+public HashSet(int initialCapacity)
+{
+    // Creating internally backing HashMap object
+    map = new HashMap(initialCapacity);
+}
+
+// Dummy value to associate with an Object in Map
+private static final Object PRESENT = new Object();
+
+If we look at the add() method of HashSet class:
+
+public boolean add(E e)
+{
+   return map.put(e, PRESENT) == null;
+}
+
+We can notice that, add() method of HashSet class internally calls the put() method of backing the HashMap object by passing the element you have specified as a key and constant “PRESENT” as its value. remove() method also works in the same manner. It internally calls the remove method of the Map interface. 
+
+public boolean remove(Object o)
+{
+return map.remove(o) == PRESENT;
+}
+
+HashSet not only stores unique Objects but also a unique Collection of Objects like ArrayList<E>, LinkedList<E>, Vector<E>,..etc.
+
+Before storing an Object, HashSet checks whether there is an existing entry using hashCode() and equals() methods. In the above example, two lists are considered equal if they have the same elements in the same order. When you invoke the hashCode()  method on the two lists, they both would give the same hash since they are equal. 
+
+HashSet does not store duplicate items,  if you give two Objects that are equal then it stores only the first one, here it is list1.
+Constructors of HashSet class
+
+In order to create a HashSet, we need to create an object of the HashSet class. The HashSet class consists of various constructors that allow the possible creation of the HashSet. The following are the constructors available in this class.
+
+1. HashSet(): This constructor is used to build an empty HashSet object in which the default initial capacity is 16 and the default load factor is 0.75. If we wish to create an empty HashSet with the name hs, then, it can be created as:
+
+HashSet<E> hs = new HashSet<E>();
+
+2. HashSet(int initialCapacity): This constructor is used to build an empty HashSet object in which the initialCapacity is specified at the time of object creation. Here, the default loadFactor remains 0.75.
+
+HashSet<E> hs = new HashSet<E>(int initialCapacity);
+
+3. HashSet(int initialCapacity, float loadFactor): This constructor is used to build an empty HashSet object in which the initialCapacity and loadFactor are specified at the time of object creation.
+
+HashSet<E> hs = new HashSet<E>(int initialCapacity, float loadFactor);
+
+4. HashSet(Collection): This constructor is used to build a HashSet object containing all the elements from the given collection. In short, this constructor is used when any conversion is needed from any Collection object to the HashSet object. If we wish to create a HashSet with the name hs, it can be created as:
+
+HashSet<E> hs = new HashSet<E>(Collection C);
+
+Implementation:
+
+Performing Various Operations on HashSet
+
+Let’s see how to perform a few frequently used operations on the HashSet.
+
+  Operation 1: Adding Elements
+
+    In order to add an element to the HashSet, we can use the add() method. However, the insertion order is not retained in the HashSet.
+    We need to keep a note that duplicate elements are not allowed and all the duplicate elements are ignored.
+
+  Operation 2: Removing Elements
+
+     The values can be removed from the HashSet using the remove() method.
+
+  Operation 3: Iterating through the HashSet
+
+    Iterate through the elements of HashSet using the iterator() method. Also, the most famous one is to use the enhanced for loop.
+
+Time Complexity of HashSet Operations: The underlying data structure for HashSet is hashtable. So amortize (average or usual case) time complexity for add, remove and look-up (contains method) operation of HashSet takes O(1) time.
+

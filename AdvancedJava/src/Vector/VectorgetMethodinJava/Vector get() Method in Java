@@ -1,0 +1,9 @@
+The java.util.vector.get() method is used to fetch or retrieve an element at a specific index from a Vector.
+
+Syntax:
+
+Vector.get(int index)
+
+Parameters: This method accepts a mandatory parameter index which is of integer data type. It specifies the position or index of the element to be fetched from the Vector.
+
+Return Value: The method returns the element present at the position specified by the parameter index.

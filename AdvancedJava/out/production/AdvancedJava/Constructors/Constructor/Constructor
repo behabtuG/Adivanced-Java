@@ -1,0 +1,30 @@
+Constructors.Constructor is always called by its class name in a class itself. A constructor is used to initialize an object not to build the object. As we all know abstract classes also do have a constructor.
+So if we do not define any constructor inside the abstract class then JVM (Java Virtual Machine) will give a default constructor to the abstract class.
+If we want to know how to define user define constructors like constructors with argument or any kind of constructor inside the abstract class then you should follow the given procedure.
+
+    Note: An abstract class is a class declared with an abstract keyword.
+
+    Properties of an abstract class:
+
+        . An abstract class can have an abstract and a non-abstract method.
+        . It must be declared with an abstract keyword.
+        . It can have a constructor, static method.
+        . It can have a final method that prevents child class of abstract class not to change the body of the method
+        . The abstract method contains no-body or in simple words, you can say that you can’t define an abstract method inside an abstract class.
+          We can define an abstract method inside the derived class of its abstract class.
+        . The object of the abstract class can’t be instantiated it means you can’t create an abstract class object directly but you can create its object by reference to its child class.
+
+    Procedure:
+
+          . If you define your own constructor without arguments inside an abstract class but forget to call your own constructor inside its derived class constructor then JVM will call the constructor by default.
+          . So if you define your single or multi-argument constructor inside the abstract class then make sure to call the constructor inside the derived class constructor with the super keyword.
+
+      Implementation: Here in this program, we are going to multiply two numbers by using the following above approach as mentioned.
+
+      Step 1: We create an abstract class named ‘Content’ and define a user define a constructor with one argument, variable with name ‘a’, and an abstract method named as ‘multiply’
+
+      Step 2: We create a class that must be derived from this abstract class ‘Content’ named ‘GFG’. Inside GFG class we are going to define a constructor and inside the method call the parent class constructor by using the super keyword and define the abstract method of its parent class in it.
+
+      Step 3: Now in the main class of our function that is ‘GeeksforGeeks’ here, where we will create an object of abstract class ‘Content’ by reference to its derived class object. Then we call the method of the abstract class by its object.
+
+      Step 4: Inside the method, we multiply both the value stored in the different variable names where one of the variables is the variable of an abstract class. We can access the variable of the abstract class by its derived class object.

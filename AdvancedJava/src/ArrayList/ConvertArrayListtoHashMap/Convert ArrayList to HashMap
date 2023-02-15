@@ -1,0 +1,16 @@
+Array List can be converted into HashMap, but the HashMap does not maintain the order of ArrayList. To maintain the order, we can use LinkedHashMap which is the implementation of HashMap.
+
+Basically, there are two different ways to convert ArrayList to Hashmap-
+
+    1. Using ArrayList Iteration
+    2. Using ArrayList Iteration with LinkedHashMap
+
+Using ArrayList Iteration:
+
+Here, we just need to iterate on each of the elements of the ArrayList and the element can be converted into the key-value pair and store in the HashMap.
+
+Using ArrayList Iteration with LinkedHashMap :
+
+    . Here, the  Array List is converted into a HashMap but HashMap does not maintain the order of the ArrayList.
+    . To maintain the order, we use LinkedHashMap which is an implementation of HashMap and helps us to maintain the order of the elements, and we can easily convert Arraylist to Hashmap.
+

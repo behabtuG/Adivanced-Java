@@ -1,0 +1,72 @@
+Conversion of infix to postfix expression can be done elegantly using two precedence function. Each operator is assigned a value (larger value means higher precedence) which depends upon whether the operator is inside or outside the stack. Also the right and left associativity for different operators can be handled by varying it’s values in the two precedence functions. 
+Infix expression example: a+b*c
+Its corresponding postfix expression: abc*+
+
+Following steps explains how these conversion has done.
+
+Step 1: a + bc* (Here we have two operators: + and * in which * has higher precedence and hence it will be evaluated first).
+
+Step 2: abc*+ (Now we have one operator left which is + so it is evaluated)
+
+To know more about infix and postfix expressions visit the links.
+Note : In this article, we are assuming that all operators are left to right associative.
+Examples:
+
+    Input: str = “a+b*c-(d/e+f*g*h)”
+    Output: abc*+de/fg*h*+-
+
+    Step 1: a+b*c-(de/+f*g*h)
+
+    Step 2: a+b*c-(de/+fg* *h)
+
+    Step 3: a+b*c-(de/+fg*h*)
+
+    Step 4: a+b*c-(de/fg*h*+)
+
+    Step 5: a+bc*-de/fg*h*+
+
+    Step 6: abc*+-de/fg*h*+
+
+    Step 7: abc*+de/fg*h*+-
+
+    Input: a+b*c/h
+    Output: abc*h/+
+
+    Step 1: a+bc*/h
+
+    Step 2: a+bc*h/
+
+    Step 3: abc*h/+
+
+    Approach:
+
+        If the input character is an operand, print it.
+        If the input character is an operator-
+            If stack is empty push it to the stack.
+            If its precedence value is greater than the precedence value of the character on top, push.
+            If its precedence value is lower or equal then pop from stack and print while precedence of top char is more than the precedence value of the input character.
+        If the input character is ‘)’, then pop and print until top is ‘(‘. (Pop ‘(‘ but don’t print it.)
+        If stack becomes empty before encountering ‘(‘, then it’s a invalid expression.
+        Repeat steps 1-4 until input expression is completely read.
+        Pop the remaining elements from stack and print them.
+
+    The above method handles right associativity of exponentiation operator (here, ^)
+    by assigning it higher precedence value outside stack and lower precedence value inside stack whereas it’s opposite for left associative operators.
+    Below is the implementation of the above approach:
+
+    How to handle operators with right to left associativity?
+    For example, power operator ^. The postfix of “a^b^c” would be “abc^^”, but the above solution would print postfix as “ab^c^” which is wrong.
+    In the above implementation, when we see an operator with equal precedence, we treat it same as lower. We need to consider the same if the two operators have left to associativity.
+     But in case of right to left associativity, we need to treat it as higher precedence and push it to the stack.
+    Approach:
+
+       1. If the input character is an operand, print it.
+       2. If the input character is an operator-
+            . If stack is empty push it to the stack.
+            . If ((its precedence value is greater than the precedence value of the character on top) OR (precedence is same AND associativity is right to left)), push.
+            . If ((its precedence value is lower) OR (precedence is same AND associativity is left to right)),
+               then pop from stack and print while precedence of top char is more than the precedence value of the input character.
+       3. If the input character is ‘)’, then pop and print until top is ‘(‘. (Pop ‘(‘ but don’t print it.)
+       4. If stack becomes empty before encountering ‘(‘, then it’s a invalid expression.
+       5.Repeat steps 1-4 until input expression is completely read.
+       6.Pop the remaining elements from stack and print them.

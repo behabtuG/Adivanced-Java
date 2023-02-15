@@ -1,0 +1,70 @@
+Method Overloading allows different methods to have the same name, but different signatures where the signature can differ by the number of
+ input parameters or type of input parameters, or a mixture of both.
+Method overloading is also known as Compile-time Polymorphism, Static Polymorphism, or Early binding in Java. In Method overloading compared
+ to parent argument, child argument will get the highest priority.
+
+ Different Ways of Method Overloading in Java
+
+     . Changing the Number of Parameters.
+     . Changing Data Types of the Arguments.
+     . Changing the Order of the Parameters of Methods
+
+ 1. Changing the Number of Parameters
+
+    Method overloading can be achieved by changing the number of parameters while passing to different methods.
+
+ 2. Changing Data Types of the Arguments
+
+    In many cases, methods can be considered Overloaded if they have the same name but have different parameter types, methods are considered
+    to be overloaded.
+
+ 3. Changing the Order of the Parameters of Methods
+
+    Method overloading can also be implemented by rearranging the parameters of two or more overloaded methods. For example, if the parameters
+    of method 1 are (String name, int roll_no) and the other method is (int roll_no, String name) but both have the same name, then these 2
+    methods are considered to be overloaded with different sequences of parameters.
+
+ What if the exact prototype does not match with arguments?
+
+  Priority-wise, the compiler takes these steps:
+
+     Type Conversion but to higher type(in terms of range) in the same family.
+     Type conversion to the next higher family(suppose if there is no long data type available for an int data type, then it will search for the
+      float data type).
+
+  Can we overload static methods?
+
+    The answer is ‘Yes’. We can have two or more static methods with the same name, but differences in input parameters. For example, consider the
+    following Java program.
+
+  Can we overload methods that differ only by static keywords?
+
+     We cannot overload two methods in Java if they differ only by static keyword (number of parameters and types of parameters are the same).
+     See the following Java program for example. Refer to this for details.
+
+  Does Java support Operator Overloading?
+
+  Unlike C++, Java doesn’t allow user-defined overloaded operators. Internally Java overloads operators, for example, + is overloaded for
+   concatenation.
+
+ Can we overload methods on return type?
+
+   We cannot overload by return type. This behavior is the same in C++.
+
+   However, Overloading methods on return type are possible in cases where the data type of the function being called is explicitly specified.
+    Look at the examples below:
+
+ What is the difference between Overloading and Methods.Overriding?
+
+   Overloading is about the same function have different signatures. Methods.Overriding is about the same function, same signature but different classes
+   connected through inheritance.
+
+ Overloading is an example of compiler time polymorphism and overriding is an example of run time polymorphism.
+
+ Advantages of Method Overloading
+
+     Method overloading improves the Readability and reusability of the program.
+     Method overloading reduces the complexity of the program.
+     Using method overloading, programmers can perform a task efficiently and effectively.
+     Using method overloading, it is possible to access methods performing related functions with slightly different arguments and types.
+     Objects of a class can also be initialized in different ways using the constructors.

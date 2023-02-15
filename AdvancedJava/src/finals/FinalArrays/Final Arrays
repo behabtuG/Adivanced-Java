@@ -1,0 +1,16 @@
+As we all know final variable declared can only be initialized once whereas the reference variable once declared final can never be reassigned
+ as it will start referring to another object which makes usage of the final impracticable. But note here that with final we are bound not to
+ refer to another object but within the object data can be changed which means we can change the state of the object but not reference. So, as
+ we all know that arrays are also an object so final arrays come into play. The same concept does apply to final arrays that are we can not make
+ the final array refer to some other array but the data within an array that is made final can be changed/manipulated.
+
+ Output Explanation: The array arr is declared as final, but the elements of an array are changed without any problem. Arrays are objects and
+ object variables are always references in Java. So, when we declare an object variable as final, it means that the variable cannot be changed
+ to refer to anything else.
+
+     GFG2 class example
+
+     Conclusion: Above program compiles without any error and program 2 fails in compilation. Let us discuss why the error occurred.
+
+   So a final array means that the array variable which is actually a reference to an object, cannot be changed to refer to anything else, but
+   the members of the array can be modified. Let us propose an example below justifying the same.

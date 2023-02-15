@@ -1,0 +1,25 @@
+Given a string of characters. The task is to write a program to print the characters of this string in sorted order using stack.
+
+Examples:
+
+Input: str = "geeksforgeeks"
+Output: eeeefggkkorss
+
+Input: str = "hello395world216"
+Output: 123569dehllloorw
+
+Approach:
+
+    . Initialize two stacks, one stack, and other tempstack.
+    . Insert the first character of the string in the stack.
+    . Iterate for all the characters in the string
+        1. if the ith character is greater than or equal to the top element of the stack, then push the element.
+        2. if the ith character is not greater, then push all the elements of the stack into tempstack, and then push the character into the stack.
+         After this, push all the greater elements of tempstack to stack.
+
+   Print the all elements of the stack in reverse order when the iteration is completed.
+
+Complexity Analysis:
+
+    Time Complexity: O(n2)
+    Auxiliary Space: O(n)

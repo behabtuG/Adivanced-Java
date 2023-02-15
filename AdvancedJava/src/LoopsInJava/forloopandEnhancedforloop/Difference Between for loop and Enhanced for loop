@@ -1,0 +1,40 @@
+Java for-loop is a control flow statement that iterates a part of the program multiple times. For-loop is the most commonly used loop in java.
+ If we know the number of iteration in advance then for-loop is the best choice.
+
+Syntax:
+
+for( initializationsection ; conditional check ;  increment/decrement section)
+   {
+    // Code to be executed
+   }
+
+   Curly braces in for loop is optional without curly braces in for-loop we can take only one statement under for-loop which should not
+   be a declarative statement and if we write declarative statement there then we will get compile-time error.
+
+ Output explanation:
+
+   . In the Initialization section, This part will be executed only once in the loop life cycle. Here we can declare and initialize a local variable for loop.
+     Here we can declare any number of variables but should have the same type by mistake if we are trying to declare a different data type then we will get a compile–time error.
+     In this section, we can take any valid java statement including ‘System.out.println()’.
+   . During the condition check, we can take any valid java expression that should be of type boolean. This part is optional
+      and if we are not taking anything then the compiler will always place a true value here.
+   . In the Increment/Decrement section, we can either increment or decrement we can the initialized value. In this section we can take any valid java statement
+     including ‘System.out.println()’ and this section is also optional.
+
+
+ Enhanced for loop(for-each loop)
+
+   This for-loop was introduced in java version 1.5 and it is also a control flow statement that iterates a part of the program multiple times.
+   This for-loop provides another way for traversing the array or collections and hence it is mainly used for traversing array or collections.
+   This loop also makes the code more readable and reduces the chance of bugs in the code.
+
+  Syntax:
+
+   for(data-type variable : array | collection)
+    {
+     // Code to be executed
+    }
+
+ After visualizing both the programs we landed upon some conclusive differences which are depicted in tabular format to get a clear understanding hand in hand.
+
+

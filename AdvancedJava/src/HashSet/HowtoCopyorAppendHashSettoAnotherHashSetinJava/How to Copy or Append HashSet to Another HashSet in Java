@@ -1,0 +1,30 @@
+HashSet is used to store distinct values in Java. HashSet stores the elements in random order, so there is no guarantee of the elements’ order. The HashSet class implements the Set interface, backed by a hash table which is actually a HashMap instance. 
+
+We can copy or append a HashSet to another HashSet. There is a couple of ways to copy HashSet or append HashSet to another HashSet in Java:
+
+    Using HashSet constructor
+    Using clone() method
+    Using the addAll() method
+
+Method 1: Using the HashSet constructor
+
+      Using the constructor, we can copy the original HashSet to another HashSet bypassing the original HashSet to the constructor.
+
+      // passing the original HashSet to the constructor
+
+      HashSet<Integer> copySet = new HashSet<>(originalSet)
+
+Method 2: Using the clone method
+
+    Using the clone method, we can copy all elements of the original HashSet to another HashSet in Java.
+
+    Note: The order of elements may be the same or may not be the same. So there is no guarantee of the order.
+
+
+Method 3: Using the addAll method
+
+    We can use the addAll() method to copy or to append a HashSet to a another HashSet. addAll method in Java add all elements to the HashSet.
+
+    Note: The order of elements may be the same or may not be the same. So there is no guarantee of the order.
+
+     Append using addAll method in the already existing HashSet:

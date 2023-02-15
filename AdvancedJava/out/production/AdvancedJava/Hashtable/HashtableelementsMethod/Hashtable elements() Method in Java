@@ -1,0 +1,9 @@
+The java.util.Hashtable.elements() method of Hashtable class in Java is used to get the enumeration of the values present in the hashtable.
+
+Syntax:
+
+Enumeration enu = Hash_table.elements()
+
+Parameters: The method does not take any parameters.
+
+Return value: The method returns an enumeration of the values of the Hashtable.

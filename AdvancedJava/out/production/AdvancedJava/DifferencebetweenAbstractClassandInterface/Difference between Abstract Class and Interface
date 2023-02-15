@@ -1,0 +1,29 @@
+As we know that abstraction refers to hiding the internal implementation of the feature and only showing the functionality to the users. i.e. what it works (showing), how it works (hiding).
+Both abstract class and interface are used for abstraction, henceforth Interface and Abstract Class are required prerequisites.
+
+Abstract class vs Interface
+
+    Type of methods: Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods.
+     From Java 8, it can have default and static methods also. From Java 9, it can have private concrete methods as well.
+    Final Variables: Variables declared in a Java interface are by default final. An abstract class may contain non-final variables.
+    Type of variables: Abstract class can have final, non-final, static and non-static variables. The interface has only static and final variables.
+    Implementation: Abstract class can provide the implementation of the interface. Interface can’t provide the implementation of an abstract class.
+    Inheritance vs Abstraction: A Java interface can be implemented using the keyword “implements” and an abstract class can be extended using the keyword “extends”.
+    Multiple implementations: An interface can extend one or more Java interfaces; an abstract class can extend another Java class and implement multiple Java interfaces.
+    Multiple Inheritance:  Interface supports multiple inheritance; an abstract class does not support multiple inheritance.
+    Accessibility of Data Members: Members of a Java interface are public by default. A Java abstract class can have class members like private, protected, etc.
+
+    When to use what?
+
+    Consider using abstract classes if any of these statements apply to your situation:
+
+        In the java application, there are some related classes that need to share some lines of code then you can put these lines of code within the abstract class and this abstract class should be extended by all these related classes.
+        You can define the non-static or non-final field(s) in the abstract class so that via a method you can access and modify the state of the object to which they belong.
+        You can expect that the classes that extend an abstract class have many common methods or fields, or require access modifiers other than public (such as protected and private).
+
+    Consider using interfaces if any of these statements apply to your situation:
+
+        It is a total abstraction, All methods declared within an interface must be implemented by the class(es) that implements this interface.
+        A class can implement more than one interface. It is called multiple inheritances.
+        You want to specify the behavior of a particular data type but are not concerned about who implements its behavior.
+

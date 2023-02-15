@@ -1,0 +1,4 @@
+Case 1: If the superclass is serializable, then subclass is automatically serializable
+
+If the superclass is Serializable, then by default, every subclass is serializable. Hence, even though subclass doesn’t implement Serializable
+interface( and if its superclass implements Serializable), then we can serialize subclass object.

@@ -1,0 +1,16 @@
+
+ to Find the Smallest Node in Binary Tree
+   1. Define Node class which has three attributes namely: data, left and right. Here, left represents the left child of the node and
+      right represents the right child of the node.
+   2. When a node is created, data will pass to data attribute of node and both left and right will be set to null.
+   3. Define another class which has an attribute root.
+        a. Rootrepresent root node of the tree and initialize it to null.
+
+     1. smallestElement() will find out the smallest node in binary tree:
+        i. It checks whether root is null, which means tree is empty.
+        ii. If tree is not empty, define a variable min that will store temp's data.
+        iii. Find out the minimum node in left subtree by calling smallestElement() recursively. Store that value in leftMin. Compare
+             the value of min with leftMin and store the minimum of two to min.
+        iv. Find out the minimum node in right subtree by calling smallestElement() recursively. Store that value in rightMin. Compare
+            the value of min with rightMin and store the maximum of two to min.
+        v. At the end, min will hold the smallest node in the binary tree.

@@ -1,0 +1,6 @@
+Java doesn’t support multi-value returns. We can use following solutions to return multiple values.
+
+
+If all returned elements are of same type
+
+We can encapsulate all returned types into a class and then return an object of that class.

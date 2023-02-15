@@ -1,0 +1,84 @@
+Given a stack of integers, sort it in ascending order using another temporary stack.
+
+Examples:
+
+Input : [34, 3, 31, 98, 92, 23]
+Output : [3, 23, 31, 34, 92, 98]
+
+Input : [3, 5, 1, 4, 2, 8]
+Output : [1, 2, 3, 4, 5, 8]
+
+Sort a stack
+
+Algorithm:
+
+    1. Create a temporary stack say tmpStack.
+    2. While input stack is NOT empty do this:
+        Pop an element from input stack call it temp
+        while temporary stack is NOT empty and top of temporary stack is greater than temp,
+        pop from temporary stack and push it to the input stack
+        push temp in temporary stack
+    3. The sorted numbers are in tmpStack
+
+input: [34, 3, 31, 98, 92, 23]
+
+Element taken out: 23
+input: [34, 3, 31, 98, 92]
+tmpStack: [23]
+
+Element taken out: 92
+input: [34, 3, 31, 98]
+tmpStack: [23, 92]
+
+Element taken out: 98
+input: [34, 3, 31]
+tmpStack: [23, 92, 98]
+
+Element taken out: 31
+input: [34, 3, 98, 92]
+tmpStack: [23, 31]
+
+Element taken out: 92
+input: [34, 3, 98]
+tmpStack: [23, 31, 92]
+
+Element taken out: 98
+input: [34, 3]
+tmpStack: [23, 31, 92, 98]
+
+Element taken out: 3
+input: [34, 98, 92, 31, 23]
+tmpStack: [3]
+
+Element taken out: 23
+input: [34, 98, 92, 31]
+tmpStack: [3, 23]
+
+Element taken out: 31
+input: [34, 98, 92]
+tmpStack: [3, 23, 31]
+
+Element taken out: 92
+input: [34, 98]
+tmpStack: [3, 23, 31, 92]
+
+Element taken out: 98
+input: [34]
+tmpStack: [3, 23, 31, 92, 98]
+
+Element taken out: 34
+input: [98, 92]
+tmpStack: [3, 23, 31, 34]
+
+Element taken out: 92
+input: [98]
+tmpStack: [3, 23, 31, 34, 92]
+
+Element taken out: 98
+input: []
+tmpStack: [3, 23, 31, 34, 92, 98]
+
+final sorted list: [3, 23, 31, 34, 92, 98]
+
+Time Complexity: O(n2) where n is the total number of integers in the given stack.
+Auxiliary Space: O(n)

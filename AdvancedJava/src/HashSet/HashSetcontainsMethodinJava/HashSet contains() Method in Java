@@ -1,0 +1,10 @@
+The Java.util.HashSet.contains() method is used to check whether a specific element is present in the HashSet or not.
+So basically it is used to check if a Set contains any particular element.
+
+Syntax:
+
+Hash_Set.contains(Object element)
+
+Parameters: The parameter element is of the type of HashSet. This is the element that needs to be tested if it is present in the set or not.
+
+Return Value: The method returns true if the element is present in the set else return False.

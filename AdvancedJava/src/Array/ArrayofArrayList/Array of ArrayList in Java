@@ -1,0 +1,15 @@
+We often come across 2D arrays where most of the part in the array is empty. Since space is a huge problem, we try different things to reduce the space.
+ One such solution is to use jagged array when we know the length of each row in the array, but the problem arises when we do not specifically know the length of each of the rows.
+ Here we use ArrayList since the length is unknown.
+Following is a Java program to demonstrate the above concept.
+
+The above code works fine, but shows below warning.
+
+prog.java:15: warning: [unchecked] unchecked conversion
+        ArrayList[] al = new ArrayList[n];
+                                  ^
+  required: ArrayList[]
+  found:    ArrayList[]
+1 warning
+
+The warning comes basically due to below line.

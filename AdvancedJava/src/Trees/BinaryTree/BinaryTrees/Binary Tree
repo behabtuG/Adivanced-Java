@@ -1,0 +1,166 @@
+ A binary tree is a recursive data structure where each node can have 2 children at most.
+
+ A common type of binary tree is a binary search tree, in which every node has a value that is greater than or equal to the node values in the
+ left sub-tree, and less than or equal to the node values in the right sub-tree.
+
+   Here's a visual representation of this type of binary tree:
+
+    For the implementation, we'll use an auxiliary Node class that will store int values, and keep a reference to each child:
+
+ Common Operations
+
+   Inserting Elements
+
+     The first operation we're going to cover is the insertion of new nodes.
+
+     First, we have to find the place where we want to add a new node in order to keep the tree sorted. We'll follow these rules starting from
+     the root node:
+
+         . if the new node's value is lower than the current node's, we go to the left child
+         . if the new node's value is greater than the current node's, we go to the right child
+         . when the current node is null, we've reached a leaf node and we can insert the new node in that position
+
+     Then we'll create a recursive method to do the insertion:
+
+   Finding an Element
+
+      Now let's add a method to check if the tree contains a specific value.
+
+      As before, we'll first create a recursive method that traverses the tree:
+
+     Here we're searching for the value by comparing it to the value in the current node; we'll then continue in the left or right child
+     depending on the outcome.
+
+      Next we'll create the public method that starts from the root:
+
+   Deleting an Element
+
+     Another common operation is the deletion of a node from the tree.
+
+     First, we have to find the node to delete in a similar way as before:
+
+     Once we find the node to delete, there are 3 main different cases:
+
+       a node has no children – this is the simplest case; we just need to replace this node with null in its parent node
+       a node has exactly one child – in the parent node, we replace this node with its only child.
+       a node has two children – this is the most complex case because it requires a tree reorganization
+
+     Let's see how we would implement the first case when the node is a leaf node:
+
+   Traversing the Tree
+
+     In this section, we'll explore different ways of traversing a tree, covering in detail the depth-first and breadth-first searches.
+
+     We'll use the same tree that we used before, and we'll examine the traversal order for each case.
+
+   Depth-First Search
+
+     Depth-first search is a type of traversal that goes deep as much as possible in every child before exploring the next sibling.
+
+     There are several ways to perform a depth-first search: in-order, pre-order and post-order.
+
+     The in-order traversal consists of first visiting the left sub-tree, then the root node, and finally the right sub-tree:
+
+   Breadth-First Search
+     This is another common type of traversal that visits all the nodes of a level before going to the next level.
+
+     This kind of traversal is also called level-order, and visits all the levels of the tree starting from the root, and from left to right.
+
+     For the implementation, we'll use a Queue to hold the nodes from each level in order. We'll extract each node from the list, print its values,
+     then add its children to the queue:
+
+
+
+  Binary tree is a tree type non-linear data structure that are mainly used for sorting and searching because they store data in hierarchical
+    form. In this section, we will learn the implementation of binary tree data structure in Java. Also, provides a short description of binary
+    tree data structure.
+
+  A tree in which each node (parent) has at most two-child nodes (left and right) is called binary tree. The top most node is called the root node.
+   In a binary tree a node contains the data and the pointer (address) of the left and right child node.
+
+  The height of a binary tree is the number of edges between the tree's root and its furthest (deepest) leaf. If the tree is empty, the height is
+   0. The height of the node is denoted by h.
+
+   The height of the above binary tree is 2.
+
+   We can calculate the number of leaves and node by using the following formula.
+
+       Maximum number of leaf nodes is a binary tree: 2h
+       Maximum number of nodes is a binary tree: 2h+1-1
+
+   Where, h is the height of binary tree.
+
+    Types of Binary Tree
+
+    There are the following types of binary tree in data structure:
+
+        1. Full/ Strictly Binary Tree
+        2. Complete Binary Tree
+        3. Perfect Binary Tree
+        4. Balance Binary Tree
+        5. Rooted Binary Tree
+        6. Degenerated/ Pathological Binary Tree
+        7. Extended Binary Tree
+        8.Skewed Binary Tree
+            a. Left-skewed Binary Tree
+            b. Right-skewed Binary Tree
+        9. Threaded Binary Tree
+            a. Single Threaded Binary Tree
+            b. Double Threaded Binary Tree
+
+    Binary Tree Implementation in Java
+
+      There are many ways to implement binary tree. In this section, we will implement binary tree using LinkedList data structure. Along with it,
+       we will also implement the traversal orders, searching a node and insert a node in a binary tree.
+
+    Implementation of Binary Tree Using LinkedList
+
+      Algorithm
+
+      Define Node class that contains three attributes namely: data left and right. Here, left represents the left child of the node and right
+      represents the right child of the node.
+
+          . When a node is created, data will pass to data attribute of the node and both left and right will be set to null.
+          . Define another class that has an attribute root.
+          . Root represents the root node of the tree and initialize it to null.
+
+         a. insert() will add a new node to the tree:
+              a. It checks whether the root is null, which means the tree is empty. It will add the new node as root.
+              b. Else, it will add root to the queue.
+              c. The variable node represents the current node.
+              d. First, it checks whether a node has a left and right child. If yes, it will add both nodes to queue.
+              e. If the left child is not present, it will add the new node as the left child.
+              f. If the left is present, then it will add the new node as the right child.
+         b. inorder() will display nodes of the tree in inorder fashion.
+              a. It traverses the entire tree then prints out left child followed by root then followed by the right child.
+
+      Binary Tree Operations
+
+        The following operations can be performed on a binary tree:
+
+          . Insertion
+          . Deletion
+          . Search
+          . Traversal
+
+      Insert a Node
+
+
+      Delete a Node
+        Algorithm
+
+          1. Starting at the root, find the deepest and rightmost node in binary tree and node that we want to delete.
+          2. Replace the deepest rightmost node's data with the node to be deleted.
+          3. Then delete the deepest rightmost node.
+
+         Consider the following figure.
+
+     Applications of Binary Tree
+
+       Applications of binary trees include:
+
+         Used in many search applications where data is constantly entering/leaving
+         As a workflow for compositing digital images for visual effects
+         Used in almost every high-bandwidth router for storing router-tables
+         Also used in wireless networking and memory allocation
+         Used in compression algorithms and many more

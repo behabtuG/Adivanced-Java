@@ -1,0 +1,7 @@
+Serialization is a mechanism of converting the state of an object into a byte stream. The byte array can be the class, version, and internal state of the object.
+
+Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory. This mechanism is used to persist the object.
+
+There are some cases of Serialization with respect to inheritance:
+
+ we will see this in different case

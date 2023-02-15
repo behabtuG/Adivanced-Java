@@ -1,0 +1,27 @@
+he task is to design a stack which can get the maximum value in the stack in O(1) time without using an additional stack.
+
+Examples:
+
+    Input:
+    push(2)
+    findMax()
+    push(6)
+    findMax()
+    pop()
+    findMax()
+    Output:
+    2 inserted in stack
+    Maximum value in the stack: 2
+    6 inserted in stack
+    Maximum value in the stack: 6
+    Element popped
+    Maximum value in the stack: 2
+
+    Approach: Instead of pushing a single element to the stack, push a pair instead.
+    The pair consists of the (value, localMax) where localMax is the maximum value upto that element.
+          . When we insert a new element, if the new element is greater than the local maximum below it,
+             we set the local maximum of a new element equal to the element itself.
+          . Else, we set the local maximum of the new element equal to the local maximum of the element below it.
+          . The local maximum of the top of the stack will be the overall maximum.
+          . Now if we want to know the maximum at any given point, we ask the top of the stack for local maximum associated with it which can be done in O(1).
+

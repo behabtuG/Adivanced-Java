@@ -1,0 +1,98 @@
+An abstract class in Java is one that is declared with the abstract keyword. It may have both abstract and non-abstract methods(methods with
+bodies).An abstract is a java modifier applicable for classes and methods in java but not for Variables.
+
+Illustration: Abstract class
+
+abstract class Shape
+{
+    int color;
+    // An abstract function
+    abstract void draw();
+}
+
+In java, the following some important observations about abstract classes are as follows:
+
+    1. An instance of an abstract class can not be created.
+    2. Constructors are allowed.
+    3. We can have an abstract class without any abstract method.
+    4. There can be a final method in abstract class but any abstract method in class(abstract class) can not be declared as final  or in
+       simpler terms final method can not be abstract itself as it will yield an error: “Illegal combination of modifiers: abstract and final”
+    5. We can define static methods in an abstract class
+    6. We can use the abstract keyword for declaring top-level classes (Outer class) as well as inner classes as abstract
+    7. If a class contains at least one abstract method then compulsory should declare a class as abstract
+    8. If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that
+        Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method
+
+    Observation 1: In Java, just like in C++ an instance of an abstract class cannot be created,
+        we can have references to abstract class type though. It is as shown below via the clean java program.
+
+    Observation 2: Like C++, an abstract class can contain constructors in Java. And a constructor of an abstract class is called when
+          an instance of an inherited class is created. It is as shown in the program below as follows:
+
+    Observation 3: In Java, we can have an abstract class without any abstract method. This allows us to create classes that cannot be
+                   instantiated but can only be inherited. It is as shown below as follows with help of a clean java program.
+
+   Observation 4: Abstract classes can also have final methods (methods that cannot be overridden).
+
+
+   Observation 5: For any abstract java class we are not allowed to create an object i.e., for abstract class instantiation is not possible.
+
+   Observation 6: Similar to the interface we can define static methods in an abstract class that can be called independently without an object.
+
+   Observation 7: We can use the abstract keyword for declaring top-level classes (Outer class) as well as inner classes as abstract.
+
+
+   Observation 8: If a class contains at least one abstract method then compulsory we should declare the class as abstract otherwise we will
+                  get a compile-time error because If a class contains at least one abstract method then, implementation is not complete for
+                  that class, and hence it is not recommended to create an object so in order to restrict object creation for such partial
+                  classes we use abstract keyword.
+
+   Observation 9: If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare
+               that Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method.
+
+   ////////////////////////////////////////////////////////////////
+   abstract is a non-access modifier in java applicable for classes, methods but not variables. It is used to achieve abstraction which is one
+   of the pillar of Object Oriented Programming(OOP). Following are different contexts where abstract can be used in Java.
+   Abstract classes
+
+   The class which is having partial implementation(i.e. not all methods present in the class have method definition). To declare a class
+   abstract, use this general form :
+
+
+   abstract class class-name{
+       //body of class
+   }
+   Due to their partial implementation, we cannot instantiate abstract classes.Any subclass of an abstract class must either implement all of
+   the abstract methods in the super-class, or be declared abstract itself.Some of the predefined classes in java are abstract. They depend on
+   their sub-classes to provide complete implementation. For example, java.lang.Number is a abstract class. For more on abstract classes.
+
+   Abstract methods
+
+   Sometimes, we require just method declaration in super-classes.This can be achieve by specifying the abstract type modifier. These methods
+    are sometimes referred to as subclasser responsibility because they have no implementation specified in the super-class. Thus, a subclass
+    must override them to provide method definition. To declare an abstract method, use this general form:
+
+    abstract type method-name(parameter-list);
+
+   As you can see, no method body is present.Any concrete class(i.e. class without abstract keyword) that extends an abstract class must
+   overrides all the abstract methods of the class.
+
+   Important rules for abstract methods:
+          . Any class that contains one or more abstract methods must also be declared abstract
+          . The following are various illegal combinations of other modifiers for methods with respect to abstract modifier :
+              1. final
+              2. abstract native
+              3. abstract synchronized
+              4. abstract static
+              5. abstract private
+              6. abstract strictfp
+
+   Note : Although abstract classes cannot be used to instantiate objects, they can be used to create object references, because Java’s
+   approach to run-time polymorphism is implemented through the use of super-class references. Thus, it must be possible to create a reference
+   to an abstract class so that it can be used to point to a subclass object.
+
+   abstract and final
+
+   In java, you will never see a class or method declared with both final and abstract keywords. For classes, final is used to prevent
+   inheritance whereas abstract classes depends upon their child classes for complete implementation. In cases of methods, final is used
+   to prevent overriding whereas abstract methods needs to be overridden in sub-classes.

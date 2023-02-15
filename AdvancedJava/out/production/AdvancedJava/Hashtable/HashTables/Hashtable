@@ -1,0 +1,71 @@
+The Hashtable class implements a hash table, which maps keys to values. Any non-null object can be used as a key or as a value.
+To successfully store and retrieve objects from a hashtable, the objects used as keys must implement the hashCode method and the equals method.
+Features of Hashtable
+
+    It is similar to HashMap, but is synchronized.
+    Hashtable stores key/value pair in hash table.
+    In Hashtable we specify an object that is used as a key, and the value we want to associate to that key.
+    The key is then hashed, and the resulting hash code is used as the index at which the value is stored within the table.
+    The initial default capacity of Hashtable class is 11 whereas loadFactor is 0.75.
+    HashMap doesn’t provide any Enumeration, while Hashtable provides not fail-fast Enumeration.
+
+Declaration:
+
+public class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>, Cloneable, Serializable
+
+Type Parameters:
+
+    K – the type of keys maintained by this map
+    V – the type of mapped values
+
+The Hierarchy of Hashtable
+
+Hashtable implements Serializable, Cloneable, Map<K,V> interfaces and extends Dictionary<K,V>. The direct subclasses are Properties, UIDefaults.
+
+Constructors:
+
+In order to create a Hashtable, we need to import it from java.util.Hashtable. There are various ways in which we can create a Hashtable.
+
+   1. Hashtable(): This creates an empty hashtable with the default load factor of 0.75 and an initial capacity is 11.
+
+        Hashtable<K, V> ht = new Hashtable<K, V>();
+
+  2. Hashtable(int initialCapacity): This creates a hash table that has an initial size specified by initialCapacity and the default load factor is 0.75.
+
+      Hashtable<K, V> ht = new Hashtable<K, V>(int initialCapacity);
+
+  3. Hashtable(int size, float fillRatio): This version creates a hash table that has an initial size specified by size and fill ratio specified by fillRatio.
+     fill ratio: Basically, it determines how full a hash table can be before it is resized upward and its Value lies between 0.0 to 1.0.
+
+      Hashtable<K, V> ht = new Hashtable<K, V>(int size, float fillRatio);
+
+  4. Hashtable(Map<? extends K,? extends V> m): This creates a hash table that is initialized with the elements in m.
+
+      Hashtable<K, V> ht = new Hashtable<K, V>(Map m);
+
+  Performing Various Operations on Hashtable
+
+  1. Adding Elements: In order to add an element to the hashtable, we can use the put() method. However, the insertion order is not retained in the hashtable.
+     Internally, for every element, a separate hash is generated and the elements are indexed based on this hash to make it more efficient.
+
+  2. Changing Elements: After adding the elements if we wish to change the element, it can be done by again adding the element with the put() method.
+     Since the elements in the hashtable are indexed using the keys, the value of the key can be changed by simply inserting the updated value for the key for which we wish to change.
+
+  3. Removing Element: In order to remove an element from the Map, we can use the remove() method.
+     This method takes the key value and removes the mapping for a key from this map if it is present in the map.
+
+
+  4. Traversal of a Hashtable: To iterate the table, we can make use of an advanced for loop. Below is the example of iterating a hashtable.
+
+  Hashtable datastructure is an array of buckets which stores the key/value pairs in them. It makes use of hashCode() method to determine which bucket the key/value pair should map.
+    The hash function helps to determine the location for a given key in the bucket list. Generally, hashcode is a non-negative integer that is equal for equal Objects and may or may not be equal for unequal Objects.
+     To determine whether two objects are equal or not, hashtable makes use of the equals() method.
+
+     It is possible that two unequal Objects have the same hashcode. This is called a collision. To resolve collisions, hashtable uses an array of lists.
+    The pairs mapped to a single bucket (array index) are stored in a list and list reference is stored in the array index.
+
+    Methods of Hashtable
+
+        . K – The type of the keys in the map.
+        . V – The type of values mapped in the map.
+

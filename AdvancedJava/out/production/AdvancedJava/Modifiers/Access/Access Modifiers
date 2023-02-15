@@ -1,0 +1,45 @@
+ As the name suggests access modifiers in Java help to restrict the scope of a class, constructor, variable, method, or data member.
+ There are four types of access modifiers available in java:
+
+    1. Default – No keyword required
+    2. Private
+    3. Protected
+    4. Public
+
+     . Default: When no access modifier is specified for a class, method, or data member – It is said to be having the default access modifier
+                by default.
+        . The data members, classes, or methods that are not declared using any access modifiers i.e. having default access modifier are
+          accessible only within the same package.
+
+       In this example, we will create two packages and the classes in the packages will be having the default access modifiers and we will
+        try to access a class from one package from a class of the second package.
+
+     . Private: The private access modifier is specified using the keyword private.
+             . The methods or data members declared as private are accessible only within the class in which they are declared.
+             . Any other class of the same package will not be able to access these members.
+             . Top-level classes or interfaces can not be declared as private because
+                 1. private means “only visible within the enclosing class”.
+                 2. protected means “only visible within the enclosing class and any subclasses”
+
+        Hence these modifiers in terms of application to classes, apply only to nested classes and not on top-level classes
+
+          In this example, we will create two classes A and B within the same package p1. We will declare a method in class A as private
+          and try to access this method from class B and see the result.
+
+     . protected: The protected access modifier is specified using the keyword protected.
+              The methods or data members declared as protected are accessible within the same package or subclasses in different packages.
+
+           In this example, we will create two packages p1 and p2. Class A in p1 is made public, to access it in p2. The method display in
+           class A is protected and class B is inherited from class A and this protected method is then accessed by creating an object of
+           class B.
+
+     . public: The public access modifier is specified using the keyword public.
+             . The public access modifier has the widest scope among all other access modifiers.
+             . Classes, methods, or data members that are declared as public are accessible from everywhere in the program. There is no
+              restriction on the scope of public data members.
+
+     Important Points:
+
+        . If other programmers use your class, try to use the most restrictive access level that makes sense for a particular member.
+          Use private unless you have a good reason not to.
+        . Avoid public fields except for constants.

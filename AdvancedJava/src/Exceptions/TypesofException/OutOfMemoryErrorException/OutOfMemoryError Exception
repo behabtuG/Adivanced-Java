@@ -1,0 +1,121 @@
+In Java, all objects are stored in a heap. They are allocated using a new operator. The OutOfMemoryError Exception in Java looks like
+ this:
+
+ Exception in thread "main" java.lang.OutOfMemoryError: Java heap spaceUsually, this error is thrown when the Java Virtual Machine
+ cannot allocate an object because it is out of memory. No more memory could be made available by the garbage collector.
+
+ OutOfMemoryError usually means that you’re doing something wrong, either holding onto objects too long or trying to process too much
+   data at a time. Sometimes, it indicates a problem that’s out of your control, such as a third-party library that caches strings or
+   an application server that doesn’t clean up after deploys. And sometimes, it has nothing to do with objects on the heap.
+
+ The java.lang.OutOfMemoryError exception can also be thrown by native library code when a native allocation cannot be satisfied (for
+  example, if swap space is low). Let us understand various cases when the OutOfMemory error might occur.
+
+Symptom or Root cause?
+
+To find the cause, the text of the exception includes a detailed message at the end. Let us examine all the errors.
+
+  Error 1 – Java heap space:
+    This error arises due to the applications that make excessive use of finalizers. If a class has a finalize method, objects of that
+    type do not have their space reclaimed at garbage collection time. Instead, after garbage collection, the objects are queued for
+    finalization, which occurs later.
+
+      Implementation:
+
+        . finalizers are executed by a daemon thread that services the finalization queue.
+        . If the finalizer thread cannot keep up with the finalization queue, the Java heap could fill up, and this type of
+          OutOfMemoryError exception would be thrown.
+        . The problem can also be as simple as a configuration issue, where the specified heap size (or the default size, if it is not
+          specified) is insufficient for the application.
+    When you execute the above code above you might expect it to run forever without any problems. As a result, over time, with the leaking
+     code constantly used, the “cached” results end up consuming a lot of Java heap space, and when the leaked memory fills all of the
+     available memory in the heap region and Garbage Collection is not able to clean it, the java.lang.OutOfMemoryError:Java heap space is
+     thrown.
+
+     Prevention: Check how to monitor objects for which finalization is pending in Monitor the Objects Pending Finalization.
+
+  Error 2 – GC Overhead limit exceeded:
+    This error indicates that the garbage collector is running all the time and Java program is making very slow progress. After a garbage
+    collection, if the Java process is spending more than approximately 98% of its time doing garbage collection and if it is recovering less
+    than 2% of the heap and has been doing so far the last 5 (compile-time constant) consecutive garbage collections, then a
+    java.lang.OutOfMemoryError is thrown.
+
+
+
+    This exception is typically thrown because the amount of live data barely fits into the Java heap having little free space for new
+    allocations.
+    Prevention: Increase the heap size and turn off it with the command line flag -XX:-UseGCOverheadLimit.
+
+  Error 3 – Permgen space is thrown:
+
+    Java memory is separated into different regions. The size of all those regions, including the permgen area, is set during the JVM launch.
+    If you do not set the sizes yourself, platform-specific defaults will be used.
+
+    The java.lang.OutOfMemoryError: PermGen space error indicates that the Permanent Generation’s area in memory is exhausted.
+
+    In the above sample code, code iterates over a loop and generates classes at run time. Class generation complexity is being taken care of
+    by the Javassist library.
+
+    Running the above code will keep generating new classes and loading their definitions into Permgen space until the space is fully utilized
+    and the java.lang.OutOfMemoryError: Permgen space is thrown.
+
+    Prevention : When the OutOfMemoryError due to PermGen exhaustion is caused during the application launch, the solution is simple. The
+    application just needs more room to load all the classes to the PermGen area, so we need to increase its size. To do so, alter your
+    application launch configuration and add (or increase if present) the -XX:MaxPermSize parameter similar to the following example:
+
+    java -XX:MaxPermSize=512m com.saket.demo.Permgen
+
+  Error 4 – Metaspace:
+
+    Java class metadata is allocated in native memory. Suppose metaspace for class metadata is exhausted, a java.lang.OutOfMemoryError
+    exception with a detail MetaSpace is thrown.
+
+    The amount of metaspace used for class metadata is limited by the parameter MaxMetaSpaceSize, which is specified on the command line.
+    When the amount of native memory needed for a class metadata exceeds MaxMetaSpaceSize, a java.lang.OutOfMemoryError exception with a
+    detail MetaSpace is thrown.
+
+    This code will keep generating new classes and loading their definitions to Metaspace until the space is fully utilized and the java.lang.
+    OutOfMemoryError: Metaspace is thrown. When launched with -XX:MaxMetaspaceSize=64m then on Mac OS X my Java 1.8.0_05 dies at around 70,
+    000 classes loaded.
+
+    Prevention: If MaxMetaSpaceSize, has been set on the command line, increase its value. MetaSpace is allocated from the same address spaces
+    as the Java heap. Reducing the size of the Java heap will make more space available for MetaSpace. This is only a correct trade-off if
+    there is an excess of free space in the Java heap.
+
+  Error 5 – Requested array size exceeds VM limit:
+
+     This error indicates that the application attempted to allocate an array that is larger than the heap size. For example, if an
+     application attempts to allocate an array of 1024 MB but the maximum heap size is 512 MB then OutOfMemoryError will be thrown with
+     “Requested array size exceeds VM limit”.
+     The java.lang.OutOfMemoryError: Requested array size exceeds VM limit can appear as a result of either of the following situations:
+
+         . Your arrays grow too big and end up having a size between the platform limit and the Integer.MAX_INT
+         . You deliberately try to allocate arrays larger than 2^31-1 elements to experiment with the limits.
+
+  Error 6 – Request size bytes for a reason. Out of swap space?:
+
+    This apparent exception occurred when an allocation from the native heap failed and the native heap might be close to exhaustion.
+    The error indicates the size (in bytes) of the request that failed and the reason for the memory request. Usually, the reason is the
+    name of the source module reporting the allocation failure, although sometimes it is the actual reason.
+
+    The java.lang.OutOfMemoryError: Out of swap space error is often caused by operating-system-level issues, such as:
+
+      . The operating system is configured with insufficient swap space.
+      . Another process on the system is consuming all memory resources.
+
+    Prevention: When this error message is thrown, the VM invokes the fatal error handling mechanism (that is, it generates a deadly error
+    log file, which contains helpful information about the thread, process, and system at the time of the crash). In the case of native heap
+     exhaustion, the heap memory and memory map information in the log can be useful.
+
+  Error 7 – reason stack_trace_with_native_method:
+
+    Whenever this error message(reason stack_trace_with_native_method) is thrown then a stack trace is printed in which the top frame is a
+    native method, then this is an indication that a native method has encountered an allocation failure. The difference between this and
+    the previous message is that the allocation failure was detected in a Java Native Interface (JNI) or native method rather than the JVM
+    code.
+
+    The exact native thread limit is platform-dependent. For example, tests Mac OS X reveals that: 64-bit Mac OS X 10.9, Java 1.7.0_45 –
+    JVM dies after #2031 threads have been created
+
+    Prevention: Use native utilities of the OS to diagnose the issue further. For more information about tools available for various
+    operating systems, see Native Operating System tools.

@@ -1,0 +1,92 @@
+Java defines several types of exceptions that relate to its various class libraries. Java also allows users to define their own
+ exceptions. Built-in Exceptions:
+    Built-in exceptions are the exceptions that are available in Java libraries. These exceptions are suitable to explain certain
+    error situations. Below is the list of important built-in exceptions in Java.
+
+     1. ArithmeticException:It is thrown when an exceptional condition has occurred in an arithmetic operation.
+     2. ArrayIndexOutOfBoundsException: It is thrown to indicate that an array has been accessed with an illegal index. The index is
+     either negative or greater than or equal to the size of the array.
+     3. ClassNotFoundException:This Exception is raised when we try to access a class whose definition is not found
+     4. FileNotFoundException:This Exception is raised when a file is not accessible or does not open.
+     5. IOException:It is thrown when an input-output operation failed or interrupted
+     6. InterruptedException:It is thrown when a thread is waiting, sleeping, or doing some processing, and it is interrupted.
+     7. NoSuchFieldException:It is thrown when a class does not contain the field (or variable) specified
+     8. NoSuchMethodException: It is thrown when accessing a method that is not found.
+     9. NullPointerException:This exception is raised when referring to the members of a null object. Null represents nothing
+     10.NumberFormatException:This exception is raised when a method could not convert a string into a numeric format.
+     11.RuntimeException:This represents an exception that occurs during runtime.
+     12.StringIndexOutOfBoundsException:It is thrown by String class methods to indicate that an index is either negative or greater
+        than the size of the string
+     13.IllegalArgumentException : This exception will throw the error or error statement when the method receives an argument which
+        is not accurately fit to the given relation or condition. It comes under the unchecked exception.
+     14.IllegalStateException : This exception will throw an error or error message when the method is not accessed for the particular
+        operation in the application. It comes under the unchecked exception.
+
+     Examples of Built-in Exception
+
+        A. Arithmetic exception
+
+        B. NullPointer Exception
+
+        C. StringIndexOutOfBound Exception
+
+        D. FileNotFound Exception
+
+        E. NumberFormat Exception
+
+        F. ArrayIndexOutOfBounds Exception
+
+        G. IO Exception
+
+        H. NoSuchMethod Exception
+
+        I. IllegalArgumentException: This program, checks whether the person is eligible for voting or not. If the age is greater than
+           or equal to 18 then it will not throw any error. If the age is less than 18 then it will throw an error with the error
+           statement.
+
+           Also, we can specify “throw new IllegalArgumentException()” without the error message. We can also specify Integer.
+           toString(variable_name) inside the IllegalArgumentException() and It will print the argument name which is not satisfied the
+           given condition.
+
+        J. IllegalStateException: This program, displays the addition of numbers only for Positive integers. If both the numbers are
+           positive then only it will call the print method to print the result otherwise it will throw the IllegalStateException with
+           an error statement. Here, the method is not accessible for non-positive integers.
+
+           Also, we can specify the “throw new IllegalStateException()” without the error statement.
+
+        k. ClassNotFound Exception
+
+     User-Defined Exceptions
+        Sometimes, the built-in exceptions in Java are not able to describe a certain situation. In such cases, the user can also
+        create exceptions which are called ‘user-defined Exceptions’.
+
+        The following steps are followed for the creation of a user-defined Exception.
+
+         . The user should create an exception class as a subclass of the Exception class. Since all the exceptions are subclasses of
+             the Exception class, the user should also make his class a subclass of it. This is done as:
+               class MyException extends Exception
+         . We can write a default constructor in his own exception class.
+
+               MyException(){}
+
+         . We can also create a parameterized constructor with a string as a parameter.
+           We can use this to store exception details. We can call the superclass(Exception) constructor from this and send the
+           string there.
+
+             MyException(String str)
+             {
+                super(str);
+             }
+
+         . To raise an exception of a user-defined type, we need to create an object to his exception class and throw it using the
+           throw clause, as:
+
+               MyException me = new MyException(“Exception details”);
+               throw me;
+
+         . The following program illustrates how to create your own exception class MyException.
+         . Details of account numbers, customer names, and balance amounts are taken in the form of three arrays.
+         . In main() method, the details are displayed using a for-loop. At this time, a check is done if in any account the balance
+           amount is less than the minimum balance amount to be apt in the account.
+         . If it is so, then MyException is raised and a message is displayed “Balance amount is less”.
+

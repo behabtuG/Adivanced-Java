@@ -1,0 +1,93 @@
+The Vector class implements a growable array of objects. Vectors fall in legacy classes, but now it is fully compatible with collections.
+ It is found in java.util package and implement the List interface, so we can use all the methods of the List interface as shown below as follows:
+
+    . Vector implements a dynamic array which means it can grow or shrink as required. Like an array, it contains components that can be accessed using an integer index.
+    . They are very similar to ArrayList, but Vector is synchronized and has some legacy methods that the collection framework does not contain.
+    . It also maintains an insertion order like an ArrayList. Still, it is rarely used in a non-thread environment as it is synchronized,
+      and due to this, it gives a poor performance in adding, searching, deleting, and updating its elements.
+    . The Iterators returned by the Vector class are fail-fast. In the case of concurrent modification, it fails and throws the ConcurrentModificationException.
+
+    Syntax:
+
+    public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+
+    Here, E is the type of element.
+
+        . It extends AbstractList and implements List interfaces.
+        . It implements Serializable, Cloneable, Iterable<E>, Collection<E>, List<E>, RandomAccess interfaces.
+        . The directly known subclass is Stack.
+
+    Important points regarding the Increment of vector capacity are as follows:
+
+    If the increment is specified, Vector will expand according to it in each allocation cycle. Still, if the increment is not specified, then the vector’s capacity gets doubled in each allocation cycle.
+     Vector defines three protected data members:
+
+        int capacityIncrement: Contains the increment value.
+        int elementCount: Number of elements currently in vector stored in it.
+        Object elementData[]: Array that holds the vector is stored in it.
+
+    Common Errors in the declaration of Vectors are as follows:
+
+        Vector throws an IllegalArgumentException if the InitialSize of the vector defined is negative.
+        If the specified collection is null, It throws NullPointerException.
+
+    Constructors
+
+    1. Vector(): Creates a default vector of the initial capacity is 10.
+
+    Vector<E> v = new Vector<E>();
+
+    2. Vector(int size): Creates a vector whose initial capacity is specified by size.
+
+    Vector<E> v = new Vector<E>(int size);
+
+    3. Vector(int size, int incr): Creates a vector whose initial capacity is specified by size and increment is specified by incr.
+    It specifies the number of elements to allocate each time a vector is resized upward.
+
+    Vector<E> v = new Vector<E>(int size, int incr);
+
+    4. Vector(Collection c): Creates a vector that contains the elements of collection c.
+
+    vect
+
+    Vector<E> v = new Vector<E>(Collection c);
+
+   Note:
+
+        If the vector increment is not specified then it’s capacity will be doubled in every increment cycle.
+        The capacity of a vector cannot be below the size, it may equal to it.
+
+             Performing Various Operations on Vector class in Java
+
+
+             Let us discuss various operations on Vector class that are listed as follows:
+
+               1. Adding elements
+               2. Updating elements
+               3. Removing elements
+               4. Iterating over elements
+
+               Operation 1: Adding Elements
+
+                  In order to add the elements to the Vector, we use the add() method.
+                  This method is overloaded to perform multiple operations based on different parameters. They are listed below as follows:
+
+                   add(Object): This method is used to add an element at the end of the Vector.
+                   add(int index, Object): This method is used to add an element at a specific index in the Vector.
+
+               Operation 2: Updating Elements
+
+                 After adding the elements, if we wish to change the element, it can be done using the set() method. Since a Vector is indexed,
+                 the element which we wish to change is referenced by the index of the element. Therefore, this method takes an index and the updated element to be inserted at that index.
+
+               Operation 3: Removing Elements
+
+                 In order to remove an element from a Vector, we can use the remove() method. This method is overloaded to perform multiple operations based on different parameters. They are:
+
+                   remove(Object): This method is used to remove an object from the Vector. If there are multiple such objects, then the first occurrence of the object is removed.
+                   remove(int index): Since a Vector is indexed, this method takes an integer value which simply removes the element present at that specific index in the Vector.
+                   After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
+
+               Operation 4: Iterating the Vector
+
+               There are multiple ways to iterate through the Vector. The most famous ways are by using the basic for loop in combination with a get() method to get the element at a specific index and the advanced for a loop.

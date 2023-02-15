@@ -1,0 +1,30 @@
+Vector is similar to arrays but is growable also, or we can say no fixed size is required. Previously vector was a part of legacy classes but now it is part of Collections. It also implements a List interface, so we can use any method of list interface on vectors also.
+
+Syntax :
+
+Vector<Integer> gfg=new Vector<>();
+
+Ways To copy elements of one vector to another:
+
+    1. Passing in the constructor
+    2. Adding one by one using add() method
+
+ Method 1: Passing in the constructor
+    . In this approach, we will simply pass the one Vector into the other Vector’s constructor.
+    . By using this approach if we change in first vector values then it will not change the values of the second vector.
+    . This is the easiest way of duplicating the vector values.
+
+    In the below program we will,
+
+    . First, create one Vector of integers and add elements to it using add() method.
+    . After that, we will pass the first vector into the constructor of the second.
+    . Now we will change one value vector and will check in another vector also to verify whether changing one vector value does not affect another vector.
+
+ Method 2: Adding one by one using add() method
+
+     In this approach, we will iterate over each element of  Vector and add that element in the second Vector.
+     Here if you change the first Vector element then it will not change the elements of the second Vector.
+     It is not the best approach but it’s a simple iteration process.
+
+   In the below program we will first create one Vector of integers and add elements to it after that we will iterate on that vector and add the element at each iteration to the other vector.
+

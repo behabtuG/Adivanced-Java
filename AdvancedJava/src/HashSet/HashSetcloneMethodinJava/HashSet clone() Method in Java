@@ -1,0 +1,9 @@
+The Java.util.HashSet.clone() method is used to return a shallow copy of the mentioned hash set. It just creates a copy of the set.
+
+Syntax:
+
+Hash_Set.clone()
+
+Parameters: The method does not take any parameters.
+
+Return Value: The method just returns a copy of the HashSet.

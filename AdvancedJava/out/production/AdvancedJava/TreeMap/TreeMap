@@ -1,0 +1,86 @@
+The TreeMap in Java is used to implement Map interface and NavigableMap along with the AbstractMap Class. The map is sorted according to the natural ordering of its keys,
+or by a Comparator provided at map creation time, depending on which constructor is used. This proves to be an efficient way of sorting and storing the key-value pairs.
+The storing order maintained by the treemap must be consistent with equals just like any other sorted map, irrespective of the explicit comparators.
+The treemap implementation is not synchronized in the sense that if a map is accessed by multiple threads, concurrently and at least one of the threads modifies
+the map structurally, it must be synchronized externally.
+
+Features of a TreeMap
+
+Some important features of the treemap are as follows:
+
+    1. This class is a member of the Java Collections Framework.
+    2. The class implements Map interfaces including NavigableMap, SortedMap, and extends AbstractMap class.
+    3. TreeMap in Java does not allow null keys (like Map) and thus a NullPointerException is thrown. However, multiple null values can be associated with different keys.
+    4. Entry pairs returned by the methods in this class and its views represent snapshots of mappings at the time they were produced. They do not support the Entry.setValue method.
+
+Now let us move forward and discuss Synchronized TreeMap. The implementation of a TreeMap is not synchronized. This means that if multiple threads access a tree set concurrently,
+ and at least one of the threads modifies the set, it must be synchronized externally. This is typically accomplished by using the Collections.synchronizedSortedMap method.
+ This is best done at the creation time, to prevent accidental unsynchronized access to the set. This can be done as:
+
+SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));
+
+Geeks, now you must be wondering how does the TreeMap works internally?
+
+The methods in a TreeMap while getting keyset and values, return an Iterator that is fail-fast in nature. Thus, any concurrent modification will throw ConcurrentModificationException.
+ A TreeMap is based upon a red-black tree data structure.
+
+Each node in the tree has:
+
+    . 3 Variables (K key=Key, V value=Value, boolean color=Color)
+    . 3 References (Entry left = Left, Entry right = Right, Entry parent = Parent)
+
+    Constructors in TreeMap
+
+    In order to create a TreeMap, we need to create an object of the TreeMap class. The TreeMap class consists of various constructors that allow the possible creation of the TreeMap.
+    The following are the constructors available in this class:
+
+        1. TreeMap()
+        2. TreeMap(Comparator comp)
+        3. TreeMap(Map M)
+        4. TreeMap(SortedMap sm)
+
+    Let us discuss them individually alongside implementing every constructor as follows:
+
+    Constructors.Constructor 1: TreeMap()
+
+       This constructor is used to build an empty treemap that will be sorted by using the natural order of its keys.
+
+    Constructors.Constructor 2: TreeMap(Comparator comp)
+
+      This constructor is used to build an empty TreeMap object in which the elements will need an external specification of the sorting order.
+
+    Constructors.Constructor 3: TreeMap(Map M)
+
+      This constructor is used to initialize a TreeMap with the entries from the given map M which will be sorted by using the natural order of the keys.
+
+    Constructors.Constructor 4: TreeMap(SortedMap sm)
+
+      This constructor is used to initialize a TreeMap with the entries from the given sorted map which will be stored in the same order as the given sorted map.
+
+      Implementation: The following programs below will demonstrate better how to create, insert, and traverse through the TreeMap.
+
+       Illustration:
+
+    Performing Various Operations on TreeMap
+
+       After the introduction of Generics in Java 1.5, it is possible to restrict the type of object that can be stored in the TreeMap. Now, let’s see how to perform a few frequently used operations on the TreeMap.
+
+       Operation 1: Adding Elements
+
+         In order to add an element to the TreeMap, we can use the put() method. However, the insertion order is not retained in the TreeMap. Internally, for every element,
+         the keys are compared and sorted in ascending order.
+
+       Operation 2: Changing Elements
+
+         After adding the elements if we wish to change the element, it can be done by again adding the element with the put() method. Since the elements in the treemap are indexed using the keys,
+         the value of the key can be changed by simply inserting the updated value for the key for which we wish to change.
+
+       Operation 3: Removing Element
+
+         In order to remove an element from the TreeMap, we can use the remove() method. This method takes the key value and removes the mapping for the key from
+         this treemap if it is present in the map.
+
+       Operation 4: Iterating through the TreeMap
+
+         There are multiple ways to iterate through the Map. The most famous way is to use a for-each loop and get the keys. The value of the key is found by using the getValue() method.
+

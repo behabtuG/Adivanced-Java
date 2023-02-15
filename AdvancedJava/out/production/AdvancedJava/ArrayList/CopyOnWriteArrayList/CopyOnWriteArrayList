@@ -1,0 +1,42 @@
+CopyOnWriteArrayList class is introduced in JDK 1.5, which implements the List interface.
+It is an enhanced version of ArrayList in which all modifications (add, set, remove, etc) are implemented by making a fresh copy.
+It is found in java.util.concurrent package. It is a data structure created to be used in a concurrent environment.
+
+ Here are few points about CopyOnWriteArrayList:
+
+    . As the name indicates, CopyOnWriteArrayList creates a Cloned copy of underlying ArrayList, for every update operation at a certain point both will be synchronized automatically,
+     which is taken care of by JVM. Therefore, there is no effect for threads that are performing read operation.
+    . It is costly to use because for every update operation a cloned copy will be created. Hence, CopyOnWriteArrayList is the best choice if our frequent operation is read operation.
+    . The underlined data structure is a grow-able array.
+    . It is a thread-safe version of ArrayList.
+    . Insertion is preserved, duplicates, null, and heterogeneous Objects are allowed.
+    . The main important point about CopyOnWriteArrayList is the Iterator of CopyOnWriteArrayList can not perform remove operation otherwise we get Run-time exception saying UnsupportedOperationException.
+     add() and set() methods on CopyOnWriteArrayList iterator also throws UnsupportedOperationException. Also Iterator of CopyOnWriteArrayList will never throw ConcurrentModificationException.
+
+   Declaration:
+
+      public class CopyOnWriteArrayList<E> extends Object implements List<E>, RandomAccess, Cloneable, Serializable
+
+   Here, E is the type of elements held in this collection.
+
+   Note: The class implements Serializable, Cloneable, Iterable<E>, Collection<E>, List<E>, RandomAccess interfaces.
+
+   Constructors:
+
+      1. CopyOnWriteArrayList(): Creates an empty list.
+
+         CopyOnWriteArrayList c = new CopyOnWriteArrayList();
+
+      2. CopyOnWriteArrayList(Collection obj): Creates a list containing the elements of the specified collection, in the order, they are returned by the collection’s iterator.
+
+         CopyOnWriteArrayList c = new CopyOnWriteArrayList(Collection obj);
+
+      3. CopyOnWriteArrayList(Object[] obj);: Creates a list holding a copy of the given array.
+
+         CopyOnWriteArrayList c = new CopyOnWriteArrayList(Object[] obj);
+
+   Iterating over CopyOnWriteArrayList:
+      We can iterate over CopyOnWriteArrayList using iterator() method. The important point to be noted is that the iterator we create is an immutable snapshot of the original list.
+      Because of this property, we can see that GfG is not printed at the first iteration.
+
+  Note: We should use CopyOnWriteArrayList when we prefer to use a data structure similar to ArrayList in a concurrent environment.

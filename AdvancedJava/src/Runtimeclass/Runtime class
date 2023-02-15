@@ -1,0 +1,11 @@
+In Java, the Runtime class is used to interact with Every Java application that has a single instance of class Runtime that allows
+the application to interface with the environment in which the application is running. The current runtime can be obtained from the
+ getRuntime() method.
+
+ Methods of Java Runtime class
+
+Note: Replace with any software you want to start. Here we work on Linux and google-chrome is written like this way only. May differ in windows/mac.
+
+From the above output, it is made clear that exit() method does not let below print statement to execute as “Program Running Check” is not printed
+ on the console. It can be made clear if we comment out the working of availableProcessors() than exit() method output is as follows:
+

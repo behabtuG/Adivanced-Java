@@ -1,0 +1,30 @@
+HashMap is a part of Java’s collection since Java 1.2. It provides the basic implementation of the Map interface of Java.
+ It stores the data in (Key, Value) pairs. Unlike Hashmap, an ArrayList is used to provides us with dynamic arrays in Java.
+ It is an alternative to an array that provides a lot more flexibility in terms of storage. In this article, we will see how to convert a Hashmap to an ArrayList.
+Since every element in the hashmap contains a key/value pair, it is not possible to store this key/value pair in a single ArrayList.
+Therefore, in order to convert a hashmap into an ArrayList, we need to maintain two separate ArrayList’s where one ArrayList is used
+ to store the Keys and the other to store the values corresponding to those keys. The following are the various methods used to convert a hashmap to the ArrayList.
+
+ Method 1:
+
+     One way to convert is to use the constructor of the ArrayList. In order to do this, we can use the keySet() method present in the HashMap.
+     This method returns the set containing all the keys of the hashmap. This set can be passed into the ArrayList while initialization in order to obtain an ArrayList containing all the keys.
+     After obtaining the keys, we can use the values() method present in the hashmap to obtain a collection of all the values present in the hashmap.
+     We can use this collection to initialize another array that contains all the values for the keys in the hashmap.
+
+   Note: In the above example, it can be clearly observed that the correlation between the keys and the values is retained by the index of the ArrayList.
+       This means that the value for the specific key can be found at the same index in the values list.
+
+ Method 2:
+
+    Another way to convert a HashMap into an ArrayList is to use the Stream API to convert map keys and values to respective lists.
+
+   Note: The Collectors.toCollection(ArrayList::new) passed to the collect() method to collect as new ArrayList.
+     We can also use toList() instead of this function to convert it to a List and then to any other List implementations.&
+
+ Method 3:
+
+    In both the above methods, the HashMap is converted to an ArrayList without retaining the direct key/value relationship. The keys and values are stored in two different ArrayLists.
+     However, we can retain the key/value pairs in the ArrayList using the entrySet() method. This method is used to create a set out of the same elements contained in the hash map.
+     It basically returns a set view of the hash map or we can create a new set and store the map elements into them.
+     We can pass this Set into the ArrayList using the constructor in order to form an ArrayList with the Entry objects as the key/value pairs.

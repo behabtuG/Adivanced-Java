@@ -1,0 +1,31 @@
+ Methods.Overriding: Methods.Overriding is a feature of OOP languages like Java that is related to run-time polymorphism. A subclass (or derived class) provides
+    a specific implementation of a method in the superclass (or base class).
+    The implementation to be executed is decided at run-time and a decision is made according to the object used for the call. Note that signatures
+    of both methods must be the same. Refer Methods.Overriding in Java for details.
+
+ Overloading: Overloading is also a feature of OOP languages like Java that is related to compile-time (or static) polymorphism. This feature allows
+   different methods to have the same name, but different signatures, especially the number of input parameters and type of input parameters. Note
+   that in both C++ and Java, methods cannot be overloaded according to the return type.
+
+ Can we overload static methods?
+   The answer is ‘Yes’. We can have two or more static methods with the same name, but differences in input parameters. For example, consider the
+   following Java program.
+
+ Can we overload methods that differ only by static keyword?
+    We cannot overload two methods in Java if they differ only by static keyword (number of parameters and types of parameters is the same).
+
+ Can we Override static methods in java?
+    We can declare static methods with the same signature in the subclass, but it is not considered overriding as there won’t be any run-time
+    polymorphism. Hence the answer is ‘No’.
+    If a derived class defines a static method with the same signature as a static method in the base class, the method in the derived class is
+     hidden by the method in the base class.
+
+ The following are some important points for method overriding and static methods in Java.
+    1) For class (or static) methods, the method according to the type of reference is called, not according to the object being referred, which
+       means method call is decided at compile time.
+    2) For instance (or non-static) methods, the method is called according to the type of object being referred, not according to the type of
+       reference, which means method calls is decided at run time.
+    3) An instance method cannot override a static method, and a static method cannot hide an instance method. For example, the following program
+       has two compiler errors.
+    4) In a subclass (or Derived Class), we can overload the methods inherited from the superclass. Such overloaded methods neither hide nor
+       override the superclass methods — they are new methods, unique to the subclass.

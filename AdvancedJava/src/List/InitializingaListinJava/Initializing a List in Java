@@ -1,0 +1,106 @@
+The Java.util.List is a child interface of Collection. It is an ordered collection of objects in which duplicate values can be stored.
+Since List preserves the insertion order, it allows positional access and insertion of elements.
+List Interface is implemented by ArrayList, LinkedList, Vector and Stack classes.
+
+List is an interface, and the instances of List can be created in the following ways:
+
+List a = new ArrayList();
+List b = new LinkedList();
+List c = new Vector();
+List d = new Stack();
+
+Below are the following ways to initialize a list:
+
+  1.  Using List.add() method
+
+    Since list is an interface, one can’t directly instantiate it. However, one can create objects of those classes which have implemented this interface and instantiate them.
+
+    Few classes which have implemented the List interface are Stack, ArrayList, LinkedList, Vector etc.
+
+    Syntax:
+
+    List<Integer> list=new ArrayList<Integer>();
+    List<Integer> llist=new LinkedList<Integer>();
+    List<Integer> stack=new Stack<Integer>();
+
+
+   Double Brace Initialization can also be used to do the above work.
+
+    Syntax:
+
+    List<Integer> list=new ArrayList<Integer>(){{
+                        add(1);
+                        add(2);
+                        add(3);
+                          }};
+
+  2. Using Arrays.asList()
+
+     .  Creating Immutable List
+
+       Arrays.asList() creates an immutable list from an array. Hence it can be used to instantiate a list with an array.
+
+       Syntax:
+
+        List<Integer> list=Arrays.asList(1, 2, 3);
+
+
+     .  Creating Mutable List
+
+        List<Integer> list=new ArrayList<>(Arrays.asList(1, 2, 3));
+
+  3. Using Collections class methods
+      There are various methods in Collections class that can be used to instantiate a list. They are:
+
+         1. Using Collections.addAll()
+
+           Collections class has a static method addAll() which can be used to initialize a list.
+           Collections.addAll() take in any number of elements after it is specified with the Collection in which the elements are to be inserted.
+
+           Syntax:
+
+           List<Integer> list = Collections.EMPTY_LIST;
+           Collections.addAll(list = new ArrayList<Integer>(), 1, 2, 3, 4);
+
+         2. Using Collections.unmodifiableList()
+
+            Collections.unmodifiableList() returns a list which can’t be altered i.e. it can neither add or delete an element.
+            Any attempt to modify the list will result in an UnsupportedOperationExample
+
+            Syntax:
+
+            List<Integer> list = Collections
+                    .unmodifiableList(Arrays.asList(1, 2, 3));
+
+         3. Using Collections.singletonList()
+
+            Collections.singletonList() returns an immutable list consisting of one element only.
+
+            Syntax:
+
+            List<Integer> list = Collections.singletonList(2);
+
+         4. Using Java 8 Stream
+
+            With the introduction of Stream and functional programming in Java 8, now one can construct any stream of objects and then collect them as a list.
+
+            Syntax:
+
+            1.  List<Integer> list
+                        = Stream.of(1, 2, 3)
+                            .collect(Collectors.toList());
+            2.  List<Integer> list
+                        = Stream.of(1, 2, 3)
+                            .collect(Collectors.toCollection(ArrayList::new));
+            3.  List<Integer> list
+                        = Stream.of(1, 2, 3, 4)
+                            .collect(Collectors.collectingAndThen(Collectors.toList(),
+                                        Collections::unmodifiableList));
+
+         5. Using Java 9 List.of()
+
+           Java 9 introduced List.of() method which takes in any number of arguments and constructs a compact and unmodifiable list out of them.
+
+           Syntax:
+
+           List<Integer> unmodifiableList = List.of(1, 2, 3);

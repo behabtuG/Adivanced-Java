@@ -1,0 +1,39 @@
+Deque interface present in java.util package is a subtype of the queue interface. The Deque is related to the double-ended queue that
+supports the addition or removal of elements from either end of the data structure. It can either be used as
+a queue(first-in-first-out/FIFO) or as a stack(last-in-first-out/LIFO). Deque is the acronym for double-ended queue.
+
+Syntax: The deque interface is declared as:
+
+public interface Deque extends Queue
+
+Creating Deque Objects Since Deque is an interface, objects cannot be created of the type deque. We always need a class that extends this list in order to create an object.
+ And also, after the introduction of Generics in Java 1.5, it is possible to restrict the type of object that can be stored in the Deque.
+ This type-safe queue can be defined as:
+
+ // Obj is the type of the object to be stored in Deque Deque<Obj> deque = new ArrayDeque<Obj> ();
+
+ Operations using the Deque Interface and the ArrayDeque class
+
+    Let’s see how to perform a few frequently used operations on the deque using the ArrayDeque class.
+
+    1. Adding Elements: In order to add an element in a deque, we can use the add() method. The difference between a queue and a deque is that in deque, the addition is possible from any direction.
+        Therefore, there are other two methods available named addFirst() and addLast() which are used to add the elements at either end.
+
+    2. Removing Elements: In order to remove an element from a deque, there are various methods available. Since we can also remove from both the ends, the deque interface provides
+       us with removeFirst(), removeLast() methods. Apart from that, this interface also provides us with the poll(), pop(), pollFirst(), pollLast() methods where pop()
+        is used to remove and return the head of the deque. However, poll() is used because this offers the same functionality as pop() and doesnt return an exception when the deque is empty.
+
+    3. Iterating through the Deque: Since a deque can be iterated from both the directions, the iterator method of the deque interface provides us two ways to iterate.
+       One from the first and the other from the back.
+
+ The class which implements the Deque interface is ArrayDeque.
+
+   ArrayDeque: ArrayDeque class which is implemented in the collection framework provides us with a way to apply resizable-array. This is a special kind of array that grows and allows
+   users to add or remove an element from both sides of the queue. Array deques have no capacity restrictions and they grow as necessary to support usage. They are not thread-safe which
+   means that in the absence of external synchronization, ArrayDeque does not support concurrent access by multiple threads. ArrayDeque class is likely to be faster than Stack when used as a stack.
+    ArrayDeque class is likely to be faster than LinkedList when used as a queue. Let’s see how to create a queue object using this class.
+
+  Methods of Deque Interface
+
+  The following are the methods present in the deque interface:
+

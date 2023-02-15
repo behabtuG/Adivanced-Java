@@ -1,0 +1,55 @@
+Looping in programming languages is a feature that facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true.
+In Java, just unlikely any programming language provides four ways for executing the loops namely while loop, for loop, for-each loop,
+do-while loop or we can call it basically three types of loops in some books as for-each loop is treated as enhanced for loop. Let us discuss for loop in details.
+
+Generally, we tend to use while loops as we do get a better understanding if we are into learning loops but after a saturation, we as programmers tend to tilt
+towards for loop as it is cleaner and foundations are carried out in a straight go for which we have to carefully grasp syntax as follows:
+
+Syntax: It consists of three parts namely as listed:
+
+    . Initialization of variables
+    . Specific condition as per requirement over which these defined variables are needed to be iterated
+    . A terminating part where we generally play with variables to reach to terminating condition state.
+
+   for(initialization; boolean expression; update statement) {
+   // Body of for loop
+  }
+
+ This is generally the basic pilgrimage structure of for loop.
+
+ Let’s look at some basic examples of using for loop and the common pitfalls in using for loop which enables us to know even
+ better as internal working will be depicted as we will be playing with codes.
+
+ Use case 1: Providing expression in for loop is a must
+
+   For loop must consist of a valid expression in the loop statement failing which can lead to an infinite loop. The statement
+
+   for ( ; ; )
+   is similar to
+   while(true)
+
+     Note: This above said is crux of advanced programming as it is origin of logic building in programming.
+
+ Use case 2: Initializing Multiple Variables
+
+    In Java, multiple variables can be initialized in the initialization block of for loop regardless of whether you use it in the loop or not.
+
+    In the above code, there is simple variation in the for loop. Two variables are declared and initialized in the initialization block.
+    The variable ‘z’ is not being used. Also, the other two components contain extra variables. So, it can be seen that the blocks may include extra variables which may not be referenced by each other.
+
+ Use case 3: Redeclaration of a Variable in the Initialization Block
+
+    Suppose, an initialization variable is already declared as an integer. Here we can not re-declare it in for loop with another data type as follows:
+
+ Use case 4: Variables declared in the initialization block must be of the same type
+
+   It is just common sense that when we declare a variable as shown below:
+
+    int x, y;
+
+   Here both variables are of the same type. It is just the same in for loop initialization block too.
+
+ Usecase 5: Variables in the loop are accessible only within
+
+    The variables that are declared in the initialization block can be accessed only within the loop as we have as per the concept of the scope of variables.
+

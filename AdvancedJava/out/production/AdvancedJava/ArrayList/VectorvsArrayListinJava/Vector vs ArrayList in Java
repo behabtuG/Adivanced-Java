@@ -1,0 +1,35 @@
+ArrayList and Vectors both implement the List interface, and both use (dynamically resizable) arrays for their internal data structure, much like using an ordinary array.
+
+Syntax:
+
+ArrayList: ArrayList<T> al = new ArrayList<T>();
+
+Vector: Vector<T> v = new Vector<T>();
+
+ArrayList Vs vector
+
+Significant Differences between ArrayList and Vector:
+
+    Synchronization: Vector is synchronized, which means only one thread at a time can access the code, while ArrayList is not synchronized, which means multiple threads can work on ArrayList at the same time.
+    For example, if one thread is performing an add operation, then there can be another thread performing a remove operation in a multithreading environment.If multiple threads access ArrayList concurrently,
+    then we must synchronize the block of the code which modifies the list structurally or allow simple element modifications. Structural modification means the addition or deletion of element(s) from the list.
+    Setting the value of an existing element is not a structural modification.
+
+    Performance: ArrayList is faster. Since it is non-synchronized, while vector operations give slower performance since they are synchronized (thread-safe), if one thread works on a vector, it has acquired a lock on it, which forces any other thread wanting to work on it to have to wait until the lock is released.
+    Data Growth: ArrayList and Vector both grow and shrink dynamically to maintain optimal use of storage – but the way they resize is different. ArrayList increments 50% of the current array size if the number of elements exceeds its capacity, while vector increments 100% – essentially doubling the current array size.
+    Traversal: Vector can use both Enumeration and Iterator for traversing over vector elements, while ArrayList can only use Iterator for traversing.
+    Applications: Most of the time, programmers prefer ArrayList over Vector because ArrayList can be synchronized explicitly using Collections.synchronizedList.
+
+  How to get Synchronized version of arraylist object:
+
+   by default arraylist is object is non-synchronized but we can get synchronized version of arraylist by using collection class Synchronized List() method.
+
+ Note: ArrayList is preferable when there is no specific requirement to use vector.
+
+ How to choose between ArrayList and Vector?
+
+     ArrayList is unsynchronized and not thread-safe, whereas Vectors are. Only one thread can call methods on a Vector, which is slightly overhead but helpful when safety is a concern. Therefore, in a single-threaded case, ArrayList is the obvious choice, but where multithreading is concerned, vectors are often preferable.
+     If we don’t know how much data we will have but know the rate at which it grows, Vector has an advantage since we can set the increment value in vectors.
+     ArrayList is newer and faster. If we don’t have any explicit requirements for using either of them, we use ArrayList over vector.
+
+ This article is contributed by Nitsdheerendra. If you like GeeksforGeeks and would like to contribute, you can also write an article using write.geeksforgeeks.org or mail your article to review-team@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks. Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above.

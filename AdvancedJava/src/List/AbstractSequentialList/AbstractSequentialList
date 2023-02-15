@@ -1,0 +1,23 @@
+The AbstractSequentialList class in Java is a part of the Java Collection Framework and implements the Collection interface and the AbstractCollection class.
+It is used to implement an unmodifiable list, for which one needs to only extend this AbstractList Class and implement only the get() and the size() methods.
+
+This class provides a skeletal implementation of the List interface to minimize the effort required to implement this interface backed by a “sequential access”
+data store (such as a linked list). For random access data (such as an array), AbstractList should be used in preference to this class.
+
+  Declaration:
+
+    public abstract class AbstractSequentialList<E>
+       extends AbstractList<E>
+
+    Where E is the type of element maintained by this List.
+
+    It implements Iterable<E>, Collection<E>, List<E> interfaces. LinkedList is the only direct subclass of AbstractSequentialList.
+
+  Constructors.Constructor: protected AbstractSequentialList() – The default constructor, but being protected, it doesn’t allow to create an AbstractSequentialList object.
+
+     AbstractSequentialList<E> asl = new LinkedList<E>();
+
+    Example 1:  AbstractSequentialList is an abstract class, so it should be assigned an instance of its subclass such as LinkedList.
+
+Methods of AbstractSequentialList
+

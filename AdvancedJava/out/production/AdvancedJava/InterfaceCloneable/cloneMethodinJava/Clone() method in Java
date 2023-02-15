@@ -1,0 +1,62 @@
+Object cloning refers to the creation of an exact copy of an object. It creates a new instance of the class of the current object and initializes all its fields with exactly the contents of the corresponding fields of this object.
+
+Using Assignment Operator to create a copy of the reference variable
+
+In Java, there is no operator to create a copy of an object. Unlike C++, in Java, if we use the assignment operator then it will create a copy of the reference variable and not the object.
+ This can be explained by taking an example. The following program demonstrates the same.
+
+ Creating a copy using the clone() method
+
+ The class whose object’s copy is to be made must have a public clone method in it or in one of its parent class.
+
+     . Every class that implements clone() should call super.clone() to obtain the cloned object reference.
+     . The class must also implement java.lang.Cloneable interface whose object clone we want to create otherwise it will throw CloneNotSupportedException when clone method is called on that class’s object.
+     . Syntax:
+       protected Object clone() throws CloneNotSupportedException
+
+     Usage of clone() method -Shallow Copy
+
+     Please Note – In the below code example the clone() method does create a completely new object with a different hashCode value, which means its in a separate memory location.
+      But due to the Test object c being inside Test2, the primitive types have achieved deep copy but this Test object c is still shared between t1 and t2.
+      To overcome that we explicitly do a deep copy for object variable c, which is discussed later.
+
+In the above example, t1.clone returns the shallow copy of the object t1. To obtain a deep copy of the object certain modifications have to be made in the clone method after obtaining the copy.
+
+Deep Copy vs Shallow Copy
+
+    Shallow copy is the method of copying an object and is followed by default in cloning. In this method, the fields of an old object X are copied to the new object Y.
+    While copying the object type field the reference is copied to Y i.e object Y will point to the same location as pointed out by X. If the field value is a primitive type it copies the value of the primitive type.
+    Therefore, any changes made in referenced objects in object X or Y will be reflected in other objects.
+
+Shallow copies are cheap and simple to make. In the above example, we created a shallow copy of the object.
+
+Usage of clone() method – Deep Copy
+
+    If we want to create a deep copy of object X and place it in a new object Y then a new copy of any referenced objects fields are created and these references are placed in object Y.
+    This means any changes made in referenced object fields in object X or Y will be reflected only in that object and not in the other. In the below example, we create a deep copy of the object.
+    A deep copy copies all fields and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+
+  In the above example, we can see that a new object for the Test class has been assigned to copy an object that will be returned to the clone method. Due to this t3 will obtain a deep copy of the object t1.
+  So any changes made in ‘c’ object fields by t3, will not be reflected in t1.
+
+  Advantages of clone method:
+
+      1. If we use the assignment operator to assign an object reference to another reference variable then it will point to the same address location of the old object and no new copy of the object will be created.
+         Due to this any changes in the reference variable will be reflected in the original object.
+      2. If we use a copy constructor, then we have to copy all the data over explicitly i.e. we have to reassign all the fields of the class in the constructor explicitly.
+         But in the clone method, this work of creating a new copy is done by the method itself. So to avoid extra processing we use object cloning.
+
+
+and
+Cloneable in Java
+
+Cloneable is an interface that is used to create the exact copy of an object. It exists in java.lang package. A class must implement the Cloneable interface if we want to create the clone of the class object.
+
+The clone() method of the Object class is used to create the clone of the object. However, if the class doesn't support the cloneable interface, then the clone() method generates the CloneNotSupportedException.
+
+The syntax of the clone() method is given below.
+
+    protected Object clone() throws CloneNotSupportedException
+
+    We can also create a copy of an object by using the new keyword, but it will take a lot of processing time. Therefore, using the clone() method is efficient for this purpose.
+    Consider the following example to create a copy of an object using the clone() method.
