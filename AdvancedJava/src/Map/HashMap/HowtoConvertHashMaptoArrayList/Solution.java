@@ -1,4 +1,4 @@
-package HashMap.HowtoConvertHashMaptoArrayList;
+package Map.HashMap.HowtoConvertHashMaptoArrayList;
 
 import java.util.*;
 import java.util.stream.*;

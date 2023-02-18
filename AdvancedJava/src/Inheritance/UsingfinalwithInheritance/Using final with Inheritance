@@ -1,0 +1,54 @@
+Prerequisite – Overriding in java, Inheritance
+final is a keyword in java used for restricting some functionalities. We can declare variables, methods, and classes with the final
+keyword.
+
+  Using final with inheritance
+      During inheritance, we must declare methods with the final keyword for which we are required to follow the same implementation
+      throughout all the derived classes. Note that it is not necessary to declare final methods in the initial stage of inheritance
+      (base class always). We can declare a final method in any subclass for which we want that if any other class extends this
+      subclass, then it must follow the same implementation of the method as in that subclass.
+
+  Using final to Prevent Inheritance
+
+     When a class is declared as final then it cannot be subclassed i.e. no other class can extend it. This is particularly useful,
+     for example, when creating an immutable class like the predefined String class. The following fragment illustrates the final
+     keyword with a class:
+     final class A
+      {
+        // methods and fields
+      }
+     // The following class is illegal.
+     class B extends A
+      {
+       // ERROR! Can't subclass A
+      }
+      Note :
+
+        . Declaring a class as final implicitly declares all of its methods as final, too.
+        . It is illegal to declare a class as both abstract and final since an abstract class is incomplete by itself and relies upon
+        its subclasses to provide complete implementations. For more on abstract classes, refer abstract classes in java
+
+  Using final to Prevent Overriding
+
+      When a method is declared as final then it cannot be overridden by subclasses. The Object class does this—a number of its
+      methods are final. The following fragment illustrates the final keyword with a method:
+
+       class A
+       {
+           final void m1()
+           {
+               System.out.println("This is a final method.");
+           }
+       }
+
+       class B extends A
+       {
+           void m1()
+           {
+               // ERROR! Can't override.
+               System.out.println("Illegal!");
+           }
+       }
+
+     Normally, Java resolves calls to methods dynamically, at run time. This is called late or dynamic binding. However, since final
+     methods cannot be overridden, a call to one can be resolved at compile time. This is called early or static binding.

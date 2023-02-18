@@ -1,4 +1,4 @@
-package TreeMap;
+package Map.TreeMap;
 
 // Java Program to Demonstrate TreeMap using Comparator Constructors.Constructor
 // Class 1 Helper class representing Student

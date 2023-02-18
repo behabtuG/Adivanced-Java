@@ -1,0 +1,42 @@
+There are certain key points that are needed to be remembered before adhering forward where we will be discussing and implementing
+static and dynamic bindings in Java later concluding out the differences.
+
+  . private, final and static members (methods and variables) use static binding while for virtual methods (In Java methods are
+       virtual by default) binding is done during run time based upon the run time object.
+  . The static binding uses Type information for binding while Dynamic binding uses Objects to resolve to bind.
+  . Overloaded methods are resolved (deciding which method to be called when there are multiple methods with the same name) using
+      static binding while overridden methods use dynamic binding, i.e, at run time.
+
+   Static Binding
+       The binding which can be resolved at compile time by the compiler is known as static or early binding. The binding of all the
+       static, private, and final methods is done at compile-time.
+
+       NewClass class example
+
+     Output Explanation: As you can see, in both cases the print method of the superclass is called. Let us discuss how this happens
+
+         We have created one object of subclass and one object of the superclass with the reference of the superclass.
+         Since the print method of the superclass is static, the compiler knows that it will not be overridden in subclasses and
+         hence compiler knows during compile time which print method to call and hence no ambiguity.
+
+     As an exercise, the reader can change the reference of object B to subclass and then check the output.
+
+   Dynamic Binding
+     In Dynamic binding compiler does’t decide the method to be called. Overriding is a perfect example of dynamic binding.
+     In overriding both parent and child classes have the same method.
+
+        GFG Class example
+     Output Explanation: Here the output differs. But why? Let’s break down the code and understand it thoroughly.
+
+       . Methods are not static in this code.
+       . During compilation, the compiler has no idea as to which print has to be called since the compiler goes only by referencing
+         variable not by the type of object, and therefore the binding would be delayed to runtime and therefore the corresponding
+         version of the print will be called based on type on an object.
+
+     TIPS
+      the question arises why binding of static, final, and private methods is always static binding?
+       Static binding is better performance-wise (no extra overhead is required). The compiler knows that all such methods cannot
+       be overridden and will always be accessed by objects of the local class. Hence compiler doesn’t have any difficulty
+       determining the object of the class (local class for sure). That’s the reason binding for such methods is static.
+
+       

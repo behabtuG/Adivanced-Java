@@ -1,0 +1,10 @@
+Binding refers to the process of converting identifiers (such as variable and performance names) into addresses. Binding is done for
+each variable and functions. For functions, it means that matching the call with the right function definition by the compiler.
+It takes place either at compile time or at runtime.
+
+In programming and software design, binding is an application programming interface (API) that provides glue code specifically made
+to allow a programming language to use a foreign library or operating system service (one that is not native to that language).
+
+Implementing dynamic binding in java by extending the class and overriding it. Explanation : The parent class bird has a method to
+eat, which prints the bird is eating. The subclass of bird, peacock, extends the parent class bird and overrides the method eat by
+printing"peacock is eating".

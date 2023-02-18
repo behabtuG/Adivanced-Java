@@ -1,4 +1,4 @@
-package HashMap.DifferencesbetweenHashMapandHashTable;
+package Map.HashMap.DifferencesbetweenHashMapandHashTable;
 
 import java.util.HashMap;
 import java.util.Hashtable;
