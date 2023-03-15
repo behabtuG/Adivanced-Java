@@ -70,7 +70,7 @@ Performing Various Operations on HashMap
 
 Important Features of HashMap
 
-To access a value one must know its key. HashMap is known as HashMap because it uses a technique called Hashings.Hashing. Hashings.Hashing is a technique of converting a large String to small String that represents the same String.
+To access a value one must know its key. HashMap is known as HashMap because it uses a technique called Hashings.Hashing. Hashings.Hashing is a technique of converting a large Strings to small Strings that represents the same Strings.
 A shorter value helps in indexing and faster searches. HashSet also uses HashMap internally.
 
 Few important features of HashMap are:

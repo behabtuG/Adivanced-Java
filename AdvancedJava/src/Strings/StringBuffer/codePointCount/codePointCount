@@ -1,0 +1,26 @@
+The codePointCount() method of StringBuffer class is used to return the number of Unicode code points in the specified range of
+beginIndex to endIndex of String contained by StringBuffer. This method takes beginIndex and endIndex as a parameter where
+beginIndex is the index of the first character of the text range and endIndex is index after the last character of the text range.
+The indexes refer to char values (Unicode code units) and the value of index must be lie between 0 to length-1. The range starts
+at the beginIndex and end at the char at index endIndex – 1. Thus the length (in chars) of the text range is endIndex-beginIndex.
+
+Syntax:
+
+public int codePointCount(int beginIndex,
+                               int endIndex)
+
+Parameters: This method takes two parameters:
+
+    beginIndex: int value representing index of the first character of the text range.
+    endIndex: int value representing index after the last character of the text range.
+
+Return Value: This method returns int value representing the number of Unicode code points in the specified text range.
+
+Exception: This method throws IndexOutOfBoundsException if:
+
+    the beginIndex is less than zero,
+    or endIndex is larger than the length of String,
+    or beginIndex is larger than endIndex.
+
+Below programs illustrate the StringBuffer.codePointCount() method:
+

@@ -112,7 +112,7 @@ These are used to cause the flow of execution to advance and branch based on cha
        statementDefault;
    }
 
-     . The expression can be of type byte, short, int char, or an enumeration. Beginning with JDK7, expression can also be of type String.
+     . The expression can be of type byte, short, int char, or an enumeration. Beginning with JDK7, expression can also be of type Strings.
      . Duplicate case values are not allowed.
      . The default statement is optional.
      . The break statement is used inside the switch to terminate a statement sequence.

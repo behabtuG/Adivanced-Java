@@ -1,0 +1,43 @@
+Pre-requisite: StringBuffer class in Java
+The java.lang.StringBuffer.append() method is used to append the string representation of some argument to the sequence. There are
+13 ways/forms in which the append() method can be used:
+
+  1.StringBuffer append(boolean a) :The java.lang.StringBuffer.append(boolean a) is an inbuilt method in Java which is used to
+    append the string representation of the boolean argument to a given sequence.
+
+    Syntax :
+
+      public StringBuffer append(boolean a)
+
+    Parameter : This method accepts a single parameter a of boolean type and refers to the Boolean value to be appended.
+
+      Return Value : The method returns a reference to this object.
+
+      Examples:
+
+      Input:
+      string_buffer = "I love my Country"
+      boolean a = true
+
+      Output: I love my Country true
+
+      Below program illustrates the java.lang.StringBuffer.append() method:
+
+ 2. java.lang.StringBuffer.append(char a) : This is an inbuilt method that appends the string representation of the char argument to the given sequence. The char argument is appended to the contents of this StringBuffer sequence.
+
+    Syntax :
+
+      public StringBuffer append(char a)
+
+    Parameter : The method accepts a single parameter a which is the Char value whose string representation is to be appended.
+
+    Return Value: The method returns a string object after the append operation is performed.
+    Examples :
+
+    Input :
+    StringBuffer = I love my Country
+    char a = A
+
+    Output: I love my Country A
+
+    Below programs illustrate the java.lang.StringBuffer.append(char a) method.

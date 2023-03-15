@@ -1,0 +1,65 @@
+Prerequisite: Multithreading in Java, Synchronized in Java
+
+Inter-thread communication in Java is a mechanism in which a thread is paused running in its critical section and another thread is allowed
+to enter (or lock) in the same critical section to be executed.
+
+    Note: Inter-thread communication is also known as Cooperation in Java.
+
+ What is Polling, and what are the problems with it?
+
+   The process of testing a condition repeatedly till it becomes true is known as polling. Polling is usually implemented with the help of
+   loops to check whether a particular condition is true or not. If it is true, a certain action is taken. This wastes many CPU cycles and
+   makes the implementation inefficient.
+
+   For example, in a classic queuing problem where one thread is producing data, and the other is consuming it.
+
+ How Java multi-threading tackles this problem?
+   To avoid polling, Java uses three methods, namely, wait(), notify(), and notifyAll(). All these methods belong to object class as final
+   so that all classes have them. They must be used within a synchronized block only.
+
+     . wait(): It tells the calling thread to give up the lock and go to sleep until some other thread enters the same monitor and calls
+       notify().
+     . notify(): It wakes up one single thread called wait() on the same object. It should be noted that calling notify() does not give up
+       a lock on a resource.
+     . notifyAll(): It wakes up all the threads called wait() on the same object.
+
+ Example:
+
+   1. A simple Java program to demonstrate the three methods. Please note that this program might only run in offline IDEs as it contains
+   2. taking input at several points.
+
+ Explanation:
+
+   As monstrous as it seems, it is a piece of cake if you go through it twice.
+
+     In the main class, a new PC object is created.
+     It runs produce and consume methods of PC objects using two different threads, namely t1 and t2, and waits for these threads to finish.
+
+   Let’s understand how our produce and consume method works.
+
+    . First of all, the use of a synchronized block ensures that only one thread at a time runs. Also, since there is a sleep method just
+      at the beginning of consume loop, the producing thread gets a kickstart.
+    . When the wait is called in produce method, it does two things. Firstly it releases the lock it holds on the PC object. Secondly,
+      it makes the produce thread go on a waiting state until all other threads have terminated. It can again acquire a lock on a PC object,
+      and some other method wakes it up by invoking notify or notifyAll on the same object.
+     . Therefore we see that as soon as the wait is called, the control transfers to consume thread, and it prints -“Waiting for return key.”
+     . After we press the return key, consume method invokes notify(). It also does two things- Firstly, unlike wait(), it does not release
+       the lock on shared resources therefore for getting the desired result, it is advised to use notify only at the end of your method.
+       Secondly, it notifies the waiting threads that they can now wake up but only after the current method terminates.
+     . As you might have observed that even after notifying, the control does not immediately pass over to the produce thread. The reason
+       for it is that we have called Thread.sleep() after notify(). We already know that the consume thread is holding a lock on a PC object.
+       Another thread cannot access it until it has released the lock. Hence only after the consume thread finishes its sleep time and after
+       that terminates by itself, the produce thread cannot take back the control.
+     . After a 2 second pause, the program terminates to its completion.
+
+   If you are still confused as to why we have used notify in consume thread, try removing it and running your program again, as you must
+   have noticed now that the program never terminates.
+
+   The reason for this is straightforward. When you called to wait on the produce thread, it went on waiting and never terminated. Since a
+   program runs till all its threads have terminated, it runs on and on.
+
+   There is a second way around this problem. You can use a second variant of wait().
+
+    void wait(long timeout)
+
+   This would make the calling thread sleep only for a time specified.

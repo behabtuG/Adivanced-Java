@@ -1,0 +1,34 @@
+In computer programming, compile time and run time refer to different phases of program execution.
+
+Compile time refers to the period during which a program is being translated from human-readable source code into machine-readable
+instructions that can be executed by the computer. During compile time, the source code is processed by a compiler program, which
+ checks the code for syntax and semantic errors, and generates object code or executable code that can be executed later.
+ Compile time is typically a one-time process that occurs before the program is run.
+
+Run time, on the other hand, refers to the period during which a program is actually executing on the computer. During run time,
+the program reads in input data, processes it according to the instructions in the code, and produces output. Run time can be
+influenced by many factors, including the speed of the processor, the amount of available memory, and the complexity of the program
+ logic.
+
+In summary, compile time refers to the process of translating source code into executable code, while run time refers to the actual
+execution of the program on the computer.
+
+The word polymorphism means having many forms. In simple words, we can define polymorphism as the ability of a message to be
+displayed in more than one form. In this article, we will see the difference between two types of polymorphisms, compile time and
+run time.
+
+ Compile Time Polymorphisms: Whenever an object is bound with its functionality at the compile time, this is known as the compile-time
+   polymorphism. At compile-time, java knows which method to call by checking the method signatures. So this is called compile-time
+   polymorphism or static or early binding. Compile-time polymorphism is achieved through method overloading. Method Overloading says
+   you can have more than one function with the same name in one class having a different prototype. Function overloading is one of
+   the ways to achieve polymorphism but it depends on technology and which type of polymorphism we adopt. In java, we achieve
+   function overloading at compile-Time. The following is an example where compile-time polymorphism can be observed.
+
+ Run-Time Polymorphisms: Whenever an object is bound with the functionality at run time, this is known as runtime polymorphism.
+     The runtime polymorphism can be achieved by method overriding. Java virtual machine determines the proper method to call at
+     the runtime, not at the compile time. It is also called dynamic or late binding. Method overriding says the child class has the
+     same method as declared in the parent class. It means if the child class provides the specific implementation of the method that
+     has been provided by one of its parent classes then it is known as method overriding. The following is an example where runtime
+     polymorphism can be observed.
+
+ The following table demonstrates the difference between runtime polymorphism and compile-time polymorphism:

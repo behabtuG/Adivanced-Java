@@ -1,0 +1,65 @@
+Although Java is strictly passed by value, the precise effect differs between whether a primitive type or a reference type is passed.
+When we pass a primitive type to a method, it is passed by value. But when we pass an object to a method, the situation changes
+dramatically, because objects are passed by what is effectively call-by-reference. Java does this interesting thing that’s sort of a hybrid
+between pass-by-value and pass-by-reference.
+Basically, a parameter cannot be changed by the function, but the function can ask the parameter to change itself via calling some method
+within it.
+
+  . While creating a variable of a class type, we only create a reference to an object. Thus, when we pass this reference to a method, the
+    parameter that receives it will refer to the same object as that referred to by the argument.
+  . This effectively means that objects act as if they are passed to methods by use of call-by-reference.
+  . Changes to the object inside the method do reflect the object used as an argument.
+
+   Illustration: Let us suppose three objects ‘ob1’ , ‘ob2’ and ‘ob3’ are created:
+
+     ObjectPassDemo ob1 = new ObjectPassDemo(100, 22);
+     ObjectPassDemo ob2 = new ObjectPassDemo(100, 22);
+     ObjectPassDemo ob3 = new ObjectPassDemo(-1, -1);
+
+     look image one
+
+   From the method side, a reference of type Foo with a name a is declared and it’s initially assigned to null.
+
+     boolean equalTo(ObjectPassDemo o);
+
+    look image two
+
+   As we call the method equalTo, the reference ‘o’ will be assigned to the object which is passed as an argument, i.e. ‘o’ will refer to
+     ‘ob2’ as the following statement execute.
+
+     System.out.println("ob1 == ob2: " + ob1.equalTo(ob2));
+
+     look image three
+
+   Now as we can see, equalTo method is called on ‘ob1’ , and ‘o’ is referring to ‘ob2’. Since values of ‘a’ and ‘b’ are same for both the
+     references, so if(condition) is true, so boolean true will be return.
+
+     if(o.a == a && o.b == b)
+
+    Again ‘o’ will reassign to ‘ob3’ as the following statement execute.
+
+    System.out.println("ob1 == ob3: " + ob1.equalTo(ob3));
+
+     look image 4
+
+   . Now as we can see, the equalTo method is called on ‘ob1’ , and ‘o’ is referring to ‘ob3’. Since values of ‘a’ and ‘b’ are not the same
+     for both the references, so if(condition) is false, so else block will execute, and false will be returned.
+
+     In Java we can pass objects to methods as one can perceive from the below program as follows:
+
+   Defining a constructor that takes an object of its class as a parameter
+
+      One of the most common uses of object parameters involves constructors. Frequently, in practice, there is a need to construct a new
+      object so that it is initially the same as some existing object. To do this, either we can use Object.clone() method or define a
+      constructor that takes an object of its class as a parameter.
+
+   Returning Objects
+
+     In java, a method can return any type of data, including objects. For example, in the following program, the incrByTen( ) method
+     returns an object in which the value of an (an integer variable) is ten greater than it is in the invoking object.
+
+      ObjectReturnDemo class example
+
+   Note: When an object reference is passed to a method, the reference itself is passed by use of call-by-value. However, since the value
+   being passed refers to an object, the copy of that value will still refer to the same object that its corresponding argument does.
+   That’s why we said that java is strictly pass-by-value.

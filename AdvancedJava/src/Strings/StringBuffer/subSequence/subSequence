@@ -1,0 +1,22 @@
+The subSequence(int start, int end) method of StringBuffer class is the inbuilt method used to return a subsequence of characters
+lie between index start and end-1 of this sequence. The subsequence starts with the char value at the index start and ends with the
+ char value at (end-1). The length of the returned subsequence is end-start. So if start is equal to end then an empty subsequence
+ is returned.
+
+  Syntax:
+
+    public CharSequence subSequence?(int start, int end)
+
+   Parameters:
+    This method accepts two parameters:
+
+    1. start which is Integer type value refers to the start index of subsequence.
+    2. end which is Integer type value refers to the last index of subsequence.
+
+  Returns:
+  This method returns the specified subsequence in range start to end-1.
+  Exception:
+  if start or end are negative, if end is greater than length(), or if start is greater than end then IndexOutOfBoundsException is
+  thrown.
+  Below programs illustrate the java.lang.StringBuffer.subSequence() method:
+  Example 1:

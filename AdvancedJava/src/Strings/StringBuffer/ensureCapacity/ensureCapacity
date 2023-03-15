@@ -1,0 +1,15 @@
+The ensureCapacity() method of StringBuffer class ensures the capacity to at least equal to the specified minimumCapacity.
+
+   . If the current capacity of StringBuffer < the argument minimumCapacity, then a new internal array is allocated with greater
+     capacity.
+   . If the minimumCapacity argument > twice the old capacity, plus 2 then new capacity is equal to minimumCapacity else new capacity
+     is equal to twice the old capacity, plus 2.
+   . If the minimumCapacity argument passed as parameter < 0, this method takes no action.
+
+   Syntax:
+
+     public void ensureCapacity(int minimumCapacity)
+
+   Parameters: This method takes one parameter minimumCapacity which is the minimum desired capacity.
+      Return Value: This method do not return anything.
+      Below programs demonstrate the ensureCapacity() method of StringBuffer Class Example 1:

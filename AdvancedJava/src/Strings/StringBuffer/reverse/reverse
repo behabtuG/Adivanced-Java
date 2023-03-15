@@ -1,0 +1,22 @@
+The Java.lang.StringBuffer.reverse() is an inbuilt method that is used to reverse the characters in the StringBuffer. The method
+causes this character sequence to be replaced by the reverse of the sequence.
+
+  Syntax:
+
+    public StringBuffer reverse()
+
+Parameters: NA
+
+Return Value: The method returns the StringBuffer after reversing the characters.
+
+  Examples:
+
+  Input: StringBuffer = GeeksforGeeks!
+  Output = !skeegrofskeeG
+
+  Input: StringBuffer = Hello World!
+  Output = !dlroW olleH
+
+  Below are programs that illustrate the java.lang.StringBuffer.reverse() method:
+
+  Program 1:

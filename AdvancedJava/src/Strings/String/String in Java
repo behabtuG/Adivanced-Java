@@ -1,0 +1,145 @@
+In the given example only one object will be created. Firstly JVM will not find any string object with the value “Welcome” in the
+string constant pool, so it will create a new object. After that it will find the string with the value “Welcome” in the pool, it
+will not create a new object but will return the reference to the same instance.
+
+Note: Strings objects are stored in a special memory area known as string constant pool.
+
+ Why Java uses the concept of string literal?
+
+ To make Java more memory efficient (because no new objects are created if it exists already in the string constant pool).
+ Using new keyword
+
+     Strings s = new Strings(“Welcome”);
+     In such a case, JVM will create a new string object in normal (non-pool) heap memory and the literal “Welcome” will be placed
+     in the string constant pool. The variable s will refer to the object in the heap (non-pool).
+
+ Syntax:
+
+ <String_Type> <string_variable> = "<sequence_of_string>";
+
+ Example:
+
+ Strings str = "Geeks";
+
+ Memory allotment of Strings
+
+   Whenever a Strings Object is created as a literal, the object will be created in the Strings constant pool. This allows JVM to
+   optimize the initialization of Strings literal.
+
+   Example:
+
+     Strings str = "Geeks";
+
+  The string can also be declared using a new operator i.e. dynamically allocated. In case of Strings are dynamically allocated they
+  are assigned a new memory location in the heap. This string will not be added to Strings constant pool.
+
+    Example:
+
+      Strings str = new Strings("Geeks");
+
+   If you want to store this string in the constant pool then you will need to “intern” it.
+
+   Example:
+
+     Strings internedString = str.intern();
+     // this will add the string to string constant pool.
+
+   It is preferred to use Strings literals as it allows JVM to optimize memory allocation.
+
+   An example that shows how to declare a Strings
+
+ Interfaces and Classes in Strings in Java
+
+   . CharBuffer: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place
+          of CharSequences. An example of such usage is the regular-expression package java.util.regex.
+
+   . Strings: It is a sequence of characters. In java, objects of Strings are immutable which means a constant and cannot be changed
+      once created.
+      Ways of Creating a Strings
+
+       There are two ways to create a string in Java:
+
+       Strings Literal
+       Using new Keyword
+
+      Strings literal
+
+       Strings s = “GeeksforGeeks”;
+
+       Using new keyword
+
+       Strings s = new Strings (“GeeksforGeeks”);
+
+   . StringBuffer is a peer class of Strings that provides much of the functionality of strings. The string represents fixed-length,
+      immutable character sequences while StringBuffer represents growable and writable character sequences.
+
+      Syntax:
+
+        StringBuffer s = new StringBuffer("GeeksforGeeks");
+
+   . StringBuilder in Java represents a mutable sequence of characters. Since the Strings Class in Java creates an immutable sequence
+     of characters, the StringBuilder class provides an alternative to Strings Class, as it creates a mutable sequence of characters.
+
+      Syntax:
+
+        StringBuilder str = new StringBuilder();
+        str.append("GFG");
+
+   . StringTokenizer class in Java is used to break a string into tokens.
+      A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance
+      this current position past the characters processed. A token is returned by taking a substring of the string that was used to
+       create the StringTokenizer object.
+
+   . StringJoiner is a class in java.util package which is used to construct a sequence of characters(strings) separated by a
+      delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the
+      help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much
+      code to write.
+
+      Syntax:
+
+      public StringJoiner(CharSequence delimiter)
+
+      Above we saw we can create a string by  Strings Literal.
+
+          For ex- // Strings s=”Welcome”;
+
+      Here the JVM checks the Strings Constant Pool. If the string does not exist, then a new string instance is created and placed
+      in a pool. If the string exists, then it will not create a new object. Rather, it will return the reference to the same
+      instance. The cache that stores these string instances is known as the Strings Constant pool or Strings Pool. In earlier
+      versions of Java up to JDK 6 Strings pool was located inside PermGen(Permanent Generation) space. But in JDK 7 it is moved
+      to the main heap area.
+
+   Why did the Strings pool move from PermGen to the normal heap area?
+
+     PermGen space is limited, the default size is just 64 MB. it was a problem with creating and storing too many string objects
+     in PermGen space. That’s why the Strings pool was moved to a larger heap area. To make Java more memory efficient, the concept
+     of string literal is used. By the use of the ‘new’ keyword, The JVM will create a new string object in the normal heap area
+     even if the same string object is present in the string pool.
+
+     For example:
+
+         Strings a=new Strings(“Bhubaneswar”)
+
+     Let us have a look at the concept with a java program and visualize the actual JVM memory structure:
+
+    Note: All objects in Java are stored in a heap. The reference variable is to the object stored in the stack area or they can be
+          contained in other objects which puts them in the heap area also.
+
+   Immutable String in Java
+
+     . In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable.
+     . Once a string object is created its data or state can’t be changed but a new string object is created.
+
+      GFG2 class Example
+
+    Here Behabtu is not changed but a new object is created with “Behabtu Kidest”. That is why a string is known as immutable.
+
+    As you can see in the given figure that two objects are created but s reference variable still refers to “Behabtu” and not to
+     “Behabtu Kidest”.
+    But if we explicitly assign it to the reference variable, it will refer to the “Behabtu Kidest” object.
+
+   Why string objects are immutable in java?
+
+       Because java uses the concept of string literal. Suppose there are 5 reference variables, all refers to one object “Behabtu”.
+       If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why
+       string objects are immutable in java.

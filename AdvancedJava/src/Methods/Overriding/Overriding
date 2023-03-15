@@ -3,7 +3,7 @@ In any object-oriented programming language, Methods.Overriding is a feature tha
  or signature, and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in
  the super-class.
 
- Method overriding is one of the way by which java achieve Run Time Polymorphism.The version of a method that is executed will be determined by the
+ Method overriding is one of the way by which java achieve Run Time Polymorphisms.The version of a method that is executed will be determined by the
   object that is used to invoke it. If an object of a parent class is used to invoke the method, then the version in the parent class will be
   executed, but if an object of the subclass is used to invoke the method, then the version in the child class will be executed. In other words,
   it is the type of the object being referred to (not the type of the reference variable) that determines which version of an overridden method
@@ -50,7 +50,7 @@ In any object-oriented programming language, Methods.Overriding is a feature tha
 
      Note :
 
-         1. In C++, we need virtual keyword to achieve overriding or Run Time Polymorphism. In Java, methods are virtual by default.
+         1. In C++, we need virtual keyword to achieve overriding or Run Time Polymorphisms. In Java, methods are virtual by default.
          2. We can have multilevel method-overriding.
          3.Overriding vs Overloading :
            1. Overloading is about same method have different signatures. Overriding is about same method, same signature but different classes
@@ -59,7 +59,7 @@ In any object-oriented programming language, Methods.Overriding is a feature tha
 
   Why Method Overriding ?
 
-     As stated earlier, overridden methods allow Java to support run-time polymorphism. Polymorphism is essential to object-oriented programming
+     As stated earlier, overridden methods allow Java to support run-time polymorphism. Polymorphisms is essential to object-oriented programming
       for one reason: it allows a general class to specify methods that will be common to all of its derivatives while allowing subclasses to
       define the specific implementation of some or all of those methods. Overridden methods are another way that Java implements the “one
       interface, multiple methods” aspect of polymorphism.

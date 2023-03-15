@@ -138,6 +138,6 @@ Advantages of the Collection Framework: Since the lack of a collection framework
     Where T is the type of the object.
 
     The frequently used implementation of a Map interface is a HashMap.
-    HashMap: HashMap provides the basic implementation of the Map interface of Java. It stores the data in (Key, Value) pairs. To access a value in a HashMap, we must know its key. HashMap uses a technique called Hashing. Hashing is a technique of converting a large String to a small String that represents
-      the same String so that the indexing and search operations are faster. HashSet also uses HashMap internally. Let’s understand the HashMap with an example:
+    HashMap: HashMap provides the basic implementation of the Map interface of Java. It stores the data in (Key, Value) pairs. To access a value in a HashMap, we must know its key. HashMap uses a technique called Hashing. Hashing is a technique of converting a large Strings to a small Strings that represents
+      the same Strings so that the indexing and search operations are faster. HashSet also uses HashMap internally. Let’s understand the HashMap with an example:
 

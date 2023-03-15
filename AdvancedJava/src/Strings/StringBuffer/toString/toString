@@ -1,0 +1,13 @@
+The toString() method of StringBuffer class is the inbuilt method used to returns a string representing the data contained by
+ StringBuffer Object. A new String object is created and initialized to get the character sequence from this StringBuffer object
+ and then String is returned by toString(). Subsequent changes to this sequence contained by Object do not affect the contents of
+ the String.
+
+  Syntax:
+
+     public abstract String toString()
+
+ Return Value: This method returns the String representing the data contained by StringBuffer Object.
+
+ Below programs illustrate the StringBuffer.toString() method:
+

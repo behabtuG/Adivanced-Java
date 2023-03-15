@@ -1,0 +1,63 @@
+ Compile-Time Resolution of Strings:
+   When Strings are created with the help of Strings literals and ‘+’ operator, they get concatenated at compile time. This is
+   referred to as Compile-Time Resolution of Strings. Compiler eliminates the concatenation operator and optimizes the string.
+
+  Example:
+
+  Consider the below code:
+   Strings str = "Geeks "
+              + "for"
+              + "Geeks";
+
+  The above code gets optimized at by the Compiler through Compile-Time Resolution of Strings as:
+
+  Strings str = "GeeksforGeeks";
+
+ RunTime Resolution of Strings:
+
+   When Strings are created with the help of Strings literals along with variables and ‘+’ operator, they get concatenated at runtime
+   only, as the value of the variables cannot be predicted beforehand. This is referred to as the RunTime Resolution of Strings.
+
+ Example:
+
+ Consider the below code:
+
+  Strings str = "Geeks " + var + "Geeks";
+
+ The above code cannot be optimized at by the Compiler at Compile-Time as the value of variable ‘var’ is unknown. Hence RunTime
+  Resolution of Strings occurs here.
+
+ Different scenarios and identifying the type of resolution:
+
+   1. Suppose the Strings is defined using a StringBuffer:
+
+      Strings str = (new StringBuffer())
+                      .append("Geeks")
+                      .append("for")
+                      .append("Geeks")
+                      .toString();
+
+     Type of Strings Resolution: Run-Time Resolution of Strings
+
+     Here the compiler cannot resolve at compile time because object creation is a runtime activity. Hence the above string will be resolved at run-time.
+     Suppose the Strings is defined using a StringBuffer:
+
+     Strings str = "Geeks"
+                  + " "
+                  + "for"
+                  + " "
+                  + "Geeks";
+
+     Type of Strings Resolution: Compile-Time Resolution of Strings
+
+     Here the compiler can resolve at compile time because given Strings are Strings Literals. Hence the above string will be resolved at compile-time.
+     Suppose the Strings is defined in a return statement:
+
+     public static Strings func(Strings var)
+     {
+         return "Geeks" + var + "Geeks";
+     }
+
+     Type of Strings Resolution: Run-Time Resolution of Strings
+
+     Here the compiler cannot resolve at compile time because the value of the variable ‘var’ is a runtime activity. Hence the above string will be resolved at run-time.

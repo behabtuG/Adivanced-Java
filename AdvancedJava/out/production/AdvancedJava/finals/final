@@ -90,7 +90,7 @@ final array or final collection. It is good practice to represent final variable
          {
              // COMPILE-ERROR! Can't subclass A
          }
-    Usage 2: The other use of final with classes is to create an immutable class like the predefined String class. One can not make a class
+    Usage 2: The other use of final with classes is to create an immutable class like the predefined Strings class. One can not make a class
              immutable without making it final.
 
   Final Methods

@@ -1,0 +1,40 @@
+  In StringBuffer class, there are two types of indexOf() method depending upon the parameters passed to it.
+
+ indexOf(String str)
+
+   The indexOf(String str) method of StringBuffer class is used to return the index of the String for first occurrence of passed
+   substring as parameter from the sequence contained by this object. If substring str is not present then -1 is returned in place
+   of index.
+
+  Syntax:
+
+    public int indexOf(String str)
+
+  Parameters: This method accepts str which is substring type value refers to the String whose index we want to get.
+  Return Value: This method returns the index of the first occurrence of the passed substring, or -1 if there is no such substring
+   present.
+
+   Below programs illustrate the StringBuffer.indexOf() method:
+
+   Example 1: when passed substring is present in the sequence.
+
+ indexOf(String str, int fromIndex):
+
+   The indexOf(String str, int fromIndex) method of StringBuffer class is used to return the index within the String for first
+   occurrence of passed substring starting from the specified index ‘fromIndex’. If substring str is not present then -1 is returned.
+    fromIndex is Integer type value refers to the index of the start of the search. If string present before the index of the start
+    of search but not after then -1 will return.
+
+     Syntax:
+
+       public int indexOf(String str, int fromIndex)
+
+     Parameters: This method accepts two one parameters str which is String type value refers to the String whose index we want to
+      get and fromIndex which is Integer type value refers to the index from which to start the search.
+
+     Returns: This method returns the index of the first occurrence of the passed substring starting at the specified index, or -1
+      if there is no such substring present.
+
+     Below programs illustrate the StringBuffer.indexOf() method:
+
+     Example 1: when passed substring is present in the sequence.

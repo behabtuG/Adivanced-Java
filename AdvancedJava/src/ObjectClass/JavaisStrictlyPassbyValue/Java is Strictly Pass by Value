@@ -1,0 +1,33 @@
+In order to understand more of how the java is processing the parameter in methods and functions, lets compare the java program with a
+C++ code which would make it more clear and helps you get the major difference between how the parameters are being passed to any methods
+or functions wrt passing parameters by value and with reference and it is the reason why Java is Strictly Pass by Value!.
+From the above examples of  C++ and Java programs, the parameters x and y are taking the copies of the value of a and b and performing the
+operation based on the copied values passed to the methods. As in all high language when ever a method or function is being parameterized
+they will only pass the values as copies to the methods or functions. Pointers are the efficient way of passing the parameters by reference
+and hence the values of the parameters are mutable as the operation being performed is on the address( memory location of variable ) rather
+than the value of variable.
+
+Hence Java does not have pointers because it is a vulnerability of accessing the addresses directly and leads to major security issues and
+these are some of the reasons why it is considered as more secure.
+
+Consider the following Java program that passes a primitive type to function.
+
+  Main class example
+
+ We pass an int to the function “change()” and as a result the change in the value of that integer is not reflected in the main method.
+ Like C/C++, Java creates a copy of the variable being passed in the method and then do the manipulations. Hence the change is not reflected
+ in the main method.
+
+ How about objects or references?
+
+ In Java, all primitives like int, char, etc are similar to C/C++, but all non-primitives (or objects of any class) are always references.
+ So it gets tricky when we pass object references to methods. Java creates a copy of references and pass it to method, but they still point
+ to same memory reference. Mean if set some other reference to object passed inside method, the object from calling method as well its
+ reference will remain unaffected. The changes are not reflected back if we change the object itself to refer some other location or object
+ If we assign reference to some other location, then changes are not reflected back in main().
+
+  Test class example
+
+Changes are reflected back if we do not assign reference to a new location or object: If we do not change the reference to refer some other
+object (or memory location), we can make changes to the members and these changes are reflected back.
+

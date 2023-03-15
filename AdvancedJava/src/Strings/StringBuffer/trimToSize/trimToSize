@@ -1,0 +1,13 @@
+The trimToSize() method of StringBuffer class is the inbuilt method used to trims the capacity used for the character sequence of
+StringBuffer object. If the buffer used by StringBuffer object is larger than necessary to hold its current sequence of characters,
+then this method is called to resize the StringBuffer object for converting this object to more space efficient. Calling this method
+may, but is not required to, affect the value returned by a subsequent call to the capacity() method.
+
+   Syntax:
+
+     public void trimToSize()
+
+  Returns: This method does not return anything.
+
+  Below programs illustrate the StringBuffer.trimToSize() method:
+

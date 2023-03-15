@@ -20,7 +20,7 @@ to cast our lambda to java.io.Serializable. But the submit method requires a Run
 
     Example
 
-    MapView userMap = Chassis.acquireMap("users", String.class, UserInfo.class);
+    MapView userMap = Chassis.acquireMap("users", Strings.class, UserInfo.class);
     userMap.put("userid", new UserInfo("User's Name"));
 
     // Print out changes
@@ -28,7 +28,7 @@ to cast our lambda to java.io.Serializable. But the submit method requires a Run
 
 
     // Obtain just the fullName without downloading the whole object
-    String name= userMap.applyToKey("userid", u -> u.fullName);
+    Strings name= userMap.applyToKey("userid", u -> u.fullName);
 
 
 
@@ -48,7 +48,7 @@ to cast our lambda to java.io.Serializable. But the submit method requires a Run
     ui -> ui.usageCounter);
 
     SerializedLambda class is used by compilers and libraries to ensure that lambdas deserialize correctly. Making the intersection cast of
-    Function<String, String> & Serializable changes the underlying type of the lambda, allowing a library like Kryo to properly understand
+    Function<Strings, Strings> & Serializable changes the underlying type of the lambda, allowing a library like Kryo to properly understand
     how to deserialize lambdas given to it.
 
     Adding this extra casting of & Serializable is one possible solution to allow Kryo to deserialize lambdas. An alternative route involves
@@ -58,13 +58,13 @@ to cast our lambda to java.io.Serializable. But the submit method requires a Run
 
     public class IntersectionCasting {
 
-      public static void main(String[] args) {
+      public static void main(Strings[] args) {
 
         SerializableLambda function = (message) -> "Kryo please serialize this message '" + message + "'";
 
       }
 
-      interface SerializableLambda extends Function<String, String>, Serializable {}
+      interface SerializableLambda extends Function<Strings, Strings>, Serializable {}
 
     }
 

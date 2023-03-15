@@ -15,7 +15,7 @@ Java defines several types of exceptions that relate to its various class librar
      9. NullPointerException:This exception is raised when referring to the members of a null object. Null represents nothing
      10.NumberFormatException:This exception is raised when a method could not convert a string into a numeric format.
      11.RuntimeException:This represents an exception that occurs during runtime.
-     12.StringIndexOutOfBoundsException:It is thrown by String class methods to indicate that an index is either negative or greater
+     12.StringIndexOutOfBoundsException:It is thrown by Strings class methods to indicate that an index is either negative or greater
         than the size of the string
      13.IllegalArgumentException : This exception will throw the error or error statement when the method receives an argument which
         is not accurately fit to the given relation or condition. It comes under the unchecked exception.
@@ -73,7 +73,7 @@ Java defines several types of exceptions that relate to its various class librar
            We can use this to store exception details. We can call the superclass(Exception) constructor from this and send the
            string there.
 
-             MyException(String str)
+             MyException(Strings str)
              {
                 super(str);
              }

@@ -1,0 +1,96 @@
+Literal: Any constant value which can be assigned to the variable is called literal/constant.
+
+In simple words, Literals in Java is a synthetic representation of boolean, numeric, character, or string data. It is a medium of
+expressing particular values in the program, such as an integer variable named ‘’/count is assigned an integer value in the
+following statement.
+  // Here 100 is a constant/literal.
+  int x = 100;
+
+   Integral literals
+
+      For Integral data types (byte, short, int, long), we can specify literals in 4 ways:-
+
+      . Decimal literals (Base 10): In this form, the allowed digits are 0-9.
+         int x = 101;
+
+      . Octal literals (Base 8): In this form, the allowed digits are 0-7.
+
+         // The octal number should be prefix with 0.
+         int x = 0146;
+
+      . Hexa-decimal literals (Base 16): In this form, the allowed digits are 0-9, and characters are a-f. We can use both uppercase
+        and lowercase characters as we know that java is a case-sensitive programming language, but here java is not case-sensitive.
+
+        // The hexa-decimal number should be prefix
+        // with 0X or 0x.
+        int x = 0X123Face;
+
+      . Binary literals: From 1.7 onward, we can specify literal value even in binary form also, allowed digits are 0 and 1. Literals
+        value should be prefixed with 0b or 0B.
+
+        int x = 0b1111;
+
+
+       Note : By default, every literal is of int type, we can specify explicitly as long type by suffixed with l or L. There is
+         no way to specify byte and short literals explicitly but indirectly we can specify. Whenever we are assigning integral
+         literal to the byte variable and if the value is within the range of byte then the compiler treats it automatically as
+         byte literals.
+
+   Floating-Point literal
+
+      For Floating-point data types, we can specify literals in only decimal form, and we cant specify in octal and Hexadecimal
+      forms.
+
+       . Decimal literals(Base 10): In this form, the allowed digits are 0-9.
+
+         double d = 123.456;
+
+     Note: By default, every floating-point literal is of double type, and hence we cant assign directly to the float variable.
+      But we can specify floating-point literal as float type by suffixed with f or F. We can specify explicitly floating-point
+      literal as double type by suffixed with d or D. Of course this convention is not required.
+
+   Char literals
+
+     For char data types, we can specify literals in 4 ways:
+
+      . Single quote: We can specify literal to a char data type as a single character within the single quote.
+
+         char ch = 'a';
+
+     . Char literal as Integral literal: we can specify char literal as integral literal, which represents the Unicode value of
+        the character, and that integral literal can be specified either in Decimal, Octal, and Hexadecimal forms. But the allowed
+        range is 0 to 65535.
+
+        char ch = 062;
+
+     . Unicode Representation: We can specify char literals in Unicode representation ‘\uxxxx’. Here xxxx represents 4 hexadecimal
+       numbers.
+
+        char ch = '\u0061';// Here /u0061 represent a.
+
+     . Escape Sequence: Every escape character can be specified as char literals.
+
+        char ch = '\n';
+
+   Strings literals
+      Any sequence of characters within double quotes is treated as Strings literals.
+
+      Strings s = "Hello";
+
+     Strings literals may not contain unescaped newline or linefeed characters. However, the Java compiler will evaluate compile-time
+     expressions, so the following Strings expression results in a string with three lines of text:
+
+     Example:
+     Strings text = "This is a Strings literal\n"
+                 + "which spans not one and not two\n"
+                 + "but three lines of text.\n";
+
+   Boolean literals
+
+     Only two values are allowed for Boolean literals, i.e., true and false.
+
+     boolean b = true;
+
+   Note: When we are performing concatenation operations, then the values in brackets are concatenated first. Then the values are
+      concatenated from the left to the right. We should be careful when we are mixing character literals and integers in Strings
+      concatenation operations and this type of operation are known as Mixed Mode operation.

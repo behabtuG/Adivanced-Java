@@ -1,0 +1,56 @@
+A graph is a data structure that consists of the following two components:
+  1. A finite set of vertices also called as nodes.
+  2. A finite set of ordered pair of the form (u, v) called as edge. The pair is ordered because (u, v) is not the same as (v, u)
+  in case of a directed graph(di-graph). The pair of the form (u, v) indicates that there is an edge from vertex u to vertex v.
+  The edges may contain weight/value/cost.
+Graphs are used to represent many real-life applications: Graphs are used to represent networks. The networks may include paths in
+  a city or telephone network or circuit network. Graphs are also used in social networks like linkedIn, Facebook. For example,
+  in Facebook, each person is represented with a vertex(or node). Each node is a structure and contains information like
+  person id, name, gender, and locale. See this for more applications of graph.
+
+Following is an example of an undirected graph with 5 vertices.
+
+The following two are the most commonly used representations of a graph.
+  1. Adjacency Matrix
+  2. Adjacency List
+  There are other representations also like, Incidence Matrix and Incidence List. The choice of graph representation is
+  situation-specific. It totally depends on the type of operations to be performed and ease of use.
+
+  Adjacency Matrix:
+
+  Adjacency Matrix is a 2D array of size V x V where V is the number of vertices in a graph. Let the 2D array be adj[][], a slot
+  adj[i][j] = 1 indicates that there is an edge from vertex i to vertex j. Adjacency matrix for undirected graph is always symmetric.
+  Adjacency Matrix is also used to represent weighted graphs. If adj[i][j] = w, then there is an edge from vertex i to vertex j with
+   weight w.
+
+In case of an undirected graph, we need to show that there is an edge from vertex i  to vertex j and vice versa. In code, we assign
+adj[i][j] = 1  and adj[j][i] = 1
+
+In case of a directed graph, if there is an edge from vertex i to vertex j then we just assign adj[i][j]=1
+
+The adjacency matrix for the above example graph is:
+
+  Pros: Representation is easier to implement and follow. Removing an edge takes O(1) time. Queries like whether there is an edge f
+     rom vertex ‘u’ to vertex ‘v’ are efficient and can be done O(1).
+  Cons: Consumes more space O(V^2). Even if the graph is sparse(contains less number of edges), it consumes the same space. Adding a
+   vertex is O(V^2) time.  Computing all neighbors of a vertex takes O(V) time (Not efficient).
+   Please see this for a sample Python implementation of adjacency matrix.
+
+   Implementation of taking input for adjacency matrix
+
+Adjacency List:
+
+An array of lists is used. The size of the array is equal to the number of vertices. Let the array be an array[]. An entry array[i]
+ represents the list of vertices adjacent to the ith vertex. This representation can also be used to represent a weighted graph.
+ The weights of edges can be represented as lists of pairs. Following is the adjacency list representation of the above graph.
+
+ Note that in the below implementation, we use dynamic arrays (vector in C++/ArrayList in Java) to represent adjacency lists instead
+  of the linked list. The vector implementation has advantages of cache friendliness.
+
+  Graph Class Example
+
+ Pros: Saves space O(|V|+|E|). In the worst case, there can be C(V, 2) number of edges in a graph thus consuming O(V^2) space.
+    Adding a vertex is easier. Computing all neighbors of a vertex takes optimal time.
+ Cons: Queries like whether there is an edge from vertex u to vertex v are not efficient and can be done O(V).
+   In Real-life problems,  graphs are sparse(|E| <<|V|2). That’s why adjacency lists Data structure is commonly used for storing
+   graphs. Adjacency matrix will enforce (|V|2) bound on time complexity for such algorithms.

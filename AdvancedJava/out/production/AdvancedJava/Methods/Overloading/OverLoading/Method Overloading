@@ -1,6 +1,6 @@
 Method Overloading allows different methods to have the same name, but different signatures where the signature can differ by the number of
  input parameters or type of input parameters, or a mixture of both.
-Method overloading is also known as Compile-time Polymorphism, Static Polymorphism, or Early binding in Java. In Method overloading compared
+Method overloading is also known as Compile-time Polymorphisms, Static Polymorphisms, or Early binding in Java. In Method overloading compared
  to parent argument, child argument will get the highest priority.
 
  Different Ways of Method Overloading in Java
@@ -21,7 +21,7 @@ Method overloading is also known as Compile-time Polymorphism, Static Polymorphi
  3. Changing the Order of the Parameters of Methods
 
     Method overloading can also be implemented by rearranging the parameters of two or more overloaded methods. For example, if the parameters
-    of method 1 are (String name, int roll_no) and the other method is (int roll_no, String name) but both have the same name, then these 2
+    of method 1 are (Strings name, int roll_no) and the other method is (int roll_no, Strings name) but both have the same name, then these 2
     methods are considered to be overloaded with different sequences of parameters.
 
  What if the exact prototype does not match with arguments?

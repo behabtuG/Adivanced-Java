@@ -1,0 +1,20 @@
+The codePointAt() method of StringBuffer class returns a character Unicode point at that index in sequence contained by
+StringBuffer.
+This method returns the “Unicodenumber” of the character at that index. Value of index must be lie between 0 to length-1.
+If the char value present at the given index lies in the high-surrogate range, the following index is less than the length of this
+sequence, and the char value at the following index is in the low-surrogate range, then the supplementary code point corresponding
+to this surrogate pair is returned. Otherwise, the char value at the given index is returned.
+
+Syntax:
+
+public int codePointAt(int index)
+
+Parameters: This method takes one parameter index which is int value representing index of the character whose unicode value to be
+returned.
+
+Return Value: This method returns unicode number of the character at the specified index.
+
+Exception: This method throws IndexOutOfBoundsException when index is negative or greater than or equal to length().
+
+Below programs demonstrate the codePointAt() method of StringBuffer Class:
+

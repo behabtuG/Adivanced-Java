@@ -1,0 +1,21 @@
+The Java.lang.StringBuffer.deleteCharAt() is a built-in Java method which removes the char at the specified position in this
+ sequence. So that the sequence is reduced by 1 char.
+
+ Syntax:
+
+   public StringBuffer deleteCharAt(int indexpoint)
+
+Parameters : The method accepts a single parameter indexpoint of integer type which refers to the index of the char to be removed.
+Return Value: The function returns the string or returns this object after removing the character.
+Exception : If the indexpoint is negative or greater than or equal to length(), then the method throws
+StringIndexOutOfBoundsException.
+
+  Examples:
+
+    Input : StringBuffer = worldofgeeks
+          int indexpoint = 4
+    Output : worlofgeeks
+
+Below programs illustrate the working of StringBuffer.deleteCharAt() method:
+
+ Program 1:

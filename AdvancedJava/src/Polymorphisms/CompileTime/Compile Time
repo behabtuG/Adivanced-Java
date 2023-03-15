@@ -1,0 +1,111 @@
+Polymorphism in Java refers to an object’s capacity to take several forms. Polymorphism allows us to perform the same action in
+multiple ways in Java.
+
+ Polymorphism is divided into two types:
+
+    1. Compile-time polymorphism
+    2. Run time polymorphism
+
+    Note: Run time polymorphism is implemented through Method overriding. Whereas, Compile Time polymorphism is implemented through
+    Method overloading and Operator overloading.
+
+ Compile-time Polymorphism
+
+   Compile-time polymorphism is also known as static polymorphism or early binding. Compile-time polymorphism is a polymorphism that
+   is resolved during the compilation process. Overloading of methods is called through the reference variable of a class.
+   Compile-time polymorphism is achieved by method overloading and operator overloading.
+
+ 1. Method overloading
+
+   We can have one or more methods with the same name that are solely distinguishable by argument numbers, type, or order.
+
+   Method Overloading occurs when a class has many methods with the same name but different parameters. Two or more methods may have
+   the same name if they have other numbers of parameters, different data types, or different numbers of parameters and different
+   data types.
+
+   Example:
+
+   void gfg() { ... }
+   void gfg(int num1 ) { ... }
+   void gfg(float num1) { ... }
+   void gfg(int num1 , float num2 ) { ... }
+
+   (a). Method overloading by changing the number of parameters
+
+      In this type, Method overloading is done by overloading methods in the function call with a varied number of parameters
+
+      Example:
+
+      show( char a )
+      show( char a ,char b )
+
+      In the given example, the first show method has one parameter, and the second show method has two methods. When a function is
+      called, the compiler looks at the number of parameters and decides how to resolve the method call.
+
+      MethodOverloading class Example
+
+     In the above example, we implement method overloading by changing several parameters. We have created two methods,
+     show(int num1 ) and show(int num1, int num2 ). In the show(int num1) method display, one number and the void show(int num1,
+     int num2 ) display two numbers.
+
+   (b). Method overloading by changing Datatype of parameter
+
+     In this type, Method overloading is done by overloading methods in the function call with different types of parameters
+
+     Example:
+
+     show( float a float b)
+     show( int a, int b )
+
+     In the above example, the first show method has two float parameters, and the second show method has two int parameters.
+     When a function is called, the compiler looks at the data type of input parameters and decides how to resolve the method call.
+
+        MethodOverloading1 Class Example
+
+     In the above example, we changed the data type of the parameters of both functions. In the first show() function datatype of
+     the parameter is int. After giving integer type input, the output will be ‘ This is integer function.’ In the second show()
+     function datatype of a parameter is double. After giving double type input, the output would be ‘This is double function.’
+   (c). By changing the sequence of parameters
+
+      In this type, overloading is dependent on the sequence of the parameters
+
+      Example:
+
+      show( int a, float b )
+      show( float a, int b )
+
+     Here in this example, The parameters int and float are used in the first declaration. The parameters are int and float in the
+     second declaration, but their order in the parameter list is different.
+
+        MethodOverloading2 class example
+
+   In the above example, in the first show, function parameters are int and char, and in the second shoe, function parameters are
+   char, and int. changed the sequence of data type.
+
+   Invalid cases of method overloading
+
+   Method overloading does not allow changing the return type of method( function ); it occurs ambiguity.
+
+   Examples
+
+   int sum(int, int);
+   Strings sum(int, int);
+
+   Because the arguments are matching, the code above will not compile. Both methods have the same amount of data types and the same
+   sequence of data types in the parameters.
+
+ 2. Operator Overloading
+    An operator is said to be overloaded if it can be used to perform more than one function. Operator overloading is an overloading
+    method in which an existing operator is given a new meaning. In Java, the + operator is overloaded. Java, on the other hand,
+    does not allow for user-defined operator overloading. To add integers, the + operator can be employed as an arithmetic addition
+    operator. It can also be used to join strings together.
+
+    GFG Class Example
+
+  In the above example, The ‘+’ operator has been overloaded. When we send two numbers to the overloaded method, we get a sum of
+  two integers, and when we pass two Strings, we get the concatenated text.
+
+ Advantages of Compile-time Polymorphism:
+
+    1. It improves code clarity and allows for the use of a single name for similar procedures.
+    2. It has a faster execution time since it is discovered early in the compilation process.

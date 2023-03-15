@@ -1,0 +1,18 @@
+The setLength(int newLength) method of StringBuffer class is the inbuilt method used to set the length of the character sequence
+equal to newLength. If the newLength passed as argument is less than the old length, the old length is changed to the newLength.
+If the newLength passed as argument is greater than or equal to the old length, null characters (‘\u0000’) are appended at the end
+of old sequence so that length becomes the newLength argument.
+
+Syntax:
+
+public void setLength(int newLength)
+
+Parameters:
+This method accepts one parameter newLength which is Integer type value refers to the new length of sequence you want to set.
+Returns:
+This method returns nothing.
+Exception:
+If the newLength is negative then IndexOutOfBoundsException.
+
+Below programs illustrate the java.lang.StringBuffer.setLength() method:
+Example 1:

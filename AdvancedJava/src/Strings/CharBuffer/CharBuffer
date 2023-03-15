@@ -1,0 +1,28 @@
+CharBuffer holds a sequence of integer values to be used in an I/O operation. The CharBuffer class provides the following four
+categories of operations upon long buffers:
+
+   . Absolute and relative get method that read single Chars.
+   . Absolute and relative put methods that write single Chars.
+   . Relative bulk put and get methods that transfer contiguous sequences of Chars from an int array or some other Chars buffer into
+     this buffer and from this buffer into an array.
+
+ Short buffers can be created by:
+
+   . allocate(): This allocates space for the buffer’s content.
+   . wrap(): This wraps an existing long array into a buffer.
+
+  Most of the methods of CharBuffer class are directly analogous to the methods defined by ByteBuffer.
+
+  Class Declaration:
+
+        public abstract class CharBuffer
+
+        extends Buffer
+
+        implements Comparable<CharBuffer>, Appendable, CharSequence, Readable
+
+  Methods of CharBuffer class:
+
+   Following are some programs to demonstrate CharBuffer class and its methods:
+
+   Example 1:

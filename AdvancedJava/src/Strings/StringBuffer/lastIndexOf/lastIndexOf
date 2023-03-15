@@ -1,0 +1,12 @@
+In StringBuffer class, there are two types of lastIndexOf() method depending upon the parameters passed to it.
+
+  lastIndexOf(String str)
+
+    The lastIndexOf(String str) method of StringBuffer class is the inbuilt method used to return the index within the String for
+    last occurrence of passed substring as parameter. The last occurrence of the empty string “” is considered to occur at the index
+     value this.length(). If substring str is not present then -1 is returned.
+
+    Syntax:
+
+      public int lastIndexOf(String str)
+

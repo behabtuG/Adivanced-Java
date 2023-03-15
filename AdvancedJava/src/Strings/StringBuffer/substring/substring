@@ -1,0 +1,40 @@
+In StringBuffer class, there are two types of substring method depending upon the parameters passed to it.
+
+  substring(int start)
+
+    The substring(int start) method of StringBuffer class is the inbuilt method used to return a substring start from index start
+    and extends to end of this sequence. The string returned by this method contains all character from index start to end of
+    the old sequence.
+
+     Syntax:
+
+       public String substring(int start)
+
+      Parameters: This method accepts only one parameter start which is Integer type value refers to the start index of substring.
+
+     Return Value: This method returns the substring lie in the range start to end of old sequence.
+
+     Exception: This method throws StringIndexOutOfBoundsException if start is less than zero, or greater than the length of this
+      object.
+
+     Below programs illustrate the StringBuffer substring() method:
+
+  substring(int start, int end)
+
+     The substring(int start, int end) method of StringBuffer class is the inbuilt method used to return a substring start from
+     index start and extends to the index end-1 of this sequence. The string returned by this method contains all character from
+     index start to index end-1 of the old sequence.
+
+     Syntax:
+
+       public String substring(int start)
+
+     Parameters: This method accepts two parameter start which is Integer type value refers to the start index of substring and end
+      which is also a Integer type value refers to the end index of substring.
+
+     Return Value: This method returns the substring lie in the range index start to index end-1 of old sequence.
+
+     Exception: This method throws StringIndexOutOfBoundsException if start or end are negative or greater than length(), or start is
+      greater than end.
+
+     Below programs illustrate the StringBuffer.substring() method:

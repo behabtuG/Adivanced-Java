@@ -1,0 +1,40 @@
+Package in Java is a mechanism to encapsulate a group of classes, sub-packages, and interfaces. Packages are used for:
+
+   . Preventing naming conflicts. For example, there can be two classes with the name Employee in two packages,
+     college.staff.cse.Employee and college.staff.ee.Employee
+   . Making searching/locating and usage of classes, interfaces, enumerations, and annotations easier
+   . Providing controlled access: protected and default have package level access control. A protected member is accessible by
+     classes in the same package and its subclasses. A default member (without any access specifier) is accessible by classes in the
+     same package only.
+
+Packages can be considered as data encapsulation (or data-hiding). Here we will be discussing the responsibility of the CLASSPATH
+environment variable while programming in Java as we move forward we for sure short need usage of importing statements.
+  Illustration:
+
+   import org.company.Menu
+
+  What does this import mean? It makes the Menu class available in the package org.company to our current class. Such that when
+  we call the below command as follows:
+
+  Menu menu = new Menu();
+
+    GFG Class Example
+
+  This package provides for system input and output through data streams, serialization, and the file system.
+  Unless otherwise noted, passing a null argument to a constructor or method in any class or interface in this package will cause
+  a NullPointerException to be thrown. All the classes listed here are imported or if we want to import a specific one then do use
+  it as stated below.
+
+  import java.util.Scanner ;
+
+    The JVM knows where to find the class Menu. Now, how will the JVM know this location?
+  It is impractical for it to go through every folder on your system and search for it. Thus, using the CLASSPATH variable we
+  provide it the place where we want it to look. We put directories and jars in the CLASSPATH variable.
+
+  Let’s say the above package resides in the directory dir. The complete path of the Menu class file would be dir/org/company/Menu.
+  We’ll specify only the directory dir in our classpath variable, as the rest information regarding the path is provided by the
+  import statements. Similar for jar, if you create a jar and mention its path in the variable, the VM will look inside the jar
+  file and find the class.
+
+  One should know how to set a classpath if not done after configuring JDK in respecting operating systems in order to see it or to
+  it and play with multiple IDE, versions game altogether. One must have an absolutely clear understanding of it.

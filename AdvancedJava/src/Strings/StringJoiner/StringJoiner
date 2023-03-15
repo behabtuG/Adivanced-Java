@@ -1,0 +1,34 @@
+StringJoiner is a class in java.util package is used to construct a sequence of characters(strings) separated by a delimiter and
+ optionally starting with a supplied prefix and ending with a given suffix. Though this can also be done with the help of the
+ StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.
+
+ Constructors of StringJoiner Class
+
+  1. StringJoiner(CharSequence delimiter): It constructs a StringJoiner with no characters, no prefix or suffix, and a copy of the
+      supplied delimiter.
+
+     Syntax:
+
+       public StringJoiner(CharSequence delimiter)
+
+    Parameters: The sequence of characters to be used between each element added to the StringJoiner value
+    Exception Thrown: NullPointerException if the delimiter is null
+
+  2. StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix): It constructs a StringJoiner with no characters
+      using copies of the supplied prefix, delimiter, and suffix. If no characters are added to the StringJoiner and methods
+      accessing the string value are invoked, it will return the prefix + suffix (or properties thereof) in the result unless
+      setEmptyValue has first been called.
+
+     Syntax:
+
+       public StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)
+
+    Parameters:
+
+     . The sequence of characters to be used between each element added to the StringJoiner value
+     . The sequence of characters to be used at the beginning
+     . The sequence of characters to be used at the end
+
+    Exception Thrown: NullPointerException if prefix, delimiter, or suffix is null.
+
+    Methods of StringJoiner Class

@@ -26,7 +26,7 @@ The ArrayDeque class implements these two interfaces:
 
        implements Deque<E>, Cloneable, Serializable
 
-       Here, E refers to the element which can refer to any class, such as Integer or String class.
+       Here, E refers to the element which can refer to any class, such as Integer or Strings class.
 
    Now we are done with syntax now let us come up with constructors been defined for it prior before implementing to grasp it better and perceiving the output better.
 

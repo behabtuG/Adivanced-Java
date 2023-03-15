@@ -1,0 +1,21 @@
+Address Binding is the association of program instructions and data to the actual physical memory location. There are various types
+ of address binding in the operating system.
+
+There are 3 types of Address Binding:
+
+    1. Compile Time Address Binding
+    2. Load Time Address Binding
+    3. Execution Time Address Binding
+
+ Here, we compare Compile Time and Execution Time address binding as following below.
+
+ Compile Time Address Binding:
+   If the compiler is responsible of performing address binding then it is called as compile time address binding. This type of
+   address binding will be done before loading the program into memory. The compiler required to interact with the operating system
+   memory manager to perform compile time address binding.
+
+ Load Time Address Binding:
+   This type of address binding will be done after loading the program into memory. Load time address binding will be done by
+   operating memory manager.
+
+   Difference between Compile Time and Load Time address Binding:

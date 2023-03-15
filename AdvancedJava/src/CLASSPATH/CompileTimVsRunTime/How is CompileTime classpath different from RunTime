@@ -1,0 +1,31 @@
+ What is a Classpath?
+   Classpath refers to the Path where all the classes/jars are available.
+
+ What is Compile-time classpath?
+   This classpath has all the classes/jars required to compile the application without any syntax error.
+
+   Now we might think that our project compiled successfully so it will execute nicely. But this is not always true why because in
+   some cases(explained below) to execute the project successfully you may need some other class/jars at runtime. That is why
+   run-time classpath comes into the picture.
+
+ What is Run-time classpath?
+    Classpath that has all the classes/jars required to execute the application successfully.
+
+ Setting classpath: Just add the dependencies in the pom.xml file will automatically add the jars in classpath.
+
+   Note: Classpath setting will be done by eclipse or any other IDE automatically. This can’t be shown here.
+
+   How is CompileTime classpath different from RunTime classpath?
+
+     Case-1: Let’s say we are developing a Spring-MVC web application to post the JSON data. So in order to achieve it, we need
+        Jackson jar to map the JSON data to the DTO class. If we don’t have this jar in the classpath then at the compile time we
+        won’t get any error but our application will not execute properly because it needs Jackson for data binding at the runtime
+        that is not available.
+        That is why we say compile-time and run-time classpath are different.
+     Case-2: While developing servlet based application we need servlet-api.jar so we can use HttpServlet, HttpServletRequest,
+        HttpServletResponse, etc while writing code and end up in no compilation error. At this point, we are using servlet-API that
+        is just specification not the actual implementation of the servlet-API.
+
+       Actually, the implementation is the JEE container that is required to run the servlet based application. So what I am trying
+       to say that while running such an application the JEE container will provide the implementation classes at runtime to
+       successfully run it without the JEE container application will not run.

@@ -1,0 +1,7 @@
+In Java, if the name of a derived class static function is the same as a base class static function then the base class static
+function shadows (or conceals) the derived class static function. For example, the following Java code prints “A.fun()”
+Note: Static method is a class property, so if a static method is called from a class name or object having a class container then the
+ method of that class is called not the object’s method.
+
+Note: If we make both A.fun() and B.fun() as non-static then the above program would print “B.fun()”. While both methods are static
+types, the variable type decides the method being invoked, not the assigned object type

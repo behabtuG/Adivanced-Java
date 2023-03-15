@@ -11,7 +11,7 @@ keyword.
   Using final to Prevent Inheritance
 
      When a class is declared as final then it cannot be subclassed i.e. no other class can extend it. This is particularly useful,
-     for example, when creating an immutable class like the predefined String class. The following fragment illustrates the final
+     for example, when creating an immutable class like the predefined Strings class. The following fragment illustrates the final
      keyword with a class:
      final class A
       {

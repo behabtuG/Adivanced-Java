@@ -1,0 +1,36 @@
+Any text-based data is stored by the computer in the form of bits(a series of 1s and 0s), and follows the specified Coding
+Scheme. The coding scheme is a Standard which tells the user’s machine which character represents which set of bytes. Specifying
+the coding scheme used is very important as without it, the machine could interpret the given bytes as a different character than
+intended.
+ For Example : 0x6B may be interpreted as character ‘k’ in ASCII, but as the character ‘, ‘ in the less commonly used EBCDIC coding
+   scheme.
+
+   . ASCII(American Standard Code for Information Interchange) : ASCII may be considered the most widespread coding scheme used.
+       Developed by the American Standards Association, ASCII was introduced in 1963 as ASA X3.4-1963. It has definitions for 128
+       characters- 0x00 to 0x7f, which are represented by 7 bits.
+        In ASCII Format-
+          Characters Decimal	Hexadecimal
+            0-9	        48-57	 30-39
+            A-Z	        65-90	 41-5A
+            a-z	        97-122   61-7A
+
+      The rest of the Hexadecimal is filled with other special characters and punctuation.
+   . UTF-32 (Unicode Transformation Format 32-bit) : UTF-32 is a coding scheme utilizing 4 bytes to represent a character.
+        It is a fixed length scheme, that is, each character is always represented by 4 bytes. It was used to represent all of
+        Unicode’s 1, 112, 064 code points.
+        Due to the large space requirements of this scheme, it was made obsolete by the later developed more efficient schemes.
+   . UTF-16(Unicode Transformation Format 16-bit) : UTF-32 is a coding scheme utilizing either 2 or 4 bytes to represent a character.
+        It can represent all of Unicode’s 1, 112, 064 code points.
+
+   . UTF-8(Unicode Transformation Format 8-bit) : Introduced in 1993, UTF-8 is a coding scheme which requires each character to be
+       represented by at least 1 byte. It can represent all of Unicode’s code points.
+       UTF-8 is a super-set of ASCII, as the first 128 characters, from 0x00 to 0x7f, are the same as ASCII. Thus, this UTF scheme
+       is reverse Compatible with ASCII.
+       It is a variable length encoding, with either 1, 2, 3 or 4 bytes used to represent a character.
+       In order to indicate that two(or more) consecutive bytes are the part of same character, or represent two different
+       characters, the first few bits of each byte are used as indicators.
+   . ISCII(Indian Script Code for Information Interchange) : It is a coding scheme which can accommodate the characters used by
+      various Indian scripts. It is an 8-bit scheme.
+      The First 128 characters are the same as ASCII, and only the next 128 bit space is used to represent ISCII specific characters.
+
+      

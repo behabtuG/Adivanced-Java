@@ -1,0 +1,27 @@
+appendCodePoint() method of StringBuffer class appends the string representation of the codePoint argument to this sequence for
+which we require pre-requisite knowledge of ASCII table as then only we will be able to perceive output why the specific literal
+is being appended as there is already an integer value been assigned.
+
+--> appendCodePoint() Method
+    --> StringBuffer Class
+        --> java.lang Package
+
+Syntax:
+
+public StringBuffer appendCodePoint(int cp)
+
+Parameters: The method accepts a single parameter cp of integer type and refers to the Unicode code point.
+
+Return Type: The method returns this object after appending the string represented by the codepoint.
+
+Illustrations:
+
+  Input : StringBuffer = Apple
+          int cp = 65
+  Output: AppleA
+
+  Input : StringBuffer = GeeksforGeeks
+         int cp = 156
+  Output: GeeksforGeeks?
+
+  Explanation: Because 65 is the ASCII value for ‘A’ and 156 is the ASCII value for ‘?’

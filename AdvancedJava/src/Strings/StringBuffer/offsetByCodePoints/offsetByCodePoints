@@ -1,0 +1,23 @@
+The offsetByCodePoints() method of StringBuffer class returns the index within this String contained by StringBuffer that is
+ offset from the index passed as parameter by codePointOffset code points. Unpaired surrogates lies between index and
+ codePointOffset count as one code point each.
+
+Syntax:
+
+public int offsetByCodePoints(int index,
+                       int codePointOffset)
+
+Parameters: This method takes two parameters:
+
+    . index: the index to be offset
+    . codePointOffset: the offset in code points
+
+Return Value: This method returns the index within this sequence.
+
+ Exception: This method throws IndexOutOfBoundsException if any one below is true:
+
+     . index < 0 or index > length of the sequence.
+     . codePointOffset > 0 and the subsequence starting with index has fewer than codePointOffset code points
+     . codePointOffset < and the subsequence before index has fewer than the absolute value of codePointOffset code points.
+
+ Below programs demonstrate the offsetByCodePoints() method of StringBuffer Class:

@@ -1,0 +1,22 @@
+Multiple Inheritance is a feature of an object-oriented concept, where a class can inherit properties of more than one parent class.
+ The problem occurs when there exist methods with the same signature in both the superclasses and subclass. On calling the method,
+ the compiler cannot determine which class method to be called and even on calling which class method gets the priority.
+
+    Note: Java doesn’t support Multiple Inheritance
+
+
+  Multiple inheritance is not supported by Java using classes, handling the complexity that causes due to multiple inheritances is
+  very complex. It creates problems during various operations like casting, constructor chaining, etc, and the above all reason is
+  that there are very few scenarios on which we actually need multiple inheritances, so better to omit it for keeping things simple
+  and straightforward.
+
+  How are the above problems handled for Default Methods and Interfaces?
+  Java 8 supports default methods where interfaces can provide a default implementation of methods. And a class can implement two or
+  more interfaces. In case both the implemented interfaces contain default methods with the same method signature, the implementing
+  class should explicitly specify which default method is to be used in some method excluding the main() of implementing class using
+  super keyword, or it should override the default method in the implementing class, or it should specify which default method is to
+  be used in the default overridden method of the implementing class.
+
+  Note: If we remove the implementation of default method from “TestClass”, we get a compiler error. If there is a diamond through
+       interfaces, then there is no issue if none of the middle interfaces provide implementation of root interface. If they provide
+       implementation, then implementation can be accessed as above using super keyword.

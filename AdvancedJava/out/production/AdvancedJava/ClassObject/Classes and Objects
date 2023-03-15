@@ -93,7 +93,7 @@ The new operator instantiates a class by allocating memory for a new object and 
     // creating object of class Test
     Test t = new Test();
 
-        Using Class.forName(String className) method: There is a pre-defined class in java.lang package with name Class. The forName(String className) method returns the Class object associated with the class with the given string name.
+        Using Class.forName(Strings className) method: There is a pre-defined class in java.lang package with name Class. The forName(Strings className) method returns the Class object associated with the class with the given string name.
         We have to give a fully qualified name for a class. On calling new Instance() method on this Class object returns new instance of the class with the given string name.
 
     // creating object of public class Test

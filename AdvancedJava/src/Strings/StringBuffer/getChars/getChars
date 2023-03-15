@@ -1,0 +1,29 @@
+The getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) method of StringBuffer class copies the characters starting at
+the index:srcBegin to index:srcEnd-1 from actual sequence into an array of char passed as parameter to function.
+
+    The characters are copied into the array of char dst[] starting at index:dstBegin and ending at index:dstbegin +
+    (srcEnd-srcBegin) – 1.
+    The first character to be copied to array is at index srcBegin and the last character to be copied is at index srcEnd-1.
+    The total number of characters to be copied is equal to srcEnd-srcBegin.
+
+Syntax:
+
+public void getChars(int srcBegin, int srcEnd,
+                          char[] dst, int dstBegin)
+
+Parameters: This method takes four parameters:
+
+    srcBegin: int value represents index on which the copying is to be started.
+    srcEnd: int value represents index on which the copying is to be stopped.
+    dst: array of char represents the array to copy the data into.
+    dstBegin: int value represents index of dst array to start pasting the copied data.
+
+Returns: This method returns nothing. Exception: This method throws StringIndexOutOfBoundsException if:
+
+    srcBegin < 0
+    dstBegin < 0
+    srcBegin > srcEnd
+    srcEnd > this.length()
+    dstBegin+srcEnd-srcBegin > dst.length
+
+Below programs demonstrate the getChars() method of StringBuffer Class: Example 1:

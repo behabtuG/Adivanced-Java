@@ -26,7 +26,7 @@ Java provides a rich set of modifiers. They are used to control access mechanism
 
      class GFG
      {
-     public static void main(String[] args)
+     public static void main(Strings[] args)
          {
              // Insert your code here
          }

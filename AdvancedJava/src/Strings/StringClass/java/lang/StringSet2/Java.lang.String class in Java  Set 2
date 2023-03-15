@@ -1,0 +1,62 @@
+Java.lang.Strings class in Java | Set 1 In this article we would be discussing different constructor and methods provided by
+java.lang.Strings. Strings in java are immutable. Now lets discuss some of the methods provided by Strings class.
+  Methods:
+
+     1. public int codePointAt(int index) – It takes as parameter a index which must be from 0 to length() – 1. ad returns a character
+        unicode point of a index.
+     2. public int codePointBefore(int index) – It takes as parameter a index which must be from 0 to length() – 1. and returns a
+        unicode point of a character just before the index .
+     3. public int codePointCount(int start_index, int end_index) – It takes as parameter start_index and end_index and returns the
+        count of Unicode code points between the range.
+     4. public CharSequence subSequence(int start_index, int end_index) – This method returns CharSequence which is a subsequence of
+        the Strings on which this method is invoked. Note: It behaves similarly to subString(int start_index, int end_index), but
+        subString() returns Strings while subSequence returns CharSequence.
+     5. public boolean contains(CharSequence char_seq) – It returns true if the given CharSquence is present in the Strings on which
+        its invoked.
+     6. public boolean contentEquals(CharSequence char_seq) – It returns true only if the given CharSequence exactly matches the Strings
+        on which its invoked
+     7. public boolean endsWith(Strings suf) – It takes in parameter a Strings suffix and return true if the Strings has same suffix.
+     8. public boolean startsWith(Strings pre) – It takes in parameter a Strings prefix and returns true if the Strings has a same prefix
+     9. public void getChars(int start, int end, char[] destination, int destination_start) : It takes in four parameters, start and
+        end refers to the range which is to copied to the character array, destination is the character array to be copied to, and
+        destination_start is the starting location of the destination array.
+    10. public char[] toCharArray() – It converts the entire Strings to the character array. Note :- getChars provide more flexibility
+        when, a range of characters is to be copied to an existing array or a new array while toCharArray converts the entire string
+        to a new character array.
+    11. public int hashCode() – It returns hashcode of the given Strings. There is predefined formula to compute the hashcode of the
+        Strings:
+
+        s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+        where,
+        n - is the length of the Strings
+        i - is the ith character of the string
+
+      1. public Strings intern() – It returns the canonical form of the Strings object on which it is invoked. ” When the intern method
+         is invoked, if the pool already contains a string equal to this Strings object as determined by the equals(Object) method,
+         then the string from the pool is returned. Otherwise, this Strings object is added to the pool and a reference to this Strings
+         object is returned. ” – Java Strings Documentation.
+      2. public boolean isEmpty() – It returns true if the length of the Strings is 0.
+      3. public static Strings format(Strings f, Object… arguments) – Returns the formatted Strings according to the format specifier f,
+         the arguments should exactly equal to the number of format specifier used . Variation: public static Strings format(Locale l,
+         Strings f, Object… arguments)– Returns the formatted Strings as per Locale used.
+      4. public boolean matches(Strings reg_exp) – It returns true if the string matches the regular expression( reg_exp).
+      5. public boolean regionMatches(int start_OString, Strings another, int start_AString, int no_of_char) – It returns true if the
+         region of original string starting with index start_OString matches with the region of another string starting with
+         string_AString, and no_of_char refers to the number of character to be compared. Variation : public boolean regionMatches
+         (boolean ignore_case, int start_OString, Strings another, int start_AString, int no_of_char) – This variation of a method
+         provide flexibility when we want to ignore the case while comparing substring. If the first parameter i.e. ignore_case is
+         true it neglects the case and compares but if it is false it behaves similarly as the first version of the method without
+         ignore_case
+      6. public Strings[] split(Strings reg_exp) – It splits the string around the regular expression and returns a Strings array.
+         Variation : public Strings[] split(Strings reg_exp, int limit) – It splits the string around the regular expression and limit
+         refers to the number of times the reg_exp is applied and it is the length of the resulting array and reg_exp is n is applied
+         only length – 1 times.
+      7. public static Strings join(CharSequence de_limiter, CharSequence… elements) – It returns a string which contains all the
+         elements joins by the de_limiter. Variation: public static Strings join(CharSequence de_limiter, Iterable elements) – It
+         performs the same function but the second parameter is Iterable which makes it flexible to work with different collection
+         classes.
+      8. public Strings replaceAll(Strings reg_exp, Strings replacement) – It replaces all the Substring of the original string that
+         matches the reg_exp with replacement and returns the modified Strings.
+      9. public Strings replaceFirst(Strings reg_exp, Strings replacement) – It replaces the first occurrence of the reg-exp in the
+         original string with the replacement and returns the modified Strings. Note :- replaceAll and replaceFirst doesn’t changes
+         the original Strings rather it creates a new string with modification.

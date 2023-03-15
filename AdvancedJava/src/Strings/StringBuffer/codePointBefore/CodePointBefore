@@ -1,0 +1,21 @@
+The codePointBefore() method of StringBuffer class is a method used to take an index as a parameter and returns the “Unicode number”
+ of the character present before that index. The value of index must lie between 0 to length-1.
+
+If the char value at (index – 1) is in the low-surrogate range, char at (index – 2) is not negative with value is in the
+high-surrogate range, then the supplementary code point value of the surrogate pair is returned by method. If the char value at
+index – 1 is an unpaired low-surrogate or a high-surrogate, the surrogate value is returned.
+
+Syntax:
+
+public int codePointBefore(int index)
+
+Parameters: This method take one parameter index which is the index of the character following the character whose unicode value
+to be returned.
+
+  Return Value: This method returns unicode number of the character before the given index.
+
+  Exception: This method throws IndexOutOfBoundsException when index is negative or greater than or equal to length().
+
+  Below programs illustrate the codePointBefore() method:
+
+  Example 2:To demonstrate IndexOutOfBoundsException

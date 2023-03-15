@@ -1,0 +1,19 @@
+The setCharAt() method of StringBuffer class sets the character at the position index to character which is the value passed as
+parameter to method. This method returns a new sequence which is identical to old sequence only difference is a new character ch
+is present at position index in new sequence. The index argument must be greater than or equal to 0, and less than the length of
+the String contained by StringBuffer object.
+
+Syntax:
+
+public void setCharAt(int index, char ch)
+
+Parameters: This method takes two parameters:
+
+    index: Integer type value which refers to the index of character to be set.
+    ch: Character type value which refers to the new char.
+
+Returns: This method returns nothing.
+
+Exception: This method throws IndexOutOfBoundException if the index is negative or greater than length().
+
+Below programs demonstrate the setCharAt() method of StringBuffer Class

@@ -24,7 +24,7 @@
        at the time of class loading. The use of a static modifier makes the program more efficient by saving memory. A static field exists
        across all the class instances, and without creating an object of the class, they can be called.
 
-      In this above code sample, we have declared the String as static, part of the static_gfg class. Generally, to access the string, we first
+      In this above code sample, we have declared the Strings as static, part of the static_gfg class. Generally, to access the string, we first
       need to create the object of the static_gfg class, but as we have declared it as static, we do not need to create an object of
       static_gfg class to access the string. We can use className.variableName for accessing it.
 

@@ -1,5 +1,5 @@
 The super keyword in java is a reference variable that is used to refer to parent class objects. An understanding of Inheritance and
-Polymorphism is needed in order to understand the super keyword. The keyword “super” came into the picture with the concept of Inheritance.
+Polymorphisms is needed in order to understand the super keyword. The keyword “super” came into the picture with the concept of Inheritance.
 It is majorly used in the following contexts:
 
     . Use of super with variables

@@ -1,0 +1,187 @@
+Strings is a sequence of characters. In java, objects of Strings are immutable which means a constant and cannot be changed once
+created.
+  Creating a Strings
+
+  There are two ways to create string in Java:
+
+      Strings literal
+
+      Strings s = “GeeksforGeeks”;
+
+      Using new keyword
+
+      Strings s = new Strings (“GeeksforGeeks”);
+
+  Constructors
+     1. Strings(byte[] byte_arr) – Construct a new Strings by decoding the byte array. It uses the platform’s default character set for
+        decoding.
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Strings s_byte =new Strings(b_arr); //Geeks
+
+     2. Strings(byte[] byte_arr, Charset char_set) – Construct a new Strings by decoding the byte array. It uses the char_set for
+        decoding.
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Charset cs = Charset.defaultCharset();
+        Strings s_byte_char = new Strings(b_arr, cs); //Geeks
+
+     3. Strings(byte[] byte_arr, Strings char_set_name) – Construct a new Strings by decoding the byte array. It uses the char_set_name
+        for decoding.
+        It looks similar to the above constructs and they appear before similar functions but it takes the Strings(which contains
+        char_set_name) as parameter while the above constructor takes CharSet.
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Strings s = new Strings(b_arr, "US-ASCII"); //Geeks
+
+     4. Strings(byte[] byte_arr, int start_index, int length) – Construct a new string from the bytes array depending on the
+        start_index(Starting location) and length(number of characters from starting location).
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Strings s = new Strings(b_arr, 1, 3); // eek
+
+     5. Strings(byte[] byte_arr, int start_index, int length, Charset char_set) –Construct a new string from the bytes array depending
+        on the start_index(Starting location) and length(number of characters from starting location).Uses char_set for decoding.
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Charset cs = Charset.defaultCharset();
+        Strings s = new Strings(b_arr, 1, 3, cs); // eek
+
+     6. Strings(byte[] byte_arr, int start_index, int length, Strings char_set_name) – Construct a new string from the bytes array
+        depending on the start_index(Starting location) and length(number of characters from starting location).Uses char_set_name
+        for decoding.
+        Example:
+
+        byte[] b_arr = {71, 101, 101, 107, 115};
+        Strings s = new Strings(b_arr, 1, 4, "US-ASCII"); // eeks
+
+     7. Strings(char[] char_arr) – Allocates a new Strings from the given Character array
+        Example:
+
+       char char_arr[] = {'G', 'e', 'e', 'k', 's'};
+       Strings s = new Strings(char_arr); //Geeks
+
+     8. Strings(char[] char_array, int start_index, int count) – Allocates a Strings from a given character array but choose count
+        characters from the start_index.
+        Example:
+
+        char char_arr[] = {'G', 'e', 'e', 'k', 's'};
+        Strings s = new Strings(char_arr , 1, 3); //eek
+
+     9. Strings(int[] uni_code_points, int offset, int count) – Allocates a Strings from a uni_code_array but choose count characters
+        from the start_index.
+        Example:
+
+        int[] uni_code = {71, 101, 101, 107, 115};
+        Strings s = new Strings(uni_code, 1, 3); //eek
+
+     10. Strings(StringBuffer s_buffer) – Allocates a new string from the string in s_buffer
+         Example:
+
+        StringBuffer s_buffer = new StringBuffer("Geeks");
+        Strings s = new Strings(s_buffer); //Geeks
+
+     11. Strings(StringBuilder s_builder) – Allocates a new string from the string in s_builder
+         Example:
+
+        StringBuilder s_builder = new StringBuilder("Geeks");
+        Strings s = new Strings(s_builder); //Geeks
+
+  Strings Methods
+     1. int length(): Returns the number of characters in the Strings.
+
+         "GeeksforGeeks".length();  // returns 13
+
+     2. Char charAt(int i): Returns the character at ith index.
+
+        "GeeksforGeeks".charAt(3); // returns  ‘k’
+
+     3. Strings substring (int i): Return the substring from the ith  index character to end.
+
+        "GeeksforGeeks".substring(3); // returns “ksforGeeks”
+
+     4. Strings substring (int i, int j): Returns the substring from i to j-1 index.
+
+        "GeeksforGeeks".substring(2, 5); // returns “eks”
+
+     5. Strings concat( Strings str): Concatenates specified string to the end of this string.
+
+        Strings s1 = ”Geeks”;
+        Strings s2 = ”forGeeks”;
+        Strings output = s1.concat(s2); // returns “GeeksforGeeks”
+
+     6. int indexOf (Strings s): Returns the index within the string of the first occurrence of the specified string.
+
+        Strings s = ”Learn Share Learn”;
+        int output = s.indexOf(“Share”); // returns 6
+
+     7. int indexOf (Strings s, int i): Returns the index within the string of the first occurrence of the specified string, starting
+        at the specified index.
+
+        Strings s = ”Learn Share Learn”;
+        int output = s.indexOf("ea",3);// returns 13
+
+     8. Int lastIndexOf( Strings s): Returns the index within the string of the last occurrence of the specified string.
+
+        Strings s = ”Learn Share Learn”;
+        int output = s.lastIndexOf("a"); // returns 14
+
+     9. boolean equals( Object otherObj): Compares this string to the specified object.
+
+        Boolean out = “Geeks”.equals(“Geeks”); // returns true
+        Boolean out = “Geeks”.equals(“geeks”); // returns false
+
+     10. boolean  equalsIgnoreCase (Strings anotherString): Compares string to another string, ignoring case considerations.
+
+        Boolean out= “Geeks”.equalsIgnoreCase(“Geeks”); // returns true
+        Boolean out = “Geeks”.equalsIgnoreCase(“geeks”); // returns true
+
+     11. int compareTo( Strings anotherString): Compares two string lexicographically.
+
+         int out = s1.compareTo(s2);  // where s1 and s2 are
+                                  // strings to be compared
+
+         This returns difference s1-s2. If :
+         out < 0  // s1 comes before s2
+         out = 0  // s1 and s2 are equal.
+         out > 0   // s1 comes after s2.
+
+     12. int compareToIgnoreCase( Strings anotherString): Compares two string lexicographically, ignoring case considerations.
+
+         int out = s1.compareToIgnoreCase(s2);
+         // where s1 and s2 are
+         // strings to be compared
+
+        This returns difference s1-s2. If :
+        out < 0  // s1 comes before s2
+        out = 0   // s1 and s2 are equal.
+        out > 0   // s1 comes after s2.
+
+         Note- In this case, it will not consider case of a letter (it will ignore whether it is uppercase or lowercase).
+     13. Strings toLowerCase(): Converts all the characters in the Strings to lower case.
+
+         Strings word1 = “HeLLo”;
+         Strings word3 = word1.toLowerCase(); // returns “hello"
+
+     14. Strings toUpperCase(): Converts all the characters in the Strings to upper case.
+
+         Strings word1 = “HeLLo”;
+         Strings word2 = word1.toUpperCase(); // returns “HELLO”
+
+     15. Strings trim(): Returns the copy of the Strings, by removing whitespaces at both ends. It does not affect whitespaces in the
+         middle.
+
+         Strings word1 = “ Learn Share Learn “;
+         Strings word2 = word1.trim(); // returns “Learn Share Learn”
+
+     16. Strings replace (char oldChar, char newChar): Returns new string by replacing all occurrences of oldChar with newChar.
+
+         Strings s1 = “feeksforfeeks“;
+         Strings s2 = “feeksforfeeks”.replace(‘f’ ,’g’); // returns “geeksgorgeeks”
+
+        Note:- s1 is still feeksforfeeks and s2 is geeksgorgeeks

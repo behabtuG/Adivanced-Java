@@ -1,5 +1,5 @@
 Immutable class in java means that once an object is created, we cannot change its content. In Java, all the wrapper classes (like Integer,
-Boolean, Byte, Short) and String class is immutable. We can create our own immutable class as well. Prior to going ahead do go through
+Boolean, Byte, Short) and Strings class is immutable. We can create our own immutable class as well. Prior to going ahead do go through
 characteristics of immutability in order to have a good understanding while implementing the same. Following are the requirements:
 
     . The class must be declared as final so that child classes can’t be created.

@@ -1,0 +1,42 @@
+Address Binding :
+The Association of program instruction and data to the actual physical memory locations is called the Address Binding.
+Let’s consider the following example given below for better understanding.
+
+Consider a program P1 has the set of instruction such that I1, I2, I3, I4, and program counter value is 10, 20, 30, 40 respectively.
+
+Program P1
+I1 --> 10
+I2 --> 20
+I3 --> 30
+I4 --> 40
+
+Program Counter = 10, 20, 30, 40
+
+ Types of Address Binding :
+
+   Address Binding divided into three types as follows.
+
+     1. Compile-time Address Binding
+     2. Load time Address Binding
+     3. Execution time Address Binding
+
+   Compile-time Address Binding :
+
+     . If the compiler is responsible for performing address binding then it is called compile-time address binding.
+     . It will be done before loading the program into memory.
+     . The compiler requires interacts with an OS memory manager to perform compile-time address binding.
+
+   Load time Address Binding :
+
+     . It will be done after loading the program into memory.
+     . This type of address binding will be done by the OS memory manager i.e loader.
+
+   Execution time or dynamic Address Binding :
+
+     . It will be postponed even after loading the program into memory.
+     . The program will be kept on changing the locations in memory until the time of program execution.
+     . The dynamic type of address binding done by the processor at the time of program execution.
+
+ Note :
+ The majority of the Operating System practically implement dynamic loading, dynamic linking, dynamic address binding.
+  For example – Windows, Linux, Unix all popular OS.

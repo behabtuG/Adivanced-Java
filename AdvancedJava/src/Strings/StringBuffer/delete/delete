@@ -1,0 +1,32 @@
+The java.lang.StringBuffer.delete() is an inbuilt method in Java which is used to remove or delete the characters in a substring
+of this sequence. The substring starts at a specified index start_point and extends to the character at the index end_point.
+
+Syntax :
+
+public StringBuffer delete(int start_point, int end_point)
+
+Parameters : The method accepts two parameters of integer type:
+start_point – This refers to the beginning index and is included in the count.
+end_point – This refer to the ending index and is excluded from the count.
+
+Return Value : The method returns the string after deleting the substring formed by the range mentioned in the parameters.
+
+Exceptions : StringIndexOutOfBoundsException occurs if the start_point is negative, greater than length(), or greater than the
+end_point.
+
+Examples :
+
+Input: String = "Apple"
+            start_point = 2
+            end_point = 4
+
+Output: Ape
+
+Input: String = "GeeksforGeeks"
+       start_point = 2
+       end_point = 7
+
+Output: GerGeeks
+
+Below programs illustrate the java.lang.StringBuffer.delete() method:
+Program 1:
